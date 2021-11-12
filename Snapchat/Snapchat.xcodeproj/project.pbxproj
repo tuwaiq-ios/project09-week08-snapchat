@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		796B7F93E73ECBBDD2F23211 /* Pods_Snapchat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 442ABAF1C2735FABB3AD8ACB /* Pods_Snapchat.framework */; };
+		B5F245AE273EEE0900DFEFB9 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F245AD273EEE0900DFEFB9 /* Message.swift */; };
+		B5F245B0273EEE2400DFEFB9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F245AF273EEE2400DFEFB9 /* User.swift */; };
+		B5F245B2273EEE3900DFEFB9 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F245B1273EEE3900DFEFB9 /* Location.swift */; };
 		E6873F17273E9F6600649EEF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6873F16273E9F6600649EEF /* AppDelegate.swift */; };
 		E6873F19273E9F6600649EEF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6873F18273E9F6600649EEF /* SceneDelegate.swift */; };
 		E6873F1B273E9F6600649EEF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6873F1A273E9F6600649EEF /* ViewController.swift */; };
@@ -24,6 +27,9 @@
 		442ABAF1C2735FABB3AD8ACB /* Pods_Snapchat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Snapchat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7489783C5C3D98DAF712CABB /* Pods-Snapchat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Snapchat.release.xcconfig"; path = "Target Support Files/Pods-Snapchat/Pods-Snapchat.release.xcconfig"; sourceTree = "<group>"; };
 		8A946894C70B01505051FB74 /* Pods-Snapchat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Snapchat.debug.xcconfig"; path = "Target Support Files/Pods-Snapchat/Pods-Snapchat.debug.xcconfig"; sourceTree = "<group>"; };
+		B5F245AD273EEE0900DFEFB9 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		B5F245AF273EEE2400DFEFB9 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		B5F245B1273EEE3900DFEFB9 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		E6873F13273E9F6600649EEF /* Snapchat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Snapchat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6873F16273E9F6600649EEF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E6873F18273E9F6600649EEF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -58,6 +64,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		B5F245AC273EEDF600DFEFB9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B5F245AD273EEE0900DFEFB9 /* Message.swift */,
+				B5F245AF273EEE2400DFEFB9 /* User.swift */,
+				B5F245B1273EEE3900DFEFB9 /* Location.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		E6873F0A273E9F6500649EEF = {
 			isa = PBXGroup;
 			children = (
@@ -79,6 +95,7 @@
 		E6873F15273E9F6600649EEF /* Snapchat */ = {
 			isa = PBXGroup;
 			children = (
+				B5F245AC273EEDF600DFEFB9 /* Models */,
 				E6873F2A273EA0A100649EEF /* GoogleService-Info.plist */,
 				E6873F34273EA4CA00649EEF /* Group Controller */,
 				E6873F1F273E9F6D00649EEF /* Assets.xcassets */,
@@ -228,9 +245,12 @@
 			files = (
 				E6873F31273EA42200649EEF /* ProfileVC.swift in Sources */,
 				E6873F1B273E9F6600649EEF /* ViewController.swift in Sources */,
+				B5F245B2273EEE3900DFEFB9 /* Location.swift in Sources */,
 				E6873F2F273EA40D00649EEF /* UserVC.swift in Sources */,
 				E6873F17273E9F6600649EEF /* AppDelegate.swift in Sources */,
 				E6873F2D273EA3A300649EEF /* TabVC.swift in Sources */,
+				B5F245B0273EEE2400DFEFB9 /* User.swift in Sources */,
+				B5F245AE273EEE0900DFEFB9 /* Message.swift in Sources */,
 				E6873F33273EA43E00649EEF /* FavoriteVC.swift in Sources */,
 				E6873F19273E9F6600649EEF /* SceneDelegate.swift in Sources */,
 			);
