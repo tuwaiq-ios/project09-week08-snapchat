@@ -25,8 +25,10 @@ func setupVCs() {
     
    createNavController(for:MapVC (), title: NSLocalizedString("location", comment: ""), image: UIImage(systemName: "location")!),
    createNavController(for:ConversationsVC(), title: NSLocalizedString("Chat", comment: ""), image: UIImage(systemName: "message")!),
+   createNavController(for:CamVC(), title: NSLocalizedString("Profile", comment: ""), image: UIImage(systemName: "camera.fill")!),
    createNavController(for:Contacts(), title: NSLocalizedString("users", comment: ""), image: UIImage(systemName: "person.3")!),
    createNavController(for:ProfileVC(), title: NSLocalizedString("Profile", comment: ""), image: UIImage(systemName: "person")!),
+   
   ]
  }
 override func viewDidLoad() {
@@ -37,6 +39,7 @@ override func viewDidLoad() {
   setupVCs()
 }
 }
+
 
 
 

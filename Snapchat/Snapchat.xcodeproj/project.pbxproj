@@ -22,6 +22,7 @@
 		E30A81AB273BDCB700CCB1C3 /* Contacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = E30A81AA273BDCB700CCB1C3 /* Contacts.swift */; };
 		E30A81AD273BDCD500CCB1C3 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E30A81AC273BDCD500CCB1C3 /* ProfileVC.swift */; };
 		E30A823E273D59C300CCB1C3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E30A823D273D59C300CCB1C3 /* GoogleService-Info.plist */; };
+		E3257349273FC5AF0088E3C2 /* CamVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3257348273FC5AF0088E3C2 /* CamVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		E30A81AA273BDCB700CCB1C3 /* Contacts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contacts.swift; sourceTree = "<group>"; };
 		E30A81AC273BDCD500CCB1C3 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		E30A823D273D59C300CCB1C3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E3257348273FC5AF0088E3C2 /* CamVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CamVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 				E30A819F273B289B00CCB1C3 /* Colors.swift */,
 				E30A81A1273B28A800CCB1C3 /*  ViewController.swift */,
 				E30A81A5273BDBF000CCB1C3 /* MapVC.swift */,
+				E3257348273FC5AF0088E3C2 /* CamVC.swift */,
 				E30A81A7273BDC0800CCB1C3 /* ConversationsVC.swift */,
 				E30A81AA273BDCB700CCB1C3 /* Contacts.swift */,
 			);
@@ -180,6 +183,7 @@
 				E30A81A8273BDC0800CCB1C3 /* ConversationsVC.swift in Sources */,
 				E30A8186273AD43B00CCB1C3 /* AppDelegate.swift in Sources */,
 				E30A819C273B287F00CCB1C3 /* SignInVC.swift in Sources */,
+				E3257349273FC5AF0088E3C2 /* CamVC.swift in Sources */,
 				E30A81AB273BDCB700CCB1C3 /* Contacts.swift in Sources */,
 				E30A819E273B288600CCB1C3 /* SignUpVC.swift in Sources */,
 				E30A81A4273BDB0400CCB1C3 /* TabBarVC.swift in Sources */,
