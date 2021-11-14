@@ -10,10 +10,8 @@ target 'JetChat' do
 pod 'Firebase/Auth'
 pod 'Firebase/Firestore'
 pod 'Firebase/Storage'
-pod 'Firebase/Analytics'
 pod 'FirebaseFirestoreSwift'
-
 pod 'MessageKit'
-pod 'GoogleMaps'
+
 
 end

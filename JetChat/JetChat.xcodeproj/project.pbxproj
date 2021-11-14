@@ -10,18 +10,20 @@
 		0094DDF4A4DA16CEA703170D /* Pods_JetChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 305761766A39BB2B03ED5092 /* Pods_JetChat.framework */; };
 		0F20C8F52740013000F231A4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F20C8F42740013000F231A4 /* AppDelegate.swift */; };
 		0F20C8F72740013000F231A4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F20C8F62740013000F231A4 /* SceneDelegate.swift */; };
-		0F20C8F92740013000F231A4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F20C8F82740013000F231A4 /* ViewController.swift */; };
+		0F20C8F92740013000F231A4 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F20C8F82740013000F231A4 /* Models.swift */; };
 		0F20C8FC2740013000F231A4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F20C8FA2740013000F231A4 /* Main.storyboard */; };
 		0F20C8FE2740013300F231A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F20C8FD2740013300F231A4 /* Assets.xcassets */; };
 		0F20C9012740013300F231A4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F20C8FF2740013300F231A4 /* LaunchScreen.storyboard */; };
 		0F20C9092740014C00F231A4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0F20C9082740014C00F231A4 /* GoogleService-Info.plist */; };
+		FA9CB0F72740468600FBE4C7 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9CB0F62740468600FBE4C7 /* HomeVC.swift */; };
+		FA9CB0FB2740483700FBE4C7 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9CB0FA2740483700FBE4C7 /* LoginVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0F20C8F12740013000F231A4 /* JetChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JetChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F20C8F42740013000F231A4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0F20C8F62740013000F231A4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		0F20C8F82740013000F231A4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0F20C8F82740013000F231A4 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		0F20C8FB2740013000F231A4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0F20C8FD2740013300F231A4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0F20C9002740013300F231A4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -30,6 +32,8 @@
 		305761766A39BB2B03ED5092 /* Pods_JetChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JetChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE603363EAA28FF2C3ED3F45 /* Pods-JetChat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JetChat.debug.xcconfig"; path = "Target Support Files/Pods-JetChat/Pods-JetChat.debug.xcconfig"; sourceTree = "<group>"; };
 		F58AC89314CFD9324521C033 /* Pods-JetChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JetChat.release.xcconfig"; path = "Target Support Files/Pods-JetChat/Pods-JetChat.release.xcconfig"; sourceTree = "<group>"; };
+		FA9CB0F62740468600FBE4C7 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		FA9CB0FA2740483700FBE4C7 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,12 +71,14 @@
 			children = (
 				0F20C8F42740013000F231A4 /* AppDelegate.swift */,
 				0F20C8F62740013000F231A4 /* SceneDelegate.swift */,
-				0F20C8F82740013000F231A4 /* ViewController.swift */,
+				0F20C8F82740013000F231A4 /* Models.swift */,
 				0F20C8FA2740013000F231A4 /* Main.storyboard */,
 				0F20C8FD2740013300F231A4 /* Assets.xcassets */,
 				0F20C8FF2740013300F231A4 /* LaunchScreen.storyboard */,
 				0F20C9022740013300F231A4 /* Info.plist */,
 				0F20C9082740014C00F231A4 /* GoogleService-Info.plist */,
+				FA9CB0F62740468600FBE4C7 /* HomeVC.swift */,
+				FA9CB0FA2740483700FBE4C7 /* LoginVC.swift */,
 			);
 			path = JetChat;
 			sourceTree = "<group>";
@@ -83,7 +89,6 @@
 				BE603363EAA28FF2C3ED3F45 /* Pods-JetChat.debug.xcconfig */,
 				F58AC89314CFD9324521C033 /* Pods-JetChat.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -107,7 +112,6 @@
 				0F20C8EE2740013000F231A4 /* Frameworks */,
 				0F20C8EF2740013000F231A4 /* Resources */,
 				0B18A7B7714BC8F4452E3512 /* [CP] Embed Pods Frameworks */,
-				B49E08C9ADDFB7FC522797C8 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -205,23 +209,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		B49E08C9ADDFB7FC522797C8 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-JetChat/Pods-JetChat-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-JetChat/Pods-JetChat-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-JetChat/Pods-JetChat-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -229,9 +216,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0F20C8F92740013000F231A4 /* ViewController.swift in Sources */,
+				0F20C8F92740013000F231A4 /* Models.swift in Sources */,
+				FA9CB0F72740468600FBE4C7 /* HomeVC.swift in Sources */,
 				0F20C8F52740013000F231A4 /* AppDelegate.swift in Sources */,
 				0F20C8F72740013000F231A4 /* SceneDelegate.swift in Sources */,
+				FA9CB0FB2740483700FBE4C7 /* LoginVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
