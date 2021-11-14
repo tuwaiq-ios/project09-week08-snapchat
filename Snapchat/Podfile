@@ -10,4 +10,5 @@ pod 'Firebase/Auth'
 pod 'Firebase/Firestore'
 pod 'Firebase/Storage'
 pod 'lottie-ios'
+pod 'SkyFloatingLabelTextField'
 end

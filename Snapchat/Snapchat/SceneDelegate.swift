@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -17,12 +18,29 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let windowScene = (scene as? UIWindowScene) else { return }
-                window = UIWindow(frame: windowScene.coordinateSpace.bounds)
-                let home = TabViewController()
-                self.window?.rootViewController = home
-                window?.makeKeyAndVisible()
-                window?.windowScene = windowScene
+        
+        /// 2. Create a new UIWindow using the windowScene constructor which takes in a window scene.
+        let window = UIWindow(windowScene: windowScene)
+        
+        /// 3. Create a view hierarchy programmatically
+        let isUserLoggedIn = Auth.auth().currentUser != nil
+        let viewController: UIViewController
+        if isUserLoggedIn {
+            viewController = TabViewController()
+        } else {
+            viewController = LoginViewController()
+        }
+        
+        let navigation = UINavigationController(rootViewController: viewController)
+        
+        /// 4. Set the root view controller of the window with your view controller
+        window.rootViewController = navigation
+        
+        /// 5. Set the window and call makeKeyAndVisible()
+        self.window = window
+        window.makeKeyAndVisible()
     }
+    
 
     func sceneDidDisconnect(_ scene: UIScene) {
         // Called as the scene is being released by the system.

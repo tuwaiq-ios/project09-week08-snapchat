@@ -437,12 +437,14 @@ PODS:
   - nanopb/decode (2.30908.0)
   - nanopb/encode (2.30908.0)
   - PromisesObjC (2.0.0)
+  - SkyFloatingLabelTextField (4.0.0)
 
 DEPENDENCIES:
   - Firebase/Auth
   - Firebase/Firestore
   - Firebase/Storage
   - lottie-ios
+  - SkyFloatingLabelTextField
 
 SPEC REPOS:
   trunk:
@@ -463,6 +465,7 @@ SPEC REPOS:
     - lottie-ios
     - nanopb
     - PromisesObjC
+    - SkyFloatingLabelTextField
 
 SPEC CHECKSUMS:
   abseil: 6c8eb7892aefa08d929b39f9bb108e5367e3228f
@@ -482,7 +485,8 @@ SPEC CHECKSUMS:
   lottie-ios: c058aeafa76daa4cf64d773554bccc8385d0150e
   nanopb: a0ba3315591a9ae0a16a309ee504766e90db0c96
   PromisesObjC: 68159ce6952d93e17b2dfe273b8c40907db5ba58
+  SkyFloatingLabelTextField: 79ddc40e4ad59707fedbb48d605417aee48bb78a
 
-PODFILE CHECKSUM: 75817fcde679e09ad325467d55d5fbd6b59605b4
+PODFILE CHECKSUM: 21fb73a1f5773191302da6519daa5af11f037f0a
 
 COCOAPODS: 1.11.2
