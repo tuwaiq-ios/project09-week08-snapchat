@@ -7,11 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C9534209273C413F00E149B0 /* LoginOrRegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9534208273C413F00E149B0 /* LoginOrRegisterVC.swift */; };
 		C953422D273D587400E149B0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C953422C273D587400E149B0 /* GoogleService-Info.plist */; };
+		C9534230273FFA4000E149B0 /* RegisterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C953422F273FFA4000E149B0 /* RegisterService.swift */; };
+		C9534232273FFAB000E149B0 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9534231273FFAB000E149B0 /* User.swift */; };
 		C9F3E3BE273AD47A0093B42F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F3E3BD273AD47A0093B42F /* AppDelegate.swift */; };
 		C9F3E3C0273AD47A0093B42F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F3E3BF273AD47A0093B42F /* SceneDelegate.swift */; };
-		C9F3E3C2273AD47A0093B42F /* LognVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F3E3C1273AD47A0093B42F /* LognVC.swift */; };
+		C9F3E3C2273AD47A0093B42F /* LogInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F3E3C1273AD47A0093B42F /* LogInVC.swift */; };
 		C9F3E3C7273AD47C0093B42F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9F3E3C6273AD47C0093B42F /* Assets.xcassets */; };
 		C9F3E3CA273AD47C0093B42F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9F3E3C8273AD47C0093B42F /* LaunchScreen.storyboard */; };
 		C9F3E3D2273ADB1D0093B42F /* TabVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F3E3D1273ADB1D0093B42F /* TabVC.swift */; };
@@ -26,12 +27,13 @@
 /* Begin PBXFileReference section */
 		4B2D15505711CF2F539B5554 /* Pods_SnapChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SnapChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A529FCFC8E6FE97CD517DA62 /* Pods-SnapChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SnapChat.release.xcconfig"; path = "Target Support Files/Pods-SnapChat/Pods-SnapChat.release.xcconfig"; sourceTree = "<group>"; };
-		C9534208273C413F00E149B0 /* LoginOrRegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginOrRegisterVC.swift; sourceTree = "<group>"; };
 		C953422C273D587400E149B0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C953422F273FFA4000E149B0 /* RegisterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterService.swift; sourceTree = "<group>"; };
+		C9534231273FFAB000E149B0 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		C9F3E3BA273AD47A0093B42F /* SnapChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SnapChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9F3E3BD273AD47A0093B42F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C9F3E3BF273AD47A0093B42F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		C9F3E3C1273AD47A0093B42F /* LognVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LognVC.swift; sourceTree = "<group>"; };
+		C9F3E3C1273AD47A0093B42F /* LogInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInVC.swift; sourceTree = "<group>"; };
 		C9F3E3C6273AD47C0093B42F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C9F3E3C9273AD47C0093B42F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C9F3E3CB273AD47C0093B42F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -64,6 +66,36 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		C9534235274122F700E149B0 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				C953422F273FFA4000E149B0 /* RegisterService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		C95342362741232B00E149B0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C9534231273FFAB000E149B0 /* User.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C9534237274123A000E149B0 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C9F3E3C1273AD47A0093B42F /* LogInVC.swift */,
+				C9F3E3D3273ADCED0093B42F /* RegisterVC.swift */,
+				C9F3E3D5273AFDA10093B42F /* MyProfileVC.swift */,
+				C9F3E3D1273ADB1D0093B42F /* TabVC.swift */,
+				C9F3E3D7273AFDB10093B42F /* MapVC.swift */,
+				C9F3E3DB273AFDCE0093B42F /* ChatVC.swift */,
+				C9F3E3DD273AFE230093B42F /* UsersVC.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		C9F3E3B1273AD47A0093B42F = {
 			isa = PBXGroup;
 			children = (
@@ -86,17 +118,12 @@
 			isa = PBXGroup;
 			children = (
 				C953422C273D587400E149B0 /* GoogleService-Info.plist */,
+				C95342362741232B00E149B0 /* Models */,
+				C9534235274122F700E149B0 /* Services */,
+				C9534237274123A000E149B0 /* Controllers */,
+				C9F3E3C6273AD47C0093B42F /* Assets.xcassets */,
 				C9F3E3BD273AD47A0093B42F /* AppDelegate.swift */,
 				C9F3E3BF273AD47A0093B42F /* SceneDelegate.swift */,
-				C9534208273C413F00E149B0 /* LoginOrRegisterVC.swift */,
-				C9F3E3C1273AD47A0093B42F /* LognVC.swift */,
-				C9F3E3D3273ADCED0093B42F /* RegisterVC.swift */,
-				C9F3E3D1273ADB1D0093B42F /* TabVC.swift */,
-				C9F3E3D5273AFDA10093B42F /* MyProfileVC.swift */,
-				C9F3E3D7273AFDB10093B42F /* MapVC.swift */,
-				C9F3E3DB273AFDCE0093B42F /* ChatVC.swift */,
-				C9F3E3DD273AFE230093B42F /* UsersVC.swift */,
-				C9F3E3C6273AD47C0093B42F /* Assets.xcassets */,
 				C9F3E3C8273AD47C0093B42F /* LaunchScreen.storyboard */,
 				C9F3E3CB273AD47C0093B42F /* Info.plist */,
 			);
@@ -109,7 +136,6 @@
 				D72834839C2AD10D690C3792 /* Pods-SnapChat.debug.xcconfig */,
 				A529FCFC8E6FE97CD517DA62 /* Pods-SnapChat.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -229,12 +255,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				C9F3E3DC273AFDCE0093B42F /* ChatVC.swift in Sources */,
+				C9534232273FFAB000E149B0 /* User.swift in Sources */,
 				C9F3E3D6273AFDA20093B42F /* MyProfileVC.swift in Sources */,
-				C9F3E3C2273AD47A0093B42F /* LognVC.swift in Sources */,
+				C9F3E3C2273AD47A0093B42F /* LogInVC.swift in Sources */,
 				C9F3E3BE273AD47A0093B42F /* AppDelegate.swift in Sources */,
 				C9F3E3D2273ADB1D0093B42F /* TabVC.swift in Sources */,
 				C9F3E3D8273AFDB10093B42F /* MapVC.swift in Sources */,
-				C9534209273C413F00E149B0 /* LoginOrRegisterVC.swift in Sources */,
+				C9534230273FFA4000E149B0 /* RegisterService.swift in Sources */,
 				C9F3E3D4273ADCED0093B42F /* RegisterVC.swift in Sources */,
 				C9F3E3DE273AFE230093B42F /* UsersVC.swift in Sources */,
 				C9F3E3C0273AD47A0093B42F /* SceneDelegate.swift in Sources */,

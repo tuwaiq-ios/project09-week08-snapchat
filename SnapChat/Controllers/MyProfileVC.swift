@@ -18,13 +18,13 @@ class MyProfileVC: UIViewController , UIImagePickerControllerDelegate , UINaviga
     
     //image picker
     lazy var profileImage: UIImageView = {
-       let view = UIImageView()
-       view.translatesAutoresizingMaskIntoConstraints = false
-       view.backgroundColor = .yellow
-       view.layer.cornerRadius = 25
-        view.isUserInteractionEnabled = true
+       let image = UIImageView()
+       image.translatesAutoresizingMaskIntoConstraints = false
+       image.backgroundColor = .yellow
+       image.layer.cornerRadius = 25
+        image.isUserInteractionEnabled = true
                               
-       return view
+       return image
    }()
     lazy var imagePicker : UIImagePickerController = {
        let imagePicker = UIImagePickerController()
@@ -34,6 +34,7 @@ class MyProfileVC: UIViewController , UIImagePickerControllerDelegate , UINaviga
        
        return imagePicker
    }()
+    
     //user name
     lazy var nameLabel: UITextField = {
        let label = UITextField()
@@ -57,7 +58,7 @@ class MyProfileVC: UIViewController , UIImagePickerControllerDelegate , UINaviga
     }()
     lazy var saveButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle("Save Snapcode", for: .normal)
+        button.setTitle("Save", for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.titleLabel?.font = UIFont.preferredFont(forTextStyle: .headline, compatibleWith: .init(legibilityWeight: .bold))
         button.heightAnchor.constraint(equalToConstant: 50).isActive = true
@@ -80,9 +81,9 @@ class MyProfileVC: UIViewController , UIImagePickerControllerDelegate , UINaviga
 
         return button
     }()
-    lazy var cancelButton: UIButton = {
+    lazy var singOutButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle("Cancel", for: .normal)
+        button.setTitle("Sing out", for: .normal)
         button.setTitleColor(.black, for: .normal)
         button.titleLabel?.font = UIFont.preferredFont (forTextStyle: .headline, compatibleWith: .init(legibilityWeight: .bold))
         button.heightAnchor.constraint(equalToConstant: 50).isActive = true
@@ -114,7 +115,7 @@ class MyProfileVC: UIViewController , UIImagePickerControllerDelegate , UINaviga
         usernameStackView.addArrangedSubview (userStatusLabel)
         verticalStackView.addArrangedSubview(saveButton)
         verticalStackView.addArrangedSubview(shareButton)
-        verticalStackView.addArrangedSubview(cancelButton)
+        verticalStackView.addArrangedSubview(singOutButton)
         
         NSLayoutConstraint.activate([
     containerView.heightAnchor.constraint(equalToConstant: 500),
@@ -131,7 +132,7 @@ class MyProfileVC: UIViewController , UIImagePickerControllerDelegate , UINaviga
  
         }
     @objc private func cancelButtonTapped() {
-    present(TabVC(), animated: true, completion: nil)
+    present(LogInVC(), animated: true, completion: nil)
         }
     
       @objc func imageTapped() {

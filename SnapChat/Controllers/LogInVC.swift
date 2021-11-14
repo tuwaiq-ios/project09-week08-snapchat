@@ -6,8 +6,9 @@
 //
 
 import UIKit
+import FirebaseAuth
 
-class LognVC: UIViewController {
+class LogInVC: UIViewController {
 
       lazy var userEmail: UITextField = {
         let userEmail = UITextField()
@@ -26,7 +27,7 @@ class LognVC: UIViewController {
         userPassword.layer.cornerRadius = 12
         userPassword.layer.borderWidth = 1
         userPassword.layer.borderColor = UIColor.lightGray.cgColor
-        userPassword.placeholder = "  Password..."
+        userPassword.placeholder = " Password..."
         userPassword.backgroundColor = .secondarySystemBackground
         return userPassword
     }()
@@ -67,12 +68,11 @@ class LognVC: UIViewController {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "Snap")
         imageView.contentMode = .scaleAspectFit
+        imageView.layer.cornerRadius = 25
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.backgroundColor = .black
         
         return imageView
     }()
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -89,6 +89,7 @@ class LognVC: UIViewController {
             imageView.widthAnchor.constraint(equalToConstant: 100),
             imageView.heightAnchor.constraint(equalToConstant: 100),
         ])
+
         //Constraint userEmail
         view.addSubview(userEmail)
         NSLayoutConstraint.activate([
@@ -138,11 +139,28 @@ class LognVC: UIViewController {
     }
     
     @objc private func loginButtonTapped() {
+        
+        //linked with firebase
+        let email = userEmail.text ?? ""
+        let password = userPassword.text ?? ""
+        
+        if email.isEmpty || password.isEmpty {
+            return
+        }
+        
+        Auth.auth().signIn(withEmail: email, password: password) { result, error in
+            if error != nil {
+                print(error as Any)
+                return
+            }
+            //oben TabVC bage
             let vc = TabVC()
             vc.modalPresentationStyle = .fullScreen
             self.present(vc, animated: true, completion: nil)
         }
+    }
     
+    //oben RegisterVC bage 
     @objc private func registerButtonTapped() {
         let vc = RegisterVC()
         vc.modalPresentationStyle = .fullScreen
@@ -150,4 +168,3 @@ class LognVC: UIViewController {
     }
 
 }
-
