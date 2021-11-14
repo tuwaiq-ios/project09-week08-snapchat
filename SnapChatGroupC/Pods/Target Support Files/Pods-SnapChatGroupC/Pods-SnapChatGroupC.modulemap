@@ -1,0 +1,6 @@
+framework module Pods_SnapChatGroupC {
+  umbrella header "Pods-SnapChatGroupC-umbrella.h"
+
+  export *
+  module * { export * }
+}
