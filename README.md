@@ -7,6 +7,7 @@
 4. Start a new conversation
 6. Realtime location sharing
 
+
 ### Grades distribution
 1. Database schema
 2. Project blueprint
