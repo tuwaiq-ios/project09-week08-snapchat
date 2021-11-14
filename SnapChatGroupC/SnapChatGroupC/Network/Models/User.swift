@@ -10,8 +10,9 @@ import UIKit
 struct User {
     let id: String
     let name: String
-    let locationId: Double
     let status: String
+    let latitude: Double
+    let longitude: Double 
     
    
 }
