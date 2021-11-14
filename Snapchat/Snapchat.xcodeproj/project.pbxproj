@@ -28,12 +28,23 @@
 		1EB7DC27273FEFBB009956E0 /* NetworkingLoadingIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB7DC26273FEFBB009956E0 /* NetworkingLoadingIndicator.swift */; };
 		1EB7DC2B273FF39F009956E0 /* loadingAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = 1EB7DC2A273FF39F009956E0 /* loadingAnimation.json */; };
 		1EB7DC2E273FFACC009956E0 /* UserActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB7DC2D273FFACC009956E0 /* UserActivity.swift */; };
+<<<<<<< HEAD
 		1EB7DC3027403600009956E0 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB7DC2F27403600009956E0 /* RegisterView.swift */; };
 		1EB7DC32274038C1009956E0 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB7DC31274038C1009956E0 /* RegisterViewController.swift */; };
 		1EB7DC342740401C009956E0 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB7DC332740401C009956E0 /* GradientView.swift */; };
 		1EB7DC37274044E0009956E0 /* SelectProfileImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB7DC36274044E0009956E0 /* SelectProfileImageViewController.swift */; };
 		1EB7DC3927404804009956E0 /* RegistrationInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB7DC3827404804009956E0 /* RegistrationInfoView.swift */; };
 		1EB7DC3C27404942009956E0 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB7DC3B27404942009956E0 /* LoginView.swift */; };
+=======
+		68B2F177274045A800D84528 /* Messages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B2F176274045A800D84528 /* Messages.swift */; };
+		68B2F17927404A9800D84528 /* ConversationsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B2F17827404A9800D84528 /* ConversationsCell.swift */; };
+		68B2F17B27404BB100D84528 /* ConversationsNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B2F17A27404BB100D84528 /* ConversationsNetworking.swift */; };
+		68B2F17D27404D2400D84528 /* NewConversationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B2F17C27404D2400D84528 /* NewConversationViewController.swift */; };
+		68B2F17F27404DFC00D84528 /* ChatNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B2F17E27404DFC00D84528 /* ChatNetworking.swift */; };
+		68B2F18427404F4500D84528 /* ChatAudio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B2F18327404F4500D84528 /* ChatAudio.swift */; };
+		68B2F18627404FA200D84528 /* MessageCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B2F18527404FA200D84528 /* MessageCollectionView.swift */; };
+		68B2F1882740517500D84528 /* NewConversationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B2F1872740517500D84528 /* NewConversationCell.swift */; };
+>>>>>>> 19b2680a4ee8dc2c11716e20ae000736bf0ee0a2
 		B72AAF5456288100ED71FB8C /* Pods_Snapchat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B46655B6529E87434A3D2C7 /* Pods_Snapchat.framework */; };
 /* End PBXBuildFile section */
 
@@ -69,6 +80,14 @@
 		1EB7DC3B27404942009956E0 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		1EFA860494150328F5CD359F /* Pods-Snapchat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Snapchat.debug.xcconfig"; path = "Target Support Files/Pods-Snapchat/Pods-Snapchat.debug.xcconfig"; sourceTree = "<group>"; };
 		291AFFD401BAFBD0AA839904 /* Pods-Snapchat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Snapchat.release.xcconfig"; path = "Target Support Files/Pods-Snapchat/Pods-Snapchat.release.xcconfig"; sourceTree = "<group>"; };
+		68B2F176274045A800D84528 /* Messages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Messages.swift; sourceTree = "<group>"; };
+		68B2F17827404A9800D84528 /* ConversationsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationsCell.swift; sourceTree = "<group>"; };
+		68B2F17A27404BB100D84528 /* ConversationsNetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationsNetworking.swift; sourceTree = "<group>"; };
+		68B2F17C27404D2400D84528 /* NewConversationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewConversationViewController.swift; sourceTree = "<group>"; };
+		68B2F17E27404DFC00D84528 /* ChatNetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatNetworking.swift; sourceTree = "<group>"; };
+		68B2F18327404F4500D84528 /* ChatAudio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatAudio.swift; sourceTree = "<group>"; };
+		68B2F18527404FA200D84528 /* MessageCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCollectionView.swift; sourceTree = "<group>"; };
+		68B2F1872740517500D84528 /* NewConversationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewConversationCell.swift; sourceTree = "<group>"; };
 		7B46655B6529E87434A3D2C7 /* Pods_Snapchat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Snapchat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -130,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				1EB7DC17273FE583009956E0 /* User.swift */,
+				68B2F176274045A800D84528 /* Messages.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -143,8 +163,9 @@
 				1EB7DC0D273FDA89009956E0 /* LocationViewController.swift */,
 				1EB7DC11273FDBA4009956E0 /* CameraViewController.swift */,
 				1EB7DC0F273FDAF2009956E0 /* ContactsViewController.swift */,
-				1EB7DC15273FDD4D009956E0 /* ConversationViewController.swift */,
-				1EB7DC13273FDBC2009956E0 /* ChatViewController.swift */,
+				68B2F18027404E5700D84528 /* Conversations */,
+				68B2F18127404E7100D84528 /* NewConversations */,
+				68B2F18227404E8400D84528 /* Chat */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -224,6 +245,36 @@
 				291AFFD401BAFBD0AA839904 /* Pods-Snapchat.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		68B2F18027404E5700D84528 /* Conversations */ = {
+			isa = PBXGroup;
+			children = (
+				1EB7DC15273FDD4D009956E0 /* ConversationViewController.swift */,
+				68B2F17827404A9800D84528 /* ConversationsCell.swift */,
+				68B2F17A27404BB100D84528 /* ConversationsNetworking.swift */,
+			);
+			path = Conversations;
+			sourceTree = "<group>";
+		};
+		68B2F18127404E7100D84528 /* NewConversations */ = {
+			isa = PBXGroup;
+			children = (
+				68B2F17C27404D2400D84528 /* NewConversationViewController.swift */,
+				68B2F1872740517500D84528 /* NewConversationCell.swift */,
+			);
+			path = NewConversations;
+			sourceTree = "<group>";
+		};
+		68B2F18227404E8400D84528 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				1EB7DC13273FDBC2009956E0 /* ChatViewController.swift */,
+				68B2F17E27404DFC00D84528 /* ChatNetworking.swift */,
+				68B2F18327404F4500D84528 /* ChatAudio.swift */,
+				68B2F18527404FA200D84528 /* MessageCollectionView.swift */,
+			);
+			path = Chat;
 			sourceTree = "<group>";
 		};
 		7C66997F307712F6BA238D91 /* Frameworks */ = {
@@ -350,9 +401,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				68B2F17B27404BB100D84528 /* ConversationsNetworking.swift in Sources */,
+				68B2F177274045A800D84528 /* Messages.swift in Sources */,
 				1EB7DC0E273FDA89009956E0 /* LocationViewController.swift in Sources */,
 				1EB7DC1F273FEBB5009956E0 /* Helper.swift in Sources */,
+<<<<<<< HEAD
 				1EB7DC342740401C009956E0 /* GradientView.swift in Sources */,
+=======
+				68B2F18427404F4500D84528 /* ChatAudio.swift in Sources */,
+>>>>>>> 19b2680a4ee8dc2c11716e20ae000736bf0ee0a2
 				1EB7DC27273FEFBB009956E0 /* NetworkingLoadingIndicator.swift in Sources */,
 				1EB7DC3C27404942009956E0 /* LoginView.swift in Sources */,
 				1EB7DC2E273FFACC009956E0 /* UserActivity.swift in Sources */,
@@ -362,12 +419,21 @@
 				1EB7DC21273FEC91009956E0 /* AthBackButton.swift in Sources */,
 				1EB7DC3927404804009956E0 /* RegistrationInfoView.swift in Sources */,
 				1EB7DC08273FD943009956E0 /* TabViewController.swift in Sources */,
+				68B2F17927404A9800D84528 /* ConversationsCell.swift in Sources */,
 				1EB7DC16273FDD4D009956E0 /* ConversationViewController.swift in Sources */,
+<<<<<<< HEAD
 				1EB7DC37274044E0009956E0 /* SelectProfileImageViewController.swift in Sources */,
+=======
+				1EB7DC0A273FD997009956E0 /* RegisterViewController.swift in Sources */,
+				68B2F1882740517500D84528 /* NewConversationCell.swift in Sources */,
+>>>>>>> 19b2680a4ee8dc2c11716e20ae000736bf0ee0a2
 				1EB7DC25273FEF7E009956E0 /* UserServices.swift in Sources */,
+				68B2F17F27404DFC00D84528 /* ChatNetworking.swift in Sources */,
 				1EB7DC06273FD8B9009956E0 /* LoginViewController.swift in Sources */,
+				68B2F18627404FA200D84528 /* MessageCollectionView.swift in Sources */,
 				1EB7DC10273FDAF2009956E0 /* ContactsViewController.swift in Sources */,
 				1EB7DBED273FD5A3009956E0 /* AppDelegate.swift in Sources */,
+				68B2F17D27404D2400D84528 /* NewConversationViewController.swift in Sources */,
 				1EB7DC18273FE583009956E0 /* User.swift in Sources */,
 				1EB7DBEF273FD5A3009956E0 /* SceneDelegate.swift in Sources */,
 				1EB7DC23273FECEF009956E0 /* AuthActionButton.swift in Sources */,
