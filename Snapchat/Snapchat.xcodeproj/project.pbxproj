@@ -8,11 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		1E39FBCC2740FA2600E5F5B4 /* HandelLogInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E39FBCB2740FA2600E5F5B4 /* HandelLogInView.swift */; };
+		1E39FBD02741808100E5F5B4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1E39FBCF2741808100E5F5B4 /* GoogleService-Info.plist */; };
 		1EB7DBED273FD5A3009956E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB7DBEC273FD5A3009956E0 /* AppDelegate.swift */; };
 		1EB7DBEF273FD5A3009956E0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB7DBEE273FD5A3009956E0 /* SceneDelegate.swift */; };
 		1EB7DBF6273FD5A9009956E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1EB7DBF5273FD5A9009956E0 /* Assets.xcassets */; };
 		1EB7DBF9273FD5A9009956E0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1EB7DBF7273FD5A9009956E0 /* LaunchScreen.storyboard */; };
-		1EB7DC01273FD6CC009956E0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1EB7DC00273FD6CC009956E0 /* GoogleService-Info.plist */; };
 		1EB7DC06273FD8B9009956E0 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB7DC05273FD8B9009956E0 /* LoginViewController.swift */; };
 		1EB7DC08273FD943009956E0 /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB7DC07273FD943009956E0 /* TabViewController.swift */; };
 		1EB7DC0C273FD9C5009956E0 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB7DC0B273FD9C5009956E0 /* ProfileViewController.swift */; };
@@ -40,13 +40,13 @@
 
 /* Begin PBXFileReference section */
 		1E39FBCB2740FA2600E5F5B4 /* HandelLogInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandelLogInView.swift; sourceTree = "<group>"; };
+		1E39FBCF2741808100E5F5B4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1EB7DBE9273FD5A3009956E0 /* Snapchat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Snapchat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1EB7DBEC273FD5A3009956E0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1EB7DBEE273FD5A3009956E0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		1EB7DBF5273FD5A9009956E0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1EB7DBF8273FD5A9009956E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1EB7DBFA273FD5A9009956E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1EB7DC00273FD6CC009956E0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1EB7DC05273FD8B9009956E0 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		1EB7DC07273FD943009956E0 /* TabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
 		1EB7DC0B273FD9C5009956E0 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -114,8 +114,8 @@
 				1EB7DC03273FD823009956E0 /* Models */,
 				1EB7DC04273FD82E009956E0 /* Controllers */,
 				1EB7DC28273FF353009956E0 /* Assets */,
-				1EB7DC00273FD6CC009956E0 /* GoogleService-Info.plist */,
 				1EB7DBFA273FD5A9009956E0 /* Info.plist */,
+				1E39FBCF2741808100E5F5B4 /* GoogleService-Info.plist */,
 			);
 			path = Snapchat;
 			sourceTree = "<group>";
@@ -298,8 +298,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				1EB7DBF9273FD5A9009956E0 /* LaunchScreen.storyboard in Resources */,
+				1E39FBD02741808100E5F5B4 /* GoogleService-Info.plist in Resources */,
 				1EB7DBF6273FD5A9009956E0 /* Assets.xcassets in Resources */,
-				1EB7DC01273FD6CC009956E0 /* GoogleService-Info.plist in Resources */,
 				1EB7DC2B273FF39F009956E0 /* loadingAnimation.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

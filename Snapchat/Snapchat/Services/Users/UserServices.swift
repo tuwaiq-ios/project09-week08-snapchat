@@ -7,7 +7,7 @@
 
 import UIKit
 import FirebaseAuth
-import FirebaseFirestore
+import FirebaseDatabase
 import FirebaseStorage
 
 class UserServices{
@@ -49,26 +49,19 @@ class UserServices{
     
     
     // MARK: Setup User Info Method
-    func setupUserInfo(_ uid: String, completion: @escaping (_ isActive: Bool) -> Void){
-        
-        Firestore.firestore().collection("users").document(uid).addSnapshotListener{ snapshot,error in
-            if error != nil {
-                return
-            }
-            
-            guard let snap = snapshot?.data() else { return }
-            
-            User.id = uid
-            User.email = snap["email"] as? String
+    func setupUserInfo(_ uid: String, completion: @escaping (_ isActive: Bool) -> Void) {
+        Database.database().reference().child("users").child(uid).observeSingleEvent(of: .value) { (snapshot) in
+            guard let snap = snapshot.value as? [String: AnyObject] else { return }
             User.name = snap["name"] as? String
-            User.status = snap["status"] as? String
-            User.profileImage = snap["image"] as? String
+            User.email = snap["email"] as? String
+            User.profileImage = snap["profileImage"] as? String
+            User.id = uid
             User.isMapLocationEnabled = snap["isMapLocationEnabled"] as? Bool
-            UserActivity.listen(isOnline: true)
-            // if USer.isMapLocationEnabled ?? false {
-            //    ChatKit.map.showsUserLocation = true
-            //    ChatKit.startUpdatingUserLocation()
-            //            }
+            UserActivity.observe(isOnline: true)
+//            if CurrentUser.isMapLocationEnabled ?? false {
+//                ChatKit.map.showsUserLocation = true
+//                ChatKit.startUpdatingUserLocation()
+//            }
             if User.id == nil || User.profileImage == nil || User.name == nil{
                 do{
                     try Auth.auth().signOut()
@@ -122,17 +115,15 @@ class UserServices{
     
     
     private func registerUserHandler(_ uid: String, _ values: [String:Any], completion: @escaping (_ error: Error?) -> Void) {
-        let userRef = Firestore.firestore().collection("users").document(uid)
-        userRef.setData(values) { error in
+        let usersRef = Database.database().reference().child("users").child(uid)
+        usersRef.updateChildValues(values) { (error, dataRef) in
             if let error = error { return completion(error) }
             self.nextController()
         }
-
     }
     
     
     // MARK: Upload Image Method
-    
     private func uploadProfileImageToStorage(_ image: UIImage, completion: @escaping (_ imageUrl: URL?, _ error: Error?) -> Void){
         let uniqueName = NSUUID().uuidString
         let storagRef = Storage.storage().reference().child("ProfileImages").child("\(uniqueName).jpg")

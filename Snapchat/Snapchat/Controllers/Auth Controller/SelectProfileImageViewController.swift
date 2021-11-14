@@ -21,6 +21,7 @@ class SelectProfileImageViewController: UIViewController, UIImagePickerControlle
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .white
         setupGradientView()
         setupRegistrationInfoView()
         setupBackButton()

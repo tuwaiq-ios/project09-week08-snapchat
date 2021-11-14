@@ -6,19 +6,20 @@
 //
 
 import UIKit
-import Firebase
+import FirebaseAuth
+import FirebaseDatabase
+
 
 class UserActivity {
     
-    static func listen(isOnline: Bool){
+    static func observe(isOnline: Bool) {
         
         guard let user = Auth.auth().currentUser else { return }
-        let ref = Firestore.firestore().collection("users")
-        let userRef = ref.document(user.uid)
-        userRef.setData([
-            "isOnline": isOnline,
-            "lastLogin": Date().timeIntervalSince1970
-        ])
+        let ref = Database.database().reference()
+        let userRef = ref.child("users").child(user.uid)
+        userRef.child("isOnline").setValue(isOnline)
+        userRef.child("lastLogin").setValue(Date().timeIntervalSince1970)
+        
     }
     
 }

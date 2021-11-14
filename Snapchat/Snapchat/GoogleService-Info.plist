@@ -3,32 +3,34 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>919222331982-91pmt6pq1g5ommq4q75oknhqf9srevqr.apps.googleusercontent.com</string>
+	<string>638667254576-qlcj2rj5icl65mngdd3r1j4m617017fp.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.919222331982-91pmt6pq1g5ommq4q75oknhqf9srevqr</string>
+	<string>com.googleusercontent.apps.638667254576-qlcj2rj5icl65mngdd3r1j4m617017fp</string>
 	<key>API_KEY</key>
-	<string>AIzaSyBA33QZPg5EUh6Zli7T7daNsQR2j4r5KUo</string>
+	<string>AIzaSyAERsGj_B9QAaSecWTmi5EWnb4rxA-CpOg</string>
 	<key>GCM_SENDER_ID</key>
-	<string>919222331982</string>
+	<string>638667254576</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>atheer-alzahrani.Snapchat</string>
 	<key>PROJECT_ID</key>
-	<string>sanpchat-project-team</string>
+	<string>snapchatteamproject</string>
 	<key>STORAGE_BUCKET</key>
-	<string>sanpchat-project-team.appspot.com</string>
+	<string>snapchatteamproject.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
-	<false></false>
+	<false/>
 	<key>IS_ANALYTICS_ENABLED</key>
-	<false></false>
+	<false/>
 	<key>IS_APPINVITE_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>IS_GCM_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>IS_SIGNIN_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:919222331982:ios:fceb3f16c4ba72841f311f</string>
+	<string>1:638667254576:ios:6d45246e4cdecf5c4076f5</string>
+	<key>DATABASE_URL</key>
+	<string>https://snapchatteamproject-default-rtdb.asia-southeast1.firebasedatabase.app</string>
 </dict>
 </plist>

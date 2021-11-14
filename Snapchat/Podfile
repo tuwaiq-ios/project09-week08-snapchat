@@ -7,7 +7,7 @@ target 'Snapchat' do
 
   # Pods for Snapchat
 pod 'Firebase/Auth'
-pod 'Firebase/Firestore'
+pod 'Firebase/Database'
 pod 'Firebase/Storage'
 pod 'lottie-ios'
 pod 'SkyFloatingLabelTextField'
