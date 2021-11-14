@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		84374BEA27413090008113F1 /* LoginOrRegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84374BE927413090008113F1 /* LoginOrRegisterVC.swift */; };
+		84374BEC27413510008113F1 /* Conversations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84374BEB27413510008113F1 /* Conversations.swift */; };
+		84374BEE27413523008113F1 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84374BED27413523008113F1 /* Location.swift */; };
+		84374BF027413531008113F1 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84374BEF27413531008113F1 /* Message.swift */; };
+		84374BF22741373E008113F1 /* CamVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84374BF12741373E008113F1 /* CamVC.swift */; };
 		C953422D273D587400E149B0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C953422C273D587400E149B0 /* GoogleService-Info.plist */; };
 		C9534230273FFA4000E149B0 /* RegisterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C953422F273FFA4000E149B0 /* RegisterService.swift */; };
 		C9534232273FFAB000E149B0 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9534231273FFAB000E149B0 /* User.swift */; };
@@ -26,6 +31,11 @@
 
 /* Begin PBXFileReference section */
 		4B2D15505711CF2F539B5554 /* Pods_SnapChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SnapChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		84374BE927413090008113F1 /* LoginOrRegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginOrRegisterVC.swift; sourceTree = "<group>"; };
+		84374BEB27413510008113F1 /* Conversations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Conversations.swift; sourceTree = "<group>"; };
+		84374BED27413523008113F1 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		84374BEF27413531008113F1 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		84374BF12741373E008113F1 /* CamVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CamVC.swift; sourceTree = "<group>"; };
 		A529FCFC8E6FE97CD517DA62 /* Pods-SnapChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SnapChat.release.xcconfig"; path = "Target Support Files/Pods-SnapChat/Pods-SnapChat.release.xcconfig"; sourceTree = "<group>"; };
 		C953422C273D587400E149B0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C953422F273FFA4000E149B0 /* RegisterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterService.swift; sourceTree = "<group>"; };
@@ -78,6 +88,9 @@
 			isa = PBXGroup;
 			children = (
 				C9534231273FFAB000E149B0 /* User.swift */,
+				84374BEB27413510008113F1 /* Conversations.swift */,
+				84374BED27413523008113F1 /* Location.swift */,
+				84374BEF27413531008113F1 /* Message.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -85,6 +98,7 @@
 		C9534237274123A000E149B0 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				84374BE927413090008113F1 /* LoginOrRegisterVC.swift */,
 				C9F3E3C1273AD47A0093B42F /* LogInVC.swift */,
 				C9F3E3D3273ADCED0093B42F /* RegisterVC.swift */,
 				C9F3E3D5273AFDA10093B42F /* MyProfileVC.swift */,
@@ -92,6 +106,7 @@
 				C9F3E3D7273AFDB10093B42F /* MapVC.swift */,
 				C9F3E3DB273AFDCE0093B42F /* ChatVC.swift */,
 				C9F3E3DD273AFE230093B42F /* UsersVC.swift */,
+				84374BF12741373E008113F1 /* CamVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -254,15 +269,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84374BF22741373E008113F1 /* CamVC.swift in Sources */,
 				C9F3E3DC273AFDCE0093B42F /* ChatVC.swift in Sources */,
 				C9534232273FFAB000E149B0 /* User.swift in Sources */,
 				C9F3E3D6273AFDA20093B42F /* MyProfileVC.swift in Sources */,
 				C9F3E3C2273AD47A0093B42F /* LogInVC.swift in Sources */,
+				84374BEA27413090008113F1 /* LoginOrRegisterVC.swift in Sources */,
+				84374BEC27413510008113F1 /* Conversations.swift in Sources */,
+				84374BEE27413523008113F1 /* Location.swift in Sources */,
 				C9F3E3BE273AD47A0093B42F /* AppDelegate.swift in Sources */,
 				C9F3E3D2273ADB1D0093B42F /* TabVC.swift in Sources */,
 				C9F3E3D8273AFDB10093B42F /* MapVC.swift in Sources */,
 				C9534230273FFA4000E149B0 /* RegisterService.swift in Sources */,
 				C9F3E3D4273ADCED0093B42F /* RegisterVC.swift in Sources */,
+				84374BF027413531008113F1 /* Message.swift in Sources */,
 				C9F3E3DE273AFE230093B42F /* UsersVC.swift in Sources */,
 				C9F3E3C0273AD47A0093B42F /* SceneDelegate.swift in Sources */,
 			);
