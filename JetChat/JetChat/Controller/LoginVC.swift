@@ -112,7 +112,7 @@ class Login: UITableViewController {
             profilImg.heightAnchor.constraint(equalToConstant: 250)
         ])
         
-        loginRegstSg = UISegmentedControl(items: ["sign In", "sign Up"])
+        loginRegstSg = UISegmentedControl(items: ["Login", "Register"])
         loginRegstSg.selectedSegmentIndex = 1
         loginRegstSg.backgroundColor = UIColor(displayP3Red: 75/255, green: 99/255, blue: 170/255, alpha: 1)
         loginRegstSg.translatesAutoresizingMaskIntoConstraints = false
