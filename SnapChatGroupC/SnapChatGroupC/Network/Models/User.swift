@@ -11,7 +11,7 @@ struct User {
     let id: String
     let name: String
     let locationId: Double
-    let email: String
-    let password: String
+    let status: String
     
+   
 }

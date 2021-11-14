@@ -1,0 +1,21 @@
+{
+  "images" : [
+    {
+      "filename" : "0133796947c845d61a7bf68418d9f84a--logo-snapchat-snapchat-account.jpg",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
