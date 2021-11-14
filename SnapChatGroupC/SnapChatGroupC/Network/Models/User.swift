@@ -5,4 +5,13 @@
 //  Created by sara al zhrani on 07/04/1443 AH.
 //
 
-import Foundation
+import UIKit
+
+struct User {
+    let id: String
+    let name: String
+    let locationId: Double
+    let email: String
+    let password: String
+    
+}
