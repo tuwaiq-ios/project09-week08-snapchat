@@ -1,5 +1,5 @@
 //
-//  ContactsViewController.swift
+//  CoversationViewController.swift
 //  Snapchat
 //
 //  Created by Eth Os on 08/04/1443 AH.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ContactsViewController: UIViewController {
+class ConversationViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
