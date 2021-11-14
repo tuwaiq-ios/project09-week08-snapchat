@@ -10,7 +10,7 @@
 		2AC760F9AF2DD27C8F445FA4 /* Pods_snapchatt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B2FE17506712939BE5D7A2B /* Pods_snapchatt.framework */; };
 		EE5A35032740EB0D0079E3DF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EE5A35022740EB0D0079E3DF /* GoogleService-Info.plist */; };
 		EE792665273FBFEA00883818 /* LoginOrRegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE792664273FBFEA00883818 /* LoginOrRegisterVC.swift */; };
-		EE792667273FC02100883818 /* LognVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE792666273FC02100883818 /* LognVC.swift */; };
+		EE792667273FC02100883818 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE792666273FC02100883818 /* LoginVC.swift */; };
 		EE792669273FC03600883818 /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE792668273FC03600883818 /* RegisterVC.swift */; };
 		EE79266B273FC04D00883818 /* TabVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE79266A273FC04D00883818 /* TabVC.swift */; };
 		EE79266D273FC06500883818 /* MyProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE79266C273FC06500883818 /* MyProfileVC.swift */; };
@@ -30,7 +30,7 @@
 		8D6CA698FC0DE207735D9794 /* Pods-snapchatt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-snapchatt.release.xcconfig"; path = "Target Support Files/Pods-snapchatt/Pods-snapchatt.release.xcconfig"; sourceTree = "<group>"; };
 		EE5A35022740EB0D0079E3DF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EE792664273FBFEA00883818 /* LoginOrRegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginOrRegisterVC.swift; sourceTree = "<group>"; };
-		EE792666273FC02100883818 /* LognVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LognVC.swift; sourceTree = "<group>"; };
+		EE792666273FC02100883818 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		EE792668273FC03600883818 /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
 		EE79266A273FC04D00883818 /* TabVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabVC.swift; sourceTree = "<group>"; };
 		EE79266C273FC06500883818 /* MyProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileVC.swift; sourceTree = "<group>"; };
@@ -100,7 +100,7 @@
 				EE808C95273D589A00477EE6 /* AppDelegate.swift */,
 				EE808C97273D589A00477EE6 /* SceneDelegate.swift */,
 				EE792664273FBFEA00883818 /* LoginOrRegisterVC.swift */,
-				EE792666273FC02100883818 /* LognVC.swift */,
+				EE792666273FC02100883818 /* LoginVC.swift */,
 				EE792668273FC03600883818 /* RegisterVC.swift */,
 				EE79266A273FC04D00883818 /* TabVC.swift */,
 				EE79266C273FC06500883818 /* MyProfileVC.swift */,
@@ -232,7 +232,7 @@
 			files = (
 				EE808C96273D589A00477EE6 /* AppDelegate.swift in Sources */,
 				EE79266B273FC04D00883818 /* TabVC.swift in Sources */,
-				EE792667273FC02100883818 /* LognVC.swift in Sources */,
+				EE792667273FC02100883818 /* LoginVC.swift in Sources */,
 				EE792675273FEDF200883818 /* CamVC.swift in Sources */,
 				EE792671273FC08300883818 /* ChatVC.swift in Sources */,
 				EE79266D273FC06500883818 /* MyProfileVC.swift in Sources */,

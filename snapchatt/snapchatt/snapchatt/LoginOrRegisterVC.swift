@@ -11,8 +11,8 @@ class LoginOrRegisterVC: UIViewController {
 
     lazy var imageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(named: "snap")
-        imageView.contentMode = .scaleAspectFit
+        imageView.image = UIImage(named: "PLLL")
+        imageView.contentMode = .scaleAspectFill
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.backgroundColor = .black
         
@@ -23,7 +23,7 @@ lazy var loginButton: UIButton = {
     loginButton.translatesAutoresizingMaskIntoConstraints = false
     loginButton.setTitle("Log In", for: .normal)
     loginButton.setTitleColor(.black, for: .normal)
-    loginButton.backgroundColor = .yellow
+	loginButton.backgroundColor = .systemCyan
     loginButton.layer.cornerRadius = 20
     loginButton.layer.masksToBounds = true
     loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
@@ -36,7 +36,7 @@ lazy var loginButton: UIButton = {
         registerButton.translatesAutoresizingMaskIntoConstraints = false
         registerButton.setTitle("Sing up", for: .normal)
         registerButton.setTitleColor(.black, for: .normal)
-        registerButton.backgroundColor = .yellow
+		registerButton.backgroundColor = .systemGreen
         registerButton.layer.cornerRadius = 20
         registerButton.layer.masksToBounds = true
         registerButton.addTarget(self, action: #selector(registerButtonTapped), for: .touchUpInside)
@@ -49,18 +49,18 @@ lazy var loginButton: UIButton = {
         view.backgroundColor = .white
         
         //Constraint imageView
-        view.addSubview(imageView)
-        NSLayoutConstraint.activate([
-            imageView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -145),
-            imageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 240),
-            imageView.widthAnchor.constraint(equalToConstant: 100),
-            imageView.heightAnchor.constraint(equalToConstant: 100),
-        ])
+		view.addSubview(imageView)
+		NSLayoutConstraint.activate([
+			imageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 150),
+			imageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+			imageView.heightAnchor.constraint(equalToConstant: 300),
+			imageView.widthAnchor.constraint(equalTo: imageView.heightAnchor,multiplier: 100/100)])
+		
         //Constraint loginButton
         view.addSubview(loginButton)
         NSLayoutConstraint.activate([
             loginButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -70),
-            loginButton.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 80),
+            loginButton.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: -30),
             loginButton.widthAnchor.constraint(equalToConstant: 240),
             loginButton.heightAnchor.constraint(equalToConstant: 40),
             
@@ -76,7 +76,7 @@ lazy var loginButton: UIButton = {
             }
     
     @objc private func loginButtonTapped() {
-        let vc = LognVC()
+        let vc = LoginVC()
         vc.modalPresentationStyle = .fullScreen
         self.present(vc, animated: true, completion: nil)
     }

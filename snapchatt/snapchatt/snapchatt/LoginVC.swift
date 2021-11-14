@@ -7,7 +7,7 @@
 
 import UIKit
 
-class LognVC: UIViewController {
+class LoginVC: UIViewController {
 
       lazy var userEmail: UITextField = {
         let userEmail = UITextField()
@@ -36,7 +36,7 @@ class LognVC: UIViewController {
         loginButton.translatesAutoresizingMaskIntoConstraints = false
         loginButton.setTitle("Log In", for: .normal)
         loginButton.setTitleColor(.black, for: .normal)
-        loginButton.backgroundColor = .yellow
+        loginButton.backgroundColor = .systemYellow
         loginButton.layer.cornerRadius = 12
         loginButton.layer.masksToBounds = true
         loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
@@ -65,8 +65,8 @@ class LognVC: UIViewController {
     
     lazy var imageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(named: "Snap")
-        imageView.contentMode = .scaleAspectFit
+        imageView.image = UIImage(named: "PLLL")
+        imageView.contentMode = .scaleAspectFill
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.backgroundColor = .black
         
@@ -81,14 +81,14 @@ class LognVC: UIViewController {
         title = "Log In"
         
         //Constraint imageView
-        view.addSubview(imageView)
-        
-        NSLayoutConstraint.activate([
-            imageView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -145),
-            imageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 100),
-            imageView.widthAnchor.constraint(equalToConstant: 100),
-            imageView.heightAnchor.constraint(equalToConstant: 100),
-        ])
+		view.addSubview(imageView)
+		NSLayoutConstraint.activate([
+			imageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 220),
+			imageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+			imageView.heightAnchor.constraint(equalToConstant: 300),
+			imageView.widthAnchor.constraint(equalTo: imageView.heightAnchor,multiplier: 100/100)])
+		
+		
         //Constraint userEmail
         view.addSubview(userEmail)
         NSLayoutConstraint.activate([
