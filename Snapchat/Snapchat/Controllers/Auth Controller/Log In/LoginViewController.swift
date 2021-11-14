@@ -88,7 +88,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         }) { (true) in
             let controller = RegisterViewController()
             controller.modalPresentationStyle = .fullScreen
-//            controller.logInVC = self
+            controller.logInVC = self
             self.present(controller, animated: false, completion: nil)
         }
     }

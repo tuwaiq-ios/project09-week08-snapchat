@@ -8,7 +8,7 @@
 import UIKit
 
 
-class SelectProfileImageVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class SelectProfileImageViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     var name: String!
     var email: String!
@@ -22,6 +22,9 @@ class SelectProfileImageVC: UIViewController, UIImagePickerControllerDelegate, U
     override func viewDidLoad() {
         super.viewDidLoad()
         setupGradientView()
+        setupRegistrationInfoView()
+        setupBackButton()
+        setupContinueButton()
     }
     
     

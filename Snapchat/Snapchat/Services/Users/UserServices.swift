@@ -50,25 +50,26 @@ class UserServices{
     
     // MARK: Setup User Info Method
     func setupUserInfo(_ uid: String, completion: @escaping (_ isActive: Bool) -> Void){
+        
         Firestore.firestore().collection("users").document(uid).addSnapshotListener{ snapshot,error in
             if error != nil {
                 return
             }
             
             guard let snap = snapshot?.data() else { return }
-            var user = User()
-            user.id = uid
-            user.email = snap["email"] as? String
-            user.name = snap["name"] as? String
-            user.status = snap["status"] as? String
-            user.profileImage = snap["image"] as? String
-            user.isMapLocationEnabled = snap["isMapLocationEnabled"] as? Bool
+            
+            User.id = uid
+            User.email = snap["email"] as? String
+            User.name = snap["name"] as? String
+            User.status = snap["status"] as? String
+            User.profileImage = snap["image"] as? String
+            User.isMapLocationEnabled = snap["isMapLocationEnabled"] as? Bool
             UserActivity.listen(isOnline: true)
             // if USer.isMapLocationEnabled ?? false {
             //    ChatKit.map.showsUserLocation = true
             //    ChatKit.startUpdatingUserLocation()
             //            }
-            if user.id == nil || user.profileImage == nil || user.name == nil{
+            if User.id == nil || User.profileImage == nil || User.name == nil{
                 do{
                     try Auth.auth().signOut()
                     return completion(false)
@@ -97,11 +98,17 @@ class UserServices{
     // MARK: SignUp User Method
     
     func registerUser(_ name: String, _ email: String, _ password: String, _ profileImage: UIImage?, completion: @escaping (_ error: String?) -> Void){
+        
         networkingLoadingIndicator.startLoadingAnimation()
+        
         Auth.auth().createUser(withEmail: email, password: password) { dataResult, error in
+            
             if let error = error { return completion(error.localizedDescription) }
+            
             guard let uid = dataResult?.user.uid else { return completion("Error occured, try again!") }
+            
             let imageToSend = profileImage ?? UIImage(named: "DefaultUserImage")
+            
             self.uploadProfileImageToStorage(imageToSend!) { (url, error) in
                 if let error = error { return completion(error.localizedDescription) }
                 guard let url = url else { return }
@@ -116,7 +123,7 @@ class UserServices{
     
     private func registerUserHandler(_ uid: String, _ values: [String:Any], completion: @escaping (_ error: Error?) -> Void) {
         let userRef = Firestore.firestore().collection("users").document(uid)
-        userRef.updateData(values) { error in
+        userRef.setData(values) { error in
             if let error = error { return completion(error) }
             self.nextController()
         }

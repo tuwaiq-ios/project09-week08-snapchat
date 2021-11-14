@@ -18,7 +18,7 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        setupUI() 
     }
     
     private func setupUI() {
@@ -60,6 +60,7 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
     @objc private func backButtonPressed() {
         dismiss(animated: false) {
            // sign in
+            self.logInVC.returnToSignInVC()
         }
     }
     
@@ -112,7 +113,7 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
         let name = registerView.nameTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         let email = registerView.emailTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         let password = registerView.passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-        let controller = SelectProfileImageVC()
+        let controller = SelectProfileImageViewController()
         controller.modalPresentationStyle = .fullScreen
         controller.name = name
         controller.email = email

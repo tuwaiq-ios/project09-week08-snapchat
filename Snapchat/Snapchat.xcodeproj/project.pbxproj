@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1E39FBCC2740FA2600E5F5B4 /* HandelLogInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E39FBCB2740FA2600E5F5B4 /* HandelLogInView.swift */; };
 		1EB7DBED273FD5A3009956E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB7DBEC273FD5A3009956E0 /* AppDelegate.swift */; };
 		1EB7DBEF273FD5A3009956E0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB7DBEE273FD5A3009956E0 /* SceneDelegate.swift */; };
 		1EB7DBF6273FD5A9009956E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1EB7DBF5273FD5A9009956E0 /* Assets.xcassets */; };
@@ -38,6 +39,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1E39FBCB2740FA2600E5F5B4 /* HandelLogInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandelLogInView.swift; sourceTree = "<group>"; };
 		1EB7DBE9273FD5A3009956E0 /* Snapchat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Snapchat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1EB7DBEC273FD5A3009956E0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1EB7DBEE273FD5A3009956E0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -213,6 +215,7 @@
 			children = (
 				1EB7DC05273FD8B9009956E0 /* LoginViewController.swift */,
 				1EB7DC3B27404942009956E0 /* LoginView.swift */,
+				1E39FBCB2740FA2600E5F5B4 /* HandelLogInView.swift */,
 			);
 			path = "Log In";
 			sourceTree = "<group>";
@@ -358,6 +361,7 @@
 				1EB7DC2E273FFACC009956E0 /* UserActivity.swift in Sources */,
 				1EB7DC32274038C1009956E0 /* RegisterViewController.swift in Sources */,
 				1EB7DC3027403600009956E0 /* RegisterView.swift in Sources */,
+				1E39FBCC2740FA2600E5F5B4 /* HandelLogInView.swift in Sources */,
 				1EB7DC0C273FD9C5009956E0 /* ProfileViewController.swift in Sources */,
 				1EB7DC21273FEC91009956E0 /* AthBackButton.swift in Sources */,
 				1EB7DC3927404804009956E0 /* RegistrationInfoView.swift in Sources */,

@@ -9,11 +9,11 @@ import UIKit
 
 class RegistrationInfoView: UIView {
     
-    var controller: SelectProfileImageVC!
+    var controller: SelectProfileImageViewController!
     var changeImageButton = UIButton()
     var profileImage: UIImageView!
     
-    init(frame: CGRect, _ controller: SelectProfileImageVC, profileImage: UIImageView) {
+    init(frame: CGRect, _ controller: SelectProfileImageViewController, profileImage: UIImageView) {
         super.init(frame: frame)
         self.controller = controller
         self.profileImage = profileImage

@@ -9,10 +9,10 @@ import UIKit
 
 
 struct User {
-    var id: String!
-    var email: String!
-    var name: String!
-    var status: String!
-    var profileImage: String!
-    var isMapLocationEnabled: Bool?
+    static var id: String!
+    static var email: String!
+    static var name: String!
+    static var status: String!
+    static var profileImage: String!
+    static var isMapLocationEnabled: Bool?
 }
