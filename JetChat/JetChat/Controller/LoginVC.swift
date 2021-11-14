@@ -150,7 +150,7 @@ class Login: UITableViewController {
             Auth.auth().createUser(withEmail: email, password: password) { result, error in
                 if error == nil {
                     // go to main vc
-                    let vc = UINavigationController(rootViewController: HomeVC())
+                    let vc = UINavigationController(rootViewController: TabBarCustom())
                     vc.modalTransitionStyle = .crossDissolve
                     vc.modalPresentationStyle = .fullScreen
                     self.present(vc, animated: true, completion: nil)
@@ -160,7 +160,7 @@ class Login: UITableViewController {
                 guard let currentUserID = Auth.auth().currentUser?.uid else {return}
                 Firestore.firestore().document("users/\(currentUserID)").setData([
                     "name" : self.nameTF.text,
-                    "id" : currentUserID,
+                    "userId" : currentUserID,
                     "email" : self.emailTF.text,
                     "status" : "online"
                 ])
@@ -176,7 +176,7 @@ class Login: UITableViewController {
             Auth.auth().signIn(withEmail: email, password: password) { result, error in
                 if error == nil {
                     // go to main vc
-                    let vc = UINavigationController(rootViewController: HomeVC())
+                    let vc = UINavigationController(rootViewController: TabBarCustom())
                     vc.modalTransitionStyle = .crossDissolve
                     vc.modalPresentationStyle = .fullScreen
                     self.present(vc, animated: true, completion: nil)
