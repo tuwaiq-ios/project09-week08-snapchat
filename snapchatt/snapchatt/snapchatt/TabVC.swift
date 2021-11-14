@@ -28,6 +28,10 @@ class TabVC: UITabBarController {
        createNavController(for:MyProfileVC(), title: NSLocalizedString("Profile", comment: ""), image: UIImage(systemName: "person")!),
      
 
+        createNavController(for:MyProfileVC(), title: NSLocalizedString("Cam", comment: ""), image: UIImage(systemName: "person")!),
+
+
+
      ]
    }
   override func viewDidLoad() {
