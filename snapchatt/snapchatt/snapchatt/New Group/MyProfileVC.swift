@@ -144,3 +144,4 @@ class MyProfileVC: UIViewController , UIImagePickerControllerDelegate , UINaviga
         dismiss(animated: true)
       }
     }
+

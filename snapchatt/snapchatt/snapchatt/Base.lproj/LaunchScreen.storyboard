@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -16,27 +16,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="snap" translatesAutoresizingMaskIntoConstraints="NO" id="zqL-G9-aja">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="snap" translatesAutoresizingMaskIntoConstraints="NO" id="EIE-BT-f0k">
+                                <rect key="frame" x="-14" y="44" width="443" height="836"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="zqL-G9-aja" secondAttribute="bottom" id="Idu-Jk-WyL"/>
-                            <constraint firstItem="zqL-G9-aja" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Mqv-qt-zBy"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zqL-G9-aja" secondAttribute="trailing" id="dRQ-zP-mB7"/>
-                            <constraint firstItem="zqL-G9-aja" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="jX9-CI-nld"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="EIE-BT-f0k" secondAttribute="bottom" constant="-18" id="Mfx-oy-KC9"/>
+                            <constraint firstItem="EIE-BT-f0k" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="-34" id="oea-yE-3Ef"/>
+                            <constraint firstItem="EIE-BT-f0k" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="rbd-de-cgn"/>
+                            <constraint firstItem="EIE-BT-f0k" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="zXD-WR-aSf"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="149" y="222"/>
+            <point key="canvasLocation" x="-36.231884057971016" y="334.82142857142856"/>
         </scene>
     </scenes>
     <resources>
-        <image name="snap" width="493" height="775"/>
+        <image name="snap" width="1000" height="775"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

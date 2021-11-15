@@ -22,15 +22,8 @@ class TabVC: UITabBarController {
      viewControllers = [
         createNavController(for:MapVC (), title: NSLocalizedString("location", comment: ""), image: UIImage(systemName: "location")!),
         createNavController(for:ChatVC(), title: NSLocalizedString("Chat", comment: ""), image: UIImage(systemName: "message")!),
-        createNavController(for:CamVC(), title: NSLocalizedString("Cam", comment: ""), image: UIImage(systemName: "camera")!),
-
        createNavController(for:UsersVC(), title: NSLocalizedString("users", comment: ""), image: UIImage(systemName: "person.3")!),
        createNavController(for:MyProfileVC(), title: NSLocalizedString("Profile", comment: ""), image: UIImage(systemName: "person")!),
-     
-
-        createNavController(for:MyProfileVC(), title: NSLocalizedString("Cam", comment: ""), image: UIImage(systemName: "person")!),
-
-
 
      ]
    }
