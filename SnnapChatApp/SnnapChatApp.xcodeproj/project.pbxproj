@@ -19,6 +19,7 @@
 		B531476E274251F300CDA765 /* LocationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B531476D274251F300CDA765 /* LocationVC.swift */; };
 		B531477227427EBF00CDA765 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B531477127427EBF00CDA765 /* GoogleService-Info.plist */; };
 		B531477427429A3F00CDA765 /* CameraVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B531477327429A3F00CDA765 /* CameraVC.swift */; };
+		B53147762742CD6000CDA765 /* ContactListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53147752742CD6000CDA765 /* ContactListVC.swift */; };
 		B536E6D627424A040067175A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B536E6D527424A040067175A /* AppDelegate.swift */; };
 		B536E6D827424A040067175A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B536E6D727424A040067175A /* SceneDelegate.swift */; };
 		B536E6DA27424A040067175A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B536E6D927424A040067175A /* ViewController.swift */; };
@@ -40,6 +41,7 @@
 		B531476D274251F300CDA765 /* LocationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationVC.swift; sourceTree = "<group>"; };
 		B531477127427EBF00CDA765 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B531477327429A3F00CDA765 /* CameraVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraVC.swift; sourceTree = "<group>"; };
+		B53147752742CD6000CDA765 /* ContactListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListVC.swift; sourceTree = "<group>"; };
 		B536E6D227424A040067175A /* SnnapChatApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SnnapChatApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B536E6D527424A040067175A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B536E6D727424A040067175A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 				B531476B27424DB800CDA765 /* UsersViewController.swift */,
 				B531476D274251F300CDA765 /* LocationVC.swift */,
 				B531477327429A3F00CDA765 /* CameraVC.swift */,
+				B53147752742CD6000CDA765 /* ContactListVC.swift */,
 			);
 			path = SnnapChatApp;
 			sourceTree = "<group>";
@@ -239,6 +242,7 @@
 				B531476027424D0300CDA765 /* TabVC.swift in Sources */,
 				B531475E27424CE400CDA765 /* LoginViewController.swift in Sources */,
 				B531476427424D3900CDA765 /* ProfileVC.swift in Sources */,
+				B53147762742CD6000CDA765 /* ContactListVC.swift in Sources */,
 				B531476C27424DB800CDA765 /* UsersViewController.swift in Sources */,
 				B531476827424D5D00CDA765 /* Message.swift in Sources */,
 				B531476E274251F300CDA765 /* LocationVC.swift in Sources */,
@@ -388,6 +392,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 88QY68DD2P;
@@ -416,6 +421,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 88QY68DD2P;

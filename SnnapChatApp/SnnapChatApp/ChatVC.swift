@@ -64,6 +64,15 @@ extension ChatVC : UITableViewDelegate , UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return messages.count
     }
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let deleteAction = UIContextualAction(
+          style: .destructive,
+          title: "Delete") { _, _, _ in
+              self.messages.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+          }
+        return UISwipeActionsConfiguration(actions: [deleteAction])
+      }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell =
         chatTableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
