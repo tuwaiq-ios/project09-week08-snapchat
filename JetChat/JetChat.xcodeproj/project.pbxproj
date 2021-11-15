@@ -16,6 +16,8 @@
 		0F20C8FE2740013300F231A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F20C8FD2740013300F231A4 /* Assets.xcassets */; };
 		0F20C9012740013300F231A4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F20C8FF2740013300F231A4 /* LaunchScreen.storyboard */; };
 		0F20C9092740014C00F231A4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0F20C9082740014C00F231A4 /* GoogleService-Info.plist */; };
+		E8084B402742935F00CA36A8 /* ChatTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8084B3F2742935F00CA36A8 /* ChatTVCell.swift */; };
+		E8084B42274293BE00CA36A8 /* DMScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8084B41274293BE00CA36A8 /* DMScreen.swift */; };
 		E88D4D0E27414962006C2560 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88D4D0D27414962006C2560 /* CustomTabBar.swift */; };
 		E88D4D1027414987006C2560 /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88D4D0F27414987006C2560 /* MapVC.swift */; };
 		E88D4D12274149B6006C2560 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88D4D11274149B6006C2560 /* HomeVC.swift */; };
@@ -36,6 +38,8 @@
 		0F20C9082740014C00F231A4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		305761766A39BB2B03ED5092 /* Pods_JetChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JetChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE603363EAA28FF2C3ED3F45 /* Pods-JetChat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JetChat.debug.xcconfig"; path = "Target Support Files/Pods-JetChat/Pods-JetChat.debug.xcconfig"; sourceTree = "<group>"; };
+		E8084B3F2742935F00CA36A8 /* ChatTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTVCell.swift; sourceTree = "<group>"; };
+		E8084B41274293BE00CA36A8 /* DMScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMScreen.swift; sourceTree = "<group>"; };
 		E88D4D0D27414962006C2560 /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
 		E88D4D0F27414987006C2560 /* MapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapVC.swift; sourceTree = "<group>"; };
 		E88D4D11274149B6006C2560 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
@@ -80,6 +84,7 @@
 				0F20C8F42740013000F231A4 /* AppDelegate.swift */,
 				0F20C8F62740013000F231A4 /* SceneDelegate.swift */,
 				E88D4D1527414F3C006C2560 /* Controller */,
+				E8084B4327429D5100CA36A8 /* Chat */,
 				E88D4D0D27414962006C2560 /* CustomTabBar.swift */,
 				0F20C8F82740013000F231A4 /* Models.swift */,
 				0F20C8FA2740013000F231A4 /* Main.storyboard */,
@@ -108,13 +113,22 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		E8084B4327429D5100CA36A8 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				E88D4D13274149E7006C2560 /* ChatVC.swift */,
+				E8084B3F2742935F00CA36A8 /* ChatTVCell.swift */,
+				E8084B41274293BE00CA36A8 /* DMScreen.swift */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
 		E88D4D1527414F3C006C2560 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
 				FA9CB0FA2740483700FBE4C7 /* LoginVC.swift */,
 				E88D4D0F27414987006C2560 /* MapVC.swift */,
 				E88D4D11274149B6006C2560 /* HomeVC.swift */,
-				E88D4D13274149E7006C2560 /* ChatVC.swift */,
 				0F1BC68127424AFB00BD67DC /* ProfileVC.swift */,
 			);
 			path = Controller;
@@ -236,6 +250,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E8084B42274293BE00CA36A8 /* DMScreen.swift in Sources */,
 				E88D4D14274149E7006C2560 /* ChatVC.swift in Sources */,
 				0F20C8F92740013000F231A4 /* Models.swift in Sources */,
 				E88D4D12274149B6006C2560 /* HomeVC.swift in Sources */,
@@ -243,6 +258,7 @@
 				E88D4D1027414987006C2560 /* MapVC.swift in Sources */,
 				E88D4D0E27414962006C2560 /* CustomTabBar.swift in Sources */,
 				0F20C8F52740013000F231A4 /* AppDelegate.swift in Sources */,
+				E8084B402742935F00CA36A8 /* ChatTVCell.swift in Sources */,
 				0F20C8F72740013000F231A4 /* SceneDelegate.swift in Sources */,
 				FA9CB0FB2740483700FBE4C7 /* LoginVC.swift in Sources */,
 			);
