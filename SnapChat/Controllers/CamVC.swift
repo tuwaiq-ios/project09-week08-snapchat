@@ -7,6 +7,8 @@
 import AVFoundation
 import UIKit
 class CamVC : UIViewController {
+    
+    
   // Capture Session
   var session : AVCaptureSession?
   // Photo Output
@@ -28,7 +30,20 @@ class CamVC : UIViewController {
     view.layer.addSublayer(previewLayer)
     view.addSubview(shutterButton)
     shutterButton.addTarget(self, action: #selector(didTapTakePhoto), for: .touchUpInside)
+      
+      let swipelift = UISwipeGestureRecognizer(
+            target: self,
+            action: #selector(openTikTok))
+          swipelift.direction = .left
+          view.addGestureRecognizer(swipelift)
+          view.isUserInteractionEnabled = true
+        
   }
+    @objc private func openTikTok() {
+        let TikTokVC = TikTok()
+        TikTokVC.modalPresentationStyle = .fullScreen
+        self.present(TikTokVC, animated: true, completion: nil)
+    }
   override func viewDidLayoutSubviews() {
     super.viewDidLayoutSubviews()
     previewLayer.frame = view.bounds

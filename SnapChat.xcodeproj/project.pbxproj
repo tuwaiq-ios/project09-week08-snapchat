@@ -12,6 +12,17 @@
 		84374BEE27413523008113F1 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84374BED27413523008113F1 /* Location.swift */; };
 		84374BF027413531008113F1 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84374BEF27413531008113F1 /* Message.swift */; };
 		84374BF22741373E008113F1 /* CamVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84374BF12741373E008113F1 /* CamVC.swift */; };
+		84374C5727429550008113F1 /* video4.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 84374C4E2742954B008113F1 /* video4.mp4 */; };
+		84374C5827429550008113F1 /* video5.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 84374C4F2742954C008113F1 /* video5.mp4 */; };
+		84374C5927429550008113F1 /* video.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 84374C502742954C008113F1 /* video.mp4 */; };
+		84374C5A27429550008113F1 /* video8.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 84374C512742954D008113F1 /* video8.mp4 */; };
+		84374C5B27429550008113F1 /* video3.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 84374C522742954E008113F1 /* video3.mp4 */; };
+		84374C5C27429550008113F1 /* video7.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 84374C532742954E008113F1 /* video7.mp4 */; };
+		84374C5D27429550008113F1 /* video6.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 84374C542742954F008113F1 /* video6.mp4 */; };
+		84374C5E27429550008113F1 /* video2.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 84374C552742954F008113F1 /* video2.mp4 */; };
+		84374C5F27429550008113F1 /* video9.MP4 in Resources */ = {isa = PBXBuildFile; fileRef = 84374C5627429550008113F1 /* video9.MP4 */; };
+		84374C6127429571008113F1 /* TikTokVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84374C6027429571008113F1 /* TikTokVC.swift */; };
+		84374C632742958F008113F1 /* VideoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84374C622742958F008113F1 /* VideoCollectionViewCell.swift */; };
 		C953422D273D587400E149B0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C953422C273D587400E149B0 /* GoogleService-Info.plist */; };
 		C9534230273FFA4000E149B0 /* RegisterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C953422F273FFA4000E149B0 /* RegisterService.swift */; };
 		C9534232273FFAB000E149B0 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9534231273FFAB000E149B0 /* User.swift */; };
@@ -36,6 +47,17 @@
 		84374BED27413523008113F1 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		84374BEF27413531008113F1 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		84374BF12741373E008113F1 /* CamVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CamVC.swift; sourceTree = "<group>"; };
+		84374C4E2742954B008113F1 /* video4.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video4.mp4; sourceTree = "<group>"; };
+		84374C4F2742954C008113F1 /* video5.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video5.mp4; sourceTree = "<group>"; };
+		84374C502742954C008113F1 /* video.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video.mp4; sourceTree = "<group>"; };
+		84374C512742954D008113F1 /* video8.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video8.mp4; sourceTree = "<group>"; };
+		84374C522742954E008113F1 /* video3.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video3.mp4; sourceTree = "<group>"; };
+		84374C532742954E008113F1 /* video7.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video7.mp4; sourceTree = "<group>"; };
+		84374C542742954F008113F1 /* video6.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video6.mp4; sourceTree = "<group>"; };
+		84374C552742954F008113F1 /* video2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video2.mp4; sourceTree = "<group>"; };
+		84374C5627429550008113F1 /* video9.MP4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video9.MP4; sourceTree = "<group>"; };
+		84374C6027429571008113F1 /* TikTokVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TikTokVC.swift; sourceTree = "<group>"; };
+		84374C622742958F008113F1 /* VideoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCollectionViewCell.swift; sourceTree = "<group>"; };
 		A529FCFC8E6FE97CD517DA62 /* Pods-SnapChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SnapChat.release.xcconfig"; path = "Target Support Files/Pods-SnapChat/Pods-SnapChat.release.xcconfig"; sourceTree = "<group>"; };
 		C953422C273D587400E149B0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C953422F273FFA4000E149B0 /* RegisterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterService.swift; sourceTree = "<group>"; };
@@ -74,6 +96,24 @@
 				4B2D15505711CF2F539B5554 /* Pods_SnapChat.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		84374C4D2742951F008113F1 /* TikTok */ = {
+			isa = PBXGroup;
+			children = (
+				84374C502742954C008113F1 /* video.mp4 */,
+				84374C552742954F008113F1 /* video2.mp4 */,
+				84374C522742954E008113F1 /* video3.mp4 */,
+				84374C4E2742954B008113F1 /* video4.mp4 */,
+				84374C4F2742954C008113F1 /* video5.mp4 */,
+				84374C542742954F008113F1 /* video6.mp4 */,
+				84374C532742954E008113F1 /* video7.mp4 */,
+				84374C512742954D008113F1 /* video8.mp4 */,
+				84374C5627429550008113F1 /* video9.MP4 */,
+				84374C6027429571008113F1 /* TikTokVC.swift */,
+				84374C622742958F008113F1 /* VideoCollectionViewCell.swift */,
+			);
+			path = TikTok;
 			sourceTree = "<group>";
 		};
 		C9534235274122F700E149B0 /* Services */ = {
@@ -132,6 +172,7 @@
 		C9F3E3BC273AD47A0093B42F /* SnapChat */ = {
 			isa = PBXGroup;
 			children = (
+				84374C4D2742951F008113F1 /* TikTok */,
 				C953422C273D587400E149B0 /* GoogleService-Info.plist */,
 				C95342362741232B00E149B0 /* Models */,
 				C9534235274122F700E149B0 /* Services */,
@@ -214,8 +255,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84374C5727429550008113F1 /* video4.mp4 in Resources */,
+				84374C5F27429550008113F1 /* video9.MP4 in Resources */,
+				84374C5A27429550008113F1 /* video8.mp4 in Resources */,
+				84374C5927429550008113F1 /* video.mp4 in Resources */,
+				84374C5C27429550008113F1 /* video7.mp4 in Resources */,
+				84374C5B27429550008113F1 /* video3.mp4 in Resources */,
+				84374C5E27429550008113F1 /* video2.mp4 in Resources */,
 				C9F3E3CA273AD47C0093B42F /* LaunchScreen.storyboard in Resources */,
 				C953422D273D587400E149B0 /* GoogleService-Info.plist in Resources */,
+				84374C5827429550008113F1 /* video5.mp4 in Resources */,
+				84374C5D27429550008113F1 /* video6.mp4 in Resources */,
 				C9F3E3C7273AD47C0093B42F /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -269,11 +319,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84374C632742958F008113F1 /* VideoCollectionViewCell.swift in Sources */,
 				84374BF22741373E008113F1 /* CamVC.swift in Sources */,
 				C9F3E3DC273AFDCE0093B42F /* ChatVC.swift in Sources */,
 				C9534232273FFAB000E149B0 /* User.swift in Sources */,
 				C9F3E3D6273AFDA20093B42F /* MyProfileVC.swift in Sources */,
 				C9F3E3C2273AD47A0093B42F /* LogInVC.swift in Sources */,
+				84374C6127429571008113F1 /* TikTokVC.swift in Sources */,
 				84374BEA27413090008113F1 /* LoginOrRegisterVC.swift in Sources */,
 				84374BEC27413510008113F1 /* Conversations.swift in Sources */,
 				84374BEE27413523008113F1 /* Location.swift in Sources */,
