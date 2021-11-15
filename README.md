@@ -8,6 +8,7 @@
 6. Realtime location sharing 
 7.
 
+
 ### Grades distribution
 1. Database schema
 2. Project blueprint

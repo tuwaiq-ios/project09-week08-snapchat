@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		2AC760F9AF2DD27C8F445FA4 /* Pods_snapchatt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B2FE17506712939BE5D7A2B /* Pods_snapchatt.framework */; };
-		EE5A35032740EB0D0079E3DF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EE5A35022740EB0D0079E3DF /* GoogleService-Info.plist */; };
 		EE792665273FBFEA00883818 /* LoginOrRegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE792664273FBFEA00883818 /* LoginOrRegisterVC.swift */; };
 		EE792667273FC02100883818 /* LognVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE792666273FC02100883818 /* LognVC.swift */; };
 		EE792669273FC03600883818 /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE792668273FC03600883818 /* RegisterVC.swift */; };
@@ -18,6 +17,7 @@
 		EE792671273FC08300883818 /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE792670273FC08300883818 /* ChatVC.swift */; };
 		EE792673273FC09C00883818 /* UsersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE792672273FC09C00883818 /* UsersVC.swift */; };
 		EE792675273FEDF200883818 /* CamVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE792674273FEDF200883818 /* CamVC.swift */; };
+		EE792677273FEF8900883818 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EE792676273FEF8900883818 /* GoogleService-Info.plist */; };
 		EE808C96273D589A00477EE6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE808C95273D589A00477EE6 /* AppDelegate.swift */; };
 		EE808C98273D589A00477EE6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE808C97273D589A00477EE6 /* SceneDelegate.swift */; };
 		EE808C9F273D589C00477EE6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE808C9E273D589C00477EE6 /* Assets.xcassets */; };
@@ -28,7 +28,6 @@
 		3B2FE17506712939BE5D7A2B /* Pods_snapchatt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_snapchatt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		712393E56D01EA7A0EE16723 /* Pods-snapchatt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-snapchatt.debug.xcconfig"; path = "Target Support Files/Pods-snapchatt/Pods-snapchatt.debug.xcconfig"; sourceTree = "<group>"; };
 		8D6CA698FC0DE207735D9794 /* Pods-snapchatt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-snapchatt.release.xcconfig"; path = "Target Support Files/Pods-snapchatt/Pods-snapchatt.release.xcconfig"; sourceTree = "<group>"; };
-		EE5A35022740EB0D0079E3DF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EE792664273FBFEA00883818 /* LoginOrRegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginOrRegisterVC.swift; sourceTree = "<group>"; };
 		EE792666273FC02100883818 /* LognVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LognVC.swift; sourceTree = "<group>"; };
 		EE792668273FC03600883818 /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
@@ -38,6 +37,7 @@
 		EE792670273FC08300883818 /* ChatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatVC.swift; sourceTree = "<group>"; };
 		EE792672273FC09C00883818 /* UsersVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersVC.swift; sourceTree = "<group>"; };
 		EE792674273FEDF200883818 /* CamVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CamVC.swift; sourceTree = "<group>"; };
+		EE792676273FEF8900883818 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EE808C92273D589A00477EE6 /* snapchatt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = snapchatt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE808C95273D589A00477EE6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EE808C97273D589A00477EE6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -65,6 +65,22 @@
 				8D6CA698FC0DE207735D9794 /* Pods-snapchatt.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		8F19FE6D274238F100740DBE /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				EE792664273FBFEA00883818 /* LoginOrRegisterVC.swift */,
+				EE792666273FC02100883818 /* LognVC.swift */,
+				EE792668273FC03600883818 /* RegisterVC.swift */,
+				EE79266A273FC04D00883818 /* TabVC.swift */,
+				EE79266C273FC06500883818 /* MyProfileVC.swift */,
+				EE79266E273FC07300883818 /* MapVC.swift */,
+				EE792670273FC08300883818 /* ChatVC.swift */,
+				EE792672273FC09C00883818 /* UsersVC.swift */,
+				EE792674273FEDF200883818 /* CamVC.swift */,
+			);
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 		D202E83FA8AD86927C90F011 /* Frameworks */ = {
@@ -96,20 +112,12 @@
 		EE808C94273D589A00477EE6 /* snapchatt */ = {
 			isa = PBXGroup;
 			children = (
-				EE5A35022740EB0D0079E3DF /* GoogleService-Info.plist */,
 				EE808C95273D589A00477EE6 /* AppDelegate.swift */,
 				EE808C97273D589A00477EE6 /* SceneDelegate.swift */,
-				EE792664273FBFEA00883818 /* LoginOrRegisterVC.swift */,
-				EE792666273FC02100883818 /* LognVC.swift */,
-				EE792668273FC03600883818 /* RegisterVC.swift */,
-				EE79266A273FC04D00883818 /* TabVC.swift */,
-				EE79266C273FC06500883818 /* MyProfileVC.swift */,
-				EE79266E273FC07300883818 /* MapVC.swift */,
-				EE792670273FC08300883818 /* ChatVC.swift */,
-				EE792672273FC09C00883818 /* UsersVC.swift */,
-				EE792674273FEDF200883818 /* CamVC.swift */,
-				EE808C9E273D589C00477EE6 /* Assets.xcassets */,
+				EE792676273FEF8900883818 /* GoogleService-Info.plist */,
+				8F19FE6D274238F100740DBE /* New Group */,
 				EE808CA0273D589C00477EE6 /* LaunchScreen.storyboard */,
+				EE808C9E273D589C00477EE6 /* Assets.xcassets */,
 				EE808CA3273D589C00477EE6 /* Info.plist */,
 			);
 			path = snapchatt;
@@ -177,7 +185,7 @@
 			files = (
 				EE808CA2273D589C00477EE6 /* LaunchScreen.storyboard in Resources */,
 				EE808C9F273D589C00477EE6 /* Assets.xcassets in Resources */,
-				EE5A35032740EB0D0079E3DF /* GoogleService-Info.plist in Resources */,
+				EE792677273FEF8900883818 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

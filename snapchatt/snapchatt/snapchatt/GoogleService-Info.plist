@@ -3,32 +3,32 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>770435017272-mnjr937fvaakrtga1qtbobv02n2tq8h5.apps.googleusercontent.com</string>
+	<string>432653047960-0sjb8v3e2posrokc5fi1tuu2bl8u96g2.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.770435017272-mnjr937fvaakrtga1qtbobv02n2tq8h5</string>
+	<string>com.googleusercontent.apps.432653047960-0sjb8v3e2posrokc5fi1tuu2bl8u96g2</string>
 	<key>API_KEY</key>
-	<string>AIzaSyArizZeKz4W0yI3BhKKiEmUprIwkLSPzDU</string>
+	<string>AIzaSyDAm3Mjb2HR62osM-7Xqy2ZvtEk4hQWJi4</string>
 	<key>GCM_SENDER_ID</key>
-	<string>770435017272</string>
+	<string>432653047960</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>sally.com.snapchatt</string>
 	<key>PROJECT_ID</key>
-	<string>lets-meett</string>
+	<string>snapchatt-fe356</string>
 	<key>STORAGE_BUCKET</key>
-	<string>lets-meett.appspot.com</string>
+	<string>snapchatt-fe356.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
-	<false/>
+	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
-	<false/>
+	<false></false>
 	<key>IS_APPINVITE_ENABLED</key>
-	<true/>
+	<true></true>
 	<key>IS_GCM_ENABLED</key>
-	<true/>
+	<true></true>
 	<key>IS_SIGNIN_ENABLED</key>
-	<true/>
+	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:770435017272:ios:f05178562f6ceda33414cd</string>
+	<string>1:432653047960:ios:6b639dfaf47bf1385998ed</string>
 </dict>
 </plist>
