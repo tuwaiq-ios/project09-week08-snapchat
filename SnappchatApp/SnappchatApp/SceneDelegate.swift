@@ -16,14 +16,21 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate, UITabBarControllerDeleg
         window?.windowScene = windowScene
         window?.makeKeyAndVisible()
         let tabBar = UITabBarController()
+        
         let profile = UINavigationController(rootViewController: ProfileController())
         profile.tabBarItem.title = "Profile"
         profile.tabBarItem.image = UIImage(systemName: "person")!
+        
         let home = UINavigationController(rootViewController: MessagesController())
         home.tabBarItem.title = "Chat"
         home.tabBarItem.image = UIImage(systemName: "message")!
+        
+        let map = UINavigationController(rootViewController: LocationController())
+        map.tabBarItem.title = "Location"
+        map.tabBarItem.image = UIImage(systemName: "location")!
+        
         tabBar.delegate = self
-        tabBar.viewControllers = [home,profile]
+        tabBar.viewControllers = [home,profile, map]
         tabBar.selectedIndex = 0
         tabBar.tabBar.tintColor = .blue
         tabBar.tabBar.backgroundColor = .white

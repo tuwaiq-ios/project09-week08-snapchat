@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		867FC4BD2742373300B2DC8F /* LocationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867FC4BC2742373300B2DC8F /* LocationController.swift */; };
 		939A7B7D19039C53BE64BB14 /* Pods_SnappchatApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 574D30A206D6CCD6ED315738 /* Pods_SnappchatApp.framework */; };
 		B592E88D27414C6000AB026F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B592E88C27414C6000AB026F /* GoogleService-Info.plist */; };
 		B592E88F27414D0F00AB026F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B592E88E27414D0F00AB026F /* User.swift */; };
@@ -31,6 +32,7 @@
 		068B4F16021A1636F04A6B7D /* Pods-SnappchatApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SnappchatApp.debug.xcconfig"; path = "Target Support Files/Pods-SnappchatApp/Pods-SnappchatApp.debug.xcconfig"; sourceTree = "<group>"; };
 		574D30A206D6CCD6ED315738 /* Pods_SnappchatApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SnappchatApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F88FB5F4DC946B9CC6B1F11 /* Pods-SnappchatApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SnappchatApp.release.xcconfig"; path = "Target Support Files/Pods-SnappchatApp/Pods-SnappchatApp.release.xcconfig"; sourceTree = "<group>"; };
+		867FC4BC2742373300B2DC8F /* LocationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationController.swift; sourceTree = "<group>"; };
 		B592E88C27414C6000AB026F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B592E88E27414D0F00AB026F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		B592E89027414D2D00AB026F /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 				B592E89E27414DE200AB026F /* ChatMessageCell.swift */,
 				B592E8A027414E0300AB026F /* UserCell.swift */,
 				B592E8A227414E1900AB026F /* ProfileController.swift */,
+				867FC4BC2742373300B2DC8F /* LocationController.swift */,
 			);
 			path = SnappchatApp;
 			sourceTree = "<group>";
@@ -246,6 +249,7 @@
 				B592E89127414D2D00AB026F /* Message.swift in Sources */,
 				B592E89B27414DB600AB026F /* LoginController.swift in Sources */,
 				B592E8A327414E1900AB026F /* ProfileController.swift in Sources */,
+				867FC4BD2742373300B2DC8F /* LocationController.swift in Sources */,
 				B592E89727414D8400AB026F /* LoginController+handlers.swift in Sources */,
 				B592E89D27414DCB00AB026F /* NewMessageController.swift in Sources */,
 				B592E89F27414DE200AB026F /* ChatMessageCell.swift in Sources */,
