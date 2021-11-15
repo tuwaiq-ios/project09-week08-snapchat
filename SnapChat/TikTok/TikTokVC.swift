@@ -50,7 +50,7 @@ class TikTok: UIViewController {
             data.append (model)
         }
         for _ in 3..<4 {
-            let model = VideoModel(caption: "Abyat AD",
+            let model = VideoModel(caption: "food AD",
                                    username: "@Sara",
                                    audioTrackName: "Video Song 🎵",
                                    videoFileName: "video4",
