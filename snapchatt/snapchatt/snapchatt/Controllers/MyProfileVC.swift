@@ -20,7 +20,7 @@ class MyProfileVC: UIViewController , UIImagePickerControllerDelegate , UINaviga
     lazy var profileImage: UIImageView = {
        let view = UIImageView()
        view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .purple
+        view.backgroundColor = .systemCyan
        view.layer.cornerRadius = 25
         view.isUserInteractionEnabled = true
                               
@@ -64,7 +64,7 @@ class MyProfileVC: UIViewController , UIImagePickerControllerDelegate , UINaviga
         button.widthAnchor.constraint(equalToConstant: 250).isActive = true
         button.layer.cornerRadius = 25
         button.layer.masksToBounds = true
-        button.backgroundColor = .blue
+        button.backgroundColor = .systemGreen
         return button
     }()
     lazy var shareButton: UIButton = {
@@ -76,7 +76,7 @@ class MyProfileVC: UIViewController , UIImagePickerControllerDelegate , UINaviga
         button.widthAnchor.constraint(equalToConstant: 250).isActive = true
         button.layer.cornerRadius = 25
         button.layer.masksToBounds = true
-        button.backgroundColor = .blue
+        button.backgroundColor = .systemCyan
 
         return button
     }()
