@@ -58,7 +58,7 @@ class UserServices{
             User.id = uid
             User.isMapLocationEnabled = snap["isMapLocationEnabled"] as? Bool
             UserActivity.observe(isOnline: true)
-//            if CurrentUser.isMapLocationEnabled ?? false {
+//            if User.isMapLocationEnabled ?? false {
 //                ChatKit.map.showsUserLocation = true
 //                ChatKit.startUpdatingUserLocation()
 //            }
