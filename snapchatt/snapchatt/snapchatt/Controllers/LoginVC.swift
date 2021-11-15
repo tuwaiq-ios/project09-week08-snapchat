@@ -4,6 +4,7 @@
 //
 //  Created by sally asiri on 08/04/1443 AH.
 //
+
 import UIKit
 import FirebaseAuth
 class LogInVC: UIViewController {
@@ -119,28 +120,28 @@ class LogInVC: UIViewController {
       registerButton.heightAnchor.constraint(equalToConstant: 40),
     ])
   }
-  @objc private func loginButtonTapped() {
-    //linked with firebase
-    let email = userEmail.text ?? ""
-    let password = userPassword.text ?? ""
-    if email.isEmpty || password.isEmpty {
-      return
-    }
-    Auth.auth().signIn(withEmail: email, password: password) { result, error in
-      if error != nil {
-        print(error as Any)
-        return
-      }
-      //oben TabVC bage
-      let vc = TabVC()
-      vc.modalPresentationStyle = .fullScreen
-      self.present(vc, animated: true, completion: nil)
-    }
+ @objc private func loginButtonTapped() {
+  // linked with firebase
+  let email = userEmail.text ?? ""
+   let password = userPassword.text ?? ""
+   if email.isEmpty || password.isEmpty {
+     return
   }
-  //oben RegisterVC bage
+  Auth.auth().signIn(withEmail: email, password: password) { result, error in
+     if error != nil {
+        print(error as Any)
+       return    }
+	  //oben TabVC bage
+    let vc = TabVC()
+   vc.modalPresentationStyle = .fullScreen
+   self.present(vc, animated: true, completion: nil)
+   }
+ }
+//  oben RegisterVC bage
   @objc private func registerButtonTapped() {
     let vc = RegisterVC()
     vc.modalPresentationStyle = .fullScreen
     self.present(vc, animated: true, completion: nil)
   }
 }
+
