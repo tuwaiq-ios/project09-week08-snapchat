@@ -8,9 +8,6 @@
 import UIKit
 import Foundation
 import MessageKit
-
-
-import UIKit
 import CoreLocation
 
 struct SenderMKit: SenderType {
@@ -33,11 +30,9 @@ struct User {
 }
 
 
-struct LocationMKit: LocationItem{
-    var location: CLLocation
-    var size: CGSize
-    
-}
+
+
+
 
 
 

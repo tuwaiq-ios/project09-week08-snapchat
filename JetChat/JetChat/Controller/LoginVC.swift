@@ -10,7 +10,9 @@ import Firebase
 import FirebaseAuth
 
 class Login: UITableViewController {
-     
+    
+    let db = Firestore.firestore()
+    
     let containerV = UIView()
     let registerBtn = UIButton()
     let nameTF = UITextField()
@@ -30,16 +32,19 @@ class Login: UITableViewController {
         
         view.backgroundColor = .white
         
+        nameTF.text = "Ibrahim"
         nameTF.placeholder = "Your Name"
         nameTF.translatesAutoresizingMaskIntoConstraints = false
         nameSeparatorV.translatesAutoresizingMaskIntoConstraints = false
         nameSeparatorV.backgroundColor = .lightGray
         
+        emailTF.text = "ibra@i.com"
         emailTF.placeholder = "Email"
         emailTF.translatesAutoresizingMaskIntoConstraints = false
         emailSeparatorV.translatesAutoresizingMaskIntoConstraints = false
         emailSeparatorV.backgroundColor = .lightGray
         
+        passTf.text = "123456"
         passTf.placeholder = "Password"
         passTf.translatesAutoresizingMaskIntoConstraints = false
         passTf.isSecureTextEntry = true
@@ -157,13 +162,20 @@ class Login: UITableViewController {
                 } else {
                     print(error?.localizedDescription)
                 }
-                guard let currentUserID = Auth.auth().currentUser?.uid else {return}
-                Firestore.firestore().document("users/\(currentUserID)").setData([
-                    "name" : self.nameTF.text,
-                    "userId" : currentUserID,
-                    "email" : self.emailTF.text,
-                    "status" : "online"
-                ])
+                guard let user = result?.user else {return}
+                
+                self.db.collection("users").document(user.uid).setData([
+                    "name": self.nameTF.text,
+                    "email": String(user.email!),
+                    "userID": user.uid,
+                    "status": "yes"
+                ], merge: true) { err in
+                    if let err = err {
+                        print("Error writing document: \(err)")
+                    } else {
+                        print("Document successfully written!")
+                    }
+                }
             }
         }
         

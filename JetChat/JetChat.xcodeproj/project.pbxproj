@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0094DDF4A4DA16CEA703170D /* Pods_JetChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 305761766A39BB2B03ED5092 /* Pods_JetChat.framework */; };
+		0F1BC68227424AFB00BD67DC /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1BC68127424AFB00BD67DC /* ProfileVC.swift */; };
 		0F20C8F52740013000F231A4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F20C8F42740013000F231A4 /* AppDelegate.swift */; };
 		0F20C8F72740013000F231A4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F20C8F62740013000F231A4 /* SceneDelegate.swift */; };
 		0F20C8F92740013000F231A4 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F20C8F82740013000F231A4 /* Models.swift */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0F1BC68127424AFB00BD67DC /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		0F20C8F12740013000F231A4 /* JetChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JetChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F20C8F42740013000F231A4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0F20C8F62740013000F231A4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 				E88D4D0F27414987006C2560 /* MapVC.swift */,
 				E88D4D11274149B6006C2560 /* HomeVC.swift */,
 				E88D4D13274149E7006C2560 /* ChatVC.swift */,
+				0F1BC68127424AFB00BD67DC /* ProfileVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -236,6 +239,7 @@
 				E88D4D14274149E7006C2560 /* ChatVC.swift in Sources */,
 				0F20C8F92740013000F231A4 /* Models.swift in Sources */,
 				E88D4D12274149B6006C2560 /* HomeVC.swift in Sources */,
+				0F1BC68227424AFB00BD67DC /* ProfileVC.swift in Sources */,
 				E88D4D1027414987006C2560 /* MapVC.swift in Sources */,
 				E88D4D0E27414962006C2560 /* CustomTabBar.swift in Sources */,
 				0F20C8F52740013000F231A4 /* AppDelegate.swift in Sources */,

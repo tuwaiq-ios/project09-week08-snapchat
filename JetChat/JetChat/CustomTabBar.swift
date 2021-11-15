@@ -21,6 +21,8 @@ class TabBarCustom: UITabBarController {
             
             barItem(tabBarTitle: "Chat", tabBarImage: UIImage(systemName: "message")!.withTintColor(.white, renderingMode: .alwaysOriginal), viewController: ChatVC()),
             
+            barItem(tabBarTitle: "Profiles", tabBarImage: UIImage(systemName: "message")!.withTintColor(.white, renderingMode: .alwaysOriginal), viewController: ProfileVC())
+            
         ]
         
         tabBar.backgroundColor = UIColor.black.withAlphaComponent(0.7)
