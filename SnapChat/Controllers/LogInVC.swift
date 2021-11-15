@@ -26,6 +26,7 @@ class LogInVC: UIViewController {
         userPassword.translatesAutoresizingMaskIntoConstraints = false
         userPassword.layer.cornerRadius = 12
         userPassword.layer.borderWidth = 1
+        userPassword.isSecureTextEntry = true
         userPassword.layer.borderColor = UIColor.lightGray.cgColor
         userPassword.placeholder = " Password..."
         userPassword.backgroundColor = .secondarySystemBackground
@@ -160,11 +161,11 @@ class LogInVC: UIViewController {
         }
     }
     
-    //oben RegisterVC bage 
+    //oben RegisterVC bage
     @objc private func registerButtonTapped() {
         let vc = RegisterVC()
         vc.modalPresentationStyle = .fullScreen
         self.present(vc, animated: true, completion: nil)
     }
-
+    
 }
