@@ -83,8 +83,6 @@ class ChatVC: UIViewController {
                     print("There was an issue retrieving data from Firestore. \(e)")
                 } else {
                     
-                    
-                    
                     if let snapshotDocuments = querySnapshot?.documents {
                         
                         for doc in snapshotDocuments {
@@ -108,9 +106,6 @@ class ChatVC: UIViewController {
                                       }else {
                                           self.currentUserName = userName
                                       }
-                                    
-                               
-                                
 
                             }
                         }
@@ -143,6 +138,7 @@ extension ChatVC: UITableViewDelegate, UITableViewDataSource {
             cell.userNameLabel.text = filterUsers[indexPath.row].name
             cell.userEmail.text     = filterUsers[indexPath.row].userEmail
             cell.circleImage.tintColor = filterUsers[indexPath.row].status == "online" ? UIColor.green : UIColor.gray
+            
             
             cell.accessoryType = .disclosureIndicator
             cell.backgroundColor = .white

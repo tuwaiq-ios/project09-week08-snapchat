@@ -33,7 +33,6 @@ class DMScreen: MessagesViewController {
         messagesCollectionView.messagesLayoutDelegate = self
         messagesCollectionView.messageCellDelegate = self
         
-        
         customizeBar()
         
         if let layout = messagesCollectionView.collectionViewLayout as? MessagesCollectionViewFlowLayout {
@@ -48,7 +47,6 @@ class DMScreen: MessagesViewController {
         //from inputBarAccessortyView
         messageInputBar.delegate = self
         
-        
         fetchMessages()
     }
     override func viewDidAppear(_ animated: Bool) {
@@ -56,7 +54,6 @@ class DMScreen: MessagesViewController {
         //present keyboard
         
         self.messageInputBar.inputTextView.becomeFirstResponder()
-        
         
     }
     private func setupLocation() {
@@ -81,18 +78,13 @@ class DMScreen: MessagesViewController {
         
         messageInputBar.inputTextView.placeholder = "Write your message"
         
-        
         scrollsToLastItemOnKeyboardBeginsEditing = true
         
-        
-    
         messageInputBar.sendButton.setTitleColor(.blue, for: .normal)
         messageInputBar.sendButton.setTitleColor(
             UIColor.blue.withAlphaComponent(0.3),
             for: .highlighted
         )
-        
-        
         
         let image = UIImage(systemName: "mappin.and.ellipse")!.withTintColor(.black, renderingMode: .alwaysOriginal)
         let button = InputBarButtonItem(frame: CGRect(origin: .zero, size: CGSize(width: image.size.width, height: image.size.height)))
@@ -112,7 +104,8 @@ class DMScreen: MessagesViewController {
     
     private func  fetchMessages() {
         
-        
+        self.messages.removeAll()
+
         db.collection("messages").whereField("messagesBetween", isEqualTo: [user, barTitle].sorted())
             .order(by: "messageSentDate")
             .addSnapshotListener { (querySnapshot, error) in
@@ -149,7 +142,7 @@ class DMScreen: MessagesViewController {
                                     
                                     let messageSentDateNEW = self.stringToDate(messageSentDate)
                                     let newMessage = MessageKit(sender: SenderMKit(senderId: senderId, displayName: displayName), messageId: messageId, sentDate: messageSentDateNEW,
-                                                                kind: .location(LocationMKit(location: CLLocation(latitude: Double(message[0])!, longitude: Double(message[1])!), size: CGSize(width: 300, height: 330))))
+                                        kind: .location(LocationMKit(location: CLLocation(latitude: Double(message[0])!, longitude: Double(message[1])!), size: CGSize(width: 300, height: 330))))
                                     
                                     self.messages.append(newMessage)
                                     DispatchQueue.main.async {
@@ -159,14 +152,11 @@ class DMScreen: MessagesViewController {
                                     }
                                 }
                                 
-                                
                             } else {
                                 print("error converting data")
                                 return
                                 
                             }
-                            
-                            
                         }
                     }
                 }
@@ -223,8 +213,6 @@ extension DMScreen: MessagesDataSource, MessagesLayoutDelegate, MessagesDisplayD
         return messages.count
     }
     
-    
-    
     func backgroundColor(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> UIColor {
         return isFromCurrentSender(message: message) ? UIColor.green : UIColor.systemGray4
     }
@@ -268,7 +256,6 @@ extension DMScreen: MessagesDataSource, MessagesLayoutDelegate, MessagesDisplayD
         guard let indexPath = messagesCollectionView.indexPath(for: cell) else {return}
         let tappedMessage = messages[indexPath.section]
         
-        
         switch tappedMessage.kind {
         case .location(let location):
             let userCoordinates = location.location.coordinate
@@ -288,8 +275,6 @@ extension DMScreen: MessagesDataSource, MessagesLayoutDelegate, MessagesDisplayD
             break
         }
     }
-    
-    
 }
 
 extension DMScreen: InputBarAccessoryViewDelegate  {
@@ -300,10 +285,7 @@ extension DMScreen: InputBarAccessoryViewDelegate  {
             messageInputBar.inputTextView.resignFirstResponder()
         }
     }
-    
-    
 }
-
 
 extension DMScreen: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -314,8 +296,7 @@ extension DMScreen: CLLocationManagerDelegate {
         locationManager.stopUpdatingLocation()
     }
     
-    
-    
+
     private func saveLocationMessage(location: CLLocation) {
         //may have to add kind to a message then if else in read based on it.
         db.collection("messages").addDocument(data: [
