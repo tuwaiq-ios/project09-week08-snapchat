@@ -28,6 +28,14 @@ struct User {
     var status: String
     var userEmail: String
 }
+struct LocationMKit: LocationItem{
+    var location: CLLocation
+    
+    var size: CGSize
+    
+}
+
+
 
 
 
