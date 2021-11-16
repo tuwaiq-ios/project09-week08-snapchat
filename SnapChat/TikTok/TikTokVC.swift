@@ -12,9 +12,11 @@ struct VideoModel {
     let audioTrackName: String
     let videoFileName: String
    let videoFileFormat: String
+  
 }
+
 class TikTok: UIViewController {
-    
+//    let isfavorit : Bool
     private var collectionView: UICollectionView?
 
         private var data = [VideoModel]()
@@ -22,6 +24,9 @@ class TikTok: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
+        
+   
+
 
         // Do any additional setup after loading the view.
         
@@ -81,7 +86,7 @@ class TikTok: UIViewController {
                                    videoFileFormat: "mp4")
             data.append (model)
         }
-        for _ in 7..<8 {
+        for _ in 7..<8{
             let model = VideoModel(caption: "Abyat AD",
                                    username: "@Sara",
                                    audioTrackName: "Video Song 🎵",
@@ -93,11 +98,11 @@ class TikTok: UIViewController {
             let model = VideoModel(caption: "Abyat AD",
                                    username: "@Sara",
                                    audioTrackName: "Video Song 🎵",
-                                   videoFileName: "video9",
-                                   videoFileFormat: "mp4")
+                                   videoFileName: "video99",
+                                   videoFileFormat: "MP4")
             data.append (model)
+      
         }
-        
     let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
         layout.itemSize = CGSize(width: view.frame.size.width,
@@ -140,22 +145,39 @@ extension TikTok: UICollectionViewDataSource{
 extension TikTok: VideoCollectionViewCellDelegate{
     func didTapLikeButton(with model: VideoModel) {
         print("like button tapped")
+        let button = UIButton(type: .custom)
+        let image = UIImage(named: "fav")?.withRenderingMode(.alwaysTemplate)
+        button.setImage(image, for: .normal)
+        button.tintColor = UIColor.red
+        
     }
     
     func didTapProfileButton(with model: VideoModel) {
         print("profile button tapped")
-
+        let vc = MyProfileVC()
+        vc.modalPresentationStyle = .fullScreen
+        self.present(vc, animated: true, completion: nil)
     }
     
     func didTapShareButton(with model: VideoModel) {
         print("share button tapped")
-
+        
+        let activityVC = UIActivityViewController(activityItems: [model.caption], applicationActivities: nil)
+        activityVC.popoverPresentationController?.sourceView = self.view
+        self.present(activityVC, animated: true, completion: nil)
+        
     }
     
     func didTapCommentButton(with model: VideoModel) {
-        print("comment button tapped")
+        let alert1 = UIAlertController(
+              title: ("Report ⚠️"),message: "are you sure want to reporting this  ⁉️",preferredStyle: .alert)
+        alert1.addAction(UIAlertAction(title: "im sure",style: .cancel,handler: { action in
+              print("OK") } ) )
+        alert1.addAction(UIAlertAction(title: "cancel",style: .default,handler: { action in
+            
+            print("cancel") } ))
+            present(alert1, animated: true, completion: nil)
+          }
+    
+                                           }
 
-    }
-    
-    
-}

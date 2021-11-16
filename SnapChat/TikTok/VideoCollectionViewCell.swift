@@ -46,26 +46,26 @@ class VideoCollectionViewCell: UICollectionViewCell, UINavigationControllerDeleg
     private let profileButton: UIButton = {
          let button = UIButton()
         button.setBackgroundImage(UIImage(systemName: "person.circle"), for:.normal)
-        
+        button.tintColor = .white
         return button
     }()
     private let likeButton: UIButton = {
          let button = UIButton()
         button.setBackgroundImage(UIImage(systemName: "heart.fill"), for:.normal)
-
+        button.tintColor = .white
         return button
     }()
     private let commentButton: UIButton = {
          let button = UIButton()
-        button.setBackgroundImage(UIImage(systemName: "text.bubble.fill"), for:.normal)
-
+        button.setBackgroundImage(UIImage(systemName: "exclamationmark.bubble"), for:.normal)
+        button.tintColor = .white
          return button
     }()
     private let shareButton: UIButton = {
          let button = UIButton()
         button.setBackgroundImage(UIImage(systemName:"arrowshape.turn.up.right.fill"), for:.normal)
-
-         return button
+        button.tintColor = .white
+        return button
     }()
     
     private let videoContainer = UIView()
