@@ -38,6 +38,7 @@
       }()
       let email : UITextField = {
         $0.placeholder = "email"
+        $0.text = "Salshahrani@gmail.com"
         $0.textAlignment = .center
         $0.backgroundColor = .init(white: 0.90, alpha: 1)
         $0.layer.cornerRadius = 22.5
@@ -45,6 +46,7 @@
       }(UITextField())
       let password : UITextField = {
         $0.placeholder = "password"
+        $0.text = "987654"
         $0.isSecureTextEntry = true
         $0.textAlignment = .center
         $0.backgroundColor = .init(white: 0.90, alpha: 1)
@@ -55,7 +57,7 @@
         $0.setTitle("LogIn", for: .normal)
         $0.titleLabel?.font = UIFont.boldSystemFont(ofSize: 22)
         $0.backgroundColor = .black
-        $0.layer.cornerRadius = 22.5
+        $0.layer.cornerRadius = 10
         $0.tintColor = .white
         $0.addTarget(self, action: #selector(login), for: .touchUpInside)
         return $0
@@ -64,7 +66,7 @@
         $0.setTitle("Sign Up", for: .normal)
         $0.titleLabel?.font = UIFont.boldSystemFont(ofSize: 22)
         $0.backgroundColor = .black
-        $0.layer.cornerRadius = 22.5
+        $0.layer.cornerRadius = 10
         $0.tintColor = .white
         $0.addTarget(self, action: #selector(SignupVC), for: .touchUpInside)
         return $0
