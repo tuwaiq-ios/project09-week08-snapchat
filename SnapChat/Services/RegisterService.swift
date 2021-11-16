@@ -38,9 +38,9 @@ class RegisterService {
                 let user = User(
                     id: (data["id"] as? String) ?? "No id",
                     name: (data["name"] as? String) ?? "No name",
-                    status: (data["status"] as? String ?? "No status"),
-                    image: (data["image"] as? String ?? "No image"),
-                    location: (data["status"] as? String ?? "No status")
+                    status: (data["status"] as? String) ?? "No status",
+                    image: (data["image"] as? String) ?? "No image",
+                    location: (data["status"] as? String) ?? "No status"
                 )
                 users.append(user)
             }
@@ -48,4 +48,13 @@ class RegisterService {
             completion(users)
         }
     }
+    func updateUserInfo(user: User) {
+        usersCollection.document(user.id).setData([
+            "id": user.id,
+            "name": user.name,
+            "image": user.image,
+            "status": user.status,
+        ], merge: true)
+    }
+
 }

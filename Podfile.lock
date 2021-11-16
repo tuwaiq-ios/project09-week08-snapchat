@@ -357,6 +357,9 @@ PODS:
   - Firebase/Firestore (8.9.0):
     - Firebase/CoreOnly
     - FirebaseFirestore (~> 8.9.0)
+  - Firebase/Storage (8.9.0):
+    - Firebase/CoreOnly
+    - FirebaseStorage (~> 8.9.0)
   - FirebaseAnalytics (8.9.0):
     - FirebaseAnalytics/AdIdSupport (= 8.9.0)
     - FirebaseCore (~> 8.0)
@@ -407,6 +410,9 @@ PODS:
     - GoogleUtilities/Environment (~> 7.6)
     - GoogleUtilities/UserDefaults (~> 7.6)
     - PromisesObjC (< 3.0, >= 1.2)
+  - FirebaseStorage (8.9.0):
+    - FirebaseCore (~> 8.0)
+    - GTMSessionFetcher/Core (~> 1.5)
   - GoogleAppMeasurement (8.9.0):
     - GoogleAppMeasurement/AdIdSupport (= 8.9.0)
     - GoogleUtilities/AppDelegateSwizzler (~> 7.6)
@@ -487,6 +493,7 @@ DEPENDENCIES:
   - Firebase/Analytics
   - Firebase/Auth
   - Firebase/Firestore
+  - Firebase/Storage
 
 SPEC REPOS:
   trunk:
@@ -499,6 +506,7 @@ SPEC REPOS:
     - FirebaseCoreDiagnostics
     - FirebaseFirestore
     - FirebaseInstallations
+    - FirebaseStorage
     - GoogleAppMeasurement
     - GoogleDataTransport
     - GoogleUtilities
@@ -519,6 +527,7 @@ SPEC CHECKSUMS:
   FirebaseCoreDiagnostics: 5daa63f1c1409d981a2d5007daa100b36eac6a34
   FirebaseFirestore: bb57bfeb3ec001d99e7e2a96dd29072b01e816f6
   FirebaseInstallations: caa7c8e0d3e2345b8829d2fa9ca1b4dfbf2fcc85
+  FirebaseStorage: 452c98c31ccb40b819764bf3039426c4388d9939
   GoogleAppMeasurement: b54a857d347703d67c7a6f23713760c9bcfe9008
   GoogleDataTransport: 629c20a4d363167143f30ea78320d5a7eb8bd940
   GoogleUtilities: 684ee790a24f73ebb2d1d966e9711c203f2a4237
@@ -529,6 +538,5 @@ SPEC CHECKSUMS:
   nanopb: a0ba3315591a9ae0a16a309ee504766e90db0c96
   PromisesObjC: 68159ce6952d93e17b2dfe273b8c40907db5ba58
 
-PODFILE CHECKSUM: 839f5db378bb569781a03008095e50200b4c6109
 
 COCOAPODS: 1.11.2

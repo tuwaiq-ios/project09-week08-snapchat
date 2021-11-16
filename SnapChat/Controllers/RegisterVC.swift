@@ -68,6 +68,7 @@ class RegisterVC: UIViewController , UIImagePickerControllerDelegate , UINavigat
         userPassword.layer.cornerRadius = 12
         userPassword.layer.borderWidth = 1
         userPassword.layer.borderColor = UIColor.lightGray.cgColor
+        userPassword.isSecureTextEntry = true
         userPassword.placeholder = "  Password..."
         userPassword.backgroundColor = .secondarySystemBackground
         return userPassword
@@ -217,20 +218,20 @@ class RegisterVC: UIViewController , UIImagePickerControllerDelegate , UINavigat
         self.present(vc, animated: true, completion: nil)
     }
     
-// image picker in register page
-  @objc func imageTapped() {
-    print("Image tapped")
-      present(imagePicker, animated: true)
-  }
-  func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-    let image = info[.editedImage] ?? info [.originalImage] as? UIImage
-      profileImage.image = image as? UIImage
-    dismiss(animated: true)
-  }
+    // image picker in register page
+    @objc func imageTapped() {
+        print("Image tapped")
+        present(imagePicker, animated: true)
+    }
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        let image = info[.editedImage] ?? info [.originalImage] as? UIImage
+        profileImage.image = image as? UIImage
+        dismiss(animated: true)
+    }
     
     @objc private func logInButtonTapped() {
         let vc = LogInVC()
         vc.modalPresentationStyle = .fullScreen
         self.present(vc, animated: true, completion: nil)
-      }
+    }
 }
