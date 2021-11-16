@@ -18,6 +18,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     let navigationController = UINavigationController(rootViewController: RegisterVC())
 
           let home = LoginOrRegisterVC()
+
         //  let home = LoginOrRegisterVC()
         self.window?.rootViewController = home
         window?.makeKeyAndVisible()
