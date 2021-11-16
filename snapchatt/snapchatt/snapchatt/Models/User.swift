@@ -7,6 +7,7 @@
 
 import UIKit
 
+// add struct user 
 struct User {
   let id: String
   let name: String

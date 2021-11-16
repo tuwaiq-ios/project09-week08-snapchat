@@ -130,10 +130,11 @@ class MyProfileVC: UIViewController , UIImagePickerControllerDelegate , UINaviga
         ])
  
         }
+    // make cancelButtonTapped works
     @objc private func cancelButtonTapped() {
     present(TabVC(), animated: true, completion: nil)
         }
-    
+    // make imageTapped works
       @objc func imageTapped() {
         print("Image tapped")
         present(imagePicker, animated: true)

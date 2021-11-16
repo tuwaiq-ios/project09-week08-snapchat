@@ -27,7 +27,7 @@ class RegisterService {
 	func listenToUsers(completion: @escaping (([User]) -> Void)) {
 		
 		usersCollection.addSnapshotListener { snapshot, error in
-			if error != nil { // اذا فيه ايرور
+            if error != nil { // if there's any error
 				return
 			}
 			guard let documents = snapshot?.documents else { return }

@@ -23,6 +23,7 @@ class CamVC : UIViewController {
 	}()
 	override func viewDidLoad() {
 		super.viewDidLoad()
+        // accses checkCameraPermissions
 		checkCameraPermissions()
 		view.backgroundColor = .black
 		view.layer.addSublayer(previewLayer)
@@ -37,6 +38,7 @@ class CamVC : UIViewController {
 	private func checkCameraPermissions() {
 		switch AVCaptureDevice.authorizationStatus(for: .video){
 		case .notDetermined:
+            
 			//Request
 			AVCaptureDevice.requestAccess(for: .video){[weak self]
 				granted in
@@ -56,6 +58,8 @@ class CamVC : UIViewController {
 		@unknown default:
 			break
 		} }
+    
+    // setUpCamera
 	private func setUpCamera() {
 		let session = AVCaptureSession()
 		if let device = AVCaptureDevice.default(for: .video) {
@@ -77,10 +81,14 @@ class CamVC : UIViewController {
 			}
 		}
 	}
-	@objc private func didTapTakePhoto() {
+    // @objc private func
+    
+    @objc private func didTapTakePhoto() {
 		output.capturePhoto(with: AVCapturePhotoSettings() , delegate: self)
 	}
 }
+
+// extension
 extension CamVC: AVCapturePhotoCaptureDelegate {
 	func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
 		guard let data = photo.fileDataRepresentation() else {

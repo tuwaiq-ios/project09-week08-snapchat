@@ -75,12 +75,13 @@ lazy var loginButton: UIButton = {
         ])
             }
     
+    // make loginButtonTapped works
     @objc private func loginButtonTapped() {
         let vc = LogInVC()
         vc.modalPresentationStyle = .fullScreen
         self.present(vc, animated: true, completion: nil)
     }
-    
+    // make registerButtonTapped works
     @objc private func registerButtonTapped() {
         let vc = RegisterVC()
         vc.modalPresentationStyle = .fullScreen

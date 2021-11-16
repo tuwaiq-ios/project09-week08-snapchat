@@ -9,7 +9,7 @@ import Foundation
 
 import UIKit
 import FirebaseFirestore
-
+// add struct Location 
 struct Location {
     let id: String
     let userId: String

@@ -7,11 +7,16 @@
 
 import UIKit
 
+// add struct Conversations
 struct Conversations {
     let id: String
-    let users:[User]
+    let users:[String]
+    
     //title if we in group
     let title: String
+    
+
+    let filterField: String
    
 }
 

@@ -20,10 +20,11 @@ class TabVC: UITabBarController {
     }
   func setupVCs() {
      viewControllers = [
-        createNavController(for:UsersVC (), title: NSLocalizedString("users", comment: ""), image: UIImage(systemName: "person.3")!),
-        createNavController(for:ChatVC(), title: NSLocalizedString("Chat", comment: ""), image: UIImage(systemName: "message")!),
-		createNavController(for:CamVC(), title: NSLocalizedString("CamVC", comment: ""), image: UIImage(systemName: "camera")!),
-       createNavController(for:MapVC(), title: NSLocalizedString("location", comment: ""), image: UIImage(systemName: "location")!),
+        createNavController(for:UsersVC (), title: NSLocalizedString("Users", comment: ""), image: UIImage(systemName: "person.3")!),
+        createNavController(for:ConversationVC (), title: NSLocalizedString("Conversation", comment: ""), image: UIImage(systemName: "message")!),
+   //     createNavController(for:ChatVC(), title: NSLocalizedString("Chat", comment: ""), image: UIImage(systemName: "message")!),
+		createNavController(for:CamVC(), title: NSLocalizedString("Cam", comment: ""), image: UIImage(systemName: "camera")!),
+       createNavController(for:MapVC(), title: NSLocalizedString("Location", comment: ""), image: UIImage(systemName: "location")!),
        createNavController(for:MyProfileVC(), title: NSLocalizedString("Profile", comment: ""), image: UIImage(systemName: "person")!),
 		
 

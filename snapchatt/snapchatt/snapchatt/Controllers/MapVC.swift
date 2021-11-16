@@ -14,6 +14,7 @@ import FirebaseFirestore
 
 class MapVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate  {
     
+    
     var locationManager: CLLocationManager!
     
     
@@ -31,6 +32,7 @@ class MapVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate  {
         
         mapView.delegate = self
         
+        //made locationServicesEnabled
         if CLLocationManager.locationServicesEnabled() {
             locationManger = CLLocationManager()
             locationManger.delegate = self
@@ -39,6 +41,7 @@ class MapVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate  {
             locationManger.startUpdatingLocation()
         }
         
+        // constraint
         view .addSubview(mapView)
         NSLayoutConstraint.activate([
             mapView.leftAnchor.constraint(equalTo: view.leftAnchor),
@@ -50,31 +53,14 @@ class MapVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate  {
         let users: Array <Any> = []
     }
     
-    
-//    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-//
-//
-//        guard let location = locations.last else {return}
-//        let lat = location.coordinate.latitude
-//        let long = location.coordinate.longitude
-//
-//
-//        let loc = MKPointAnnotation()
-//        loc.title = "Asir"
-//        loc.coordinate = CLLocationCoordinate2D(latitude: lat, longitude: long)
-//        mapView.addAnnotation(loc)
-//    }
-//
-
-
-    }
-//extension ViewController: MKMapViewDelegate, CLLocationManagerDelegate {
-    
+}
+// coordinates
     func locationManager(_ manager: CLLocationManager,
         didUpdateLocations location: [CLLocation]) {
         guard let lastLocation = location.last else { return }
         let lat = lastLocation.coordinate.latitude
         let long = lastLocation.coordinate.latitude
+        
         
         guard let currentUserId = Auth.auth().currentUser?.uid else { return }
         Firestore.firestore().collection("users").document(currentUserId).setData([

@@ -11,6 +11,7 @@
 		5EF797392742504D00890375 /* RegisterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF797382742504D00890375 /* RegisterService.swift */; };
 		5EF7973B274252E500890375 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF7973A274252E500890375 /* User.swift */; };
 		5EF7973D2742798900890375 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5EF7973C2742798900890375 /* GoogleService-Info.plist */; };
+		8F31E45D2743C60000F2CDA3 /* ConversationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F31E45C2743C60000F2CDA3 /* ConversationVC.swift */; };
 		EE17EEF1274298A300589EAA /* Conversations.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE17EEF0274298A300589EAA /* Conversations.swift */; };
 		EE17EEF3274298BA00589EAA /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE17EEF2274298BA00589EAA /* Location.swift */; };
 		EE17EEF5274298CB00589EAA /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE17EEF4274298CB00589EAA /* Message.swift */; };
@@ -36,6 +37,7 @@
 		5EF7973C2742798900890375 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		712393E56D01EA7A0EE16723 /* Pods-snapchatt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-snapchatt.debug.xcconfig"; path = "Target Support Files/Pods-snapchatt/Pods-snapchatt.debug.xcconfig"; sourceTree = "<group>"; };
 		8D6CA698FC0DE207735D9794 /* Pods-snapchatt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-snapchatt.release.xcconfig"; path = "Target Support Files/Pods-snapchatt/Pods-snapchatt.release.xcconfig"; sourceTree = "<group>"; };
+		8F31E45C2743C60000F2CDA3 /* ConversationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationVC.swift; sourceTree = "<group>"; };
 		EE17EEF0274298A300589EAA /* Conversations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Conversations.swift; sourceTree = "<group>"; };
 		EE17EEF2274298BA00589EAA /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		EE17EEF4274298CB00589EAA /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
@@ -71,14 +73,15 @@
 		5EF7973E2742806700890375 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				EE792670273FC08300883818 /* ChatVC.swift */,
 				EE792666273FC02100883818 /* LoginVC.swift */,
 				EE792664273FBFEA00883818 /* Login , RegisterVC.swift */,
 				EE792674273FEDF200883818 /* CamVC.swift */,
 				EE79266E273FC07300883818 /* MapVC.swift */,
-				EE792670273FC08300883818 /* ChatVC.swift */,
 				EE79266C273FC06500883818 /* MyProfileVC.swift */,
 				EE79266A273FC04D00883818 /* TabVC.swift */,
 				EE792672273FC09C00883818 /* UsersVC.swift */,
+				8F31E45C2743C60000F2CDA3 /* ConversationVC.swift */,
 				EE792668273FC03600883818 /* RegisterVC.swift */,
 			);
 			path = Controllers;
@@ -274,6 +277,7 @@
 				EE17EEF1274298A300589EAA /* Conversations.swift in Sources */,
 				EE792667273FC02100883818 /* LoginVC.swift in Sources */,
 				EE792675273FEDF200883818 /* CamVC.swift in Sources */,
+				8F31E45D2743C60000F2CDA3 /* ConversationVC.swift in Sources */,
 				EE792671273FC08300883818 /* ChatVC.swift in Sources */,
 				EE79266D273FC06500883818 /* MyProfileVC.swift in Sources */,
 				EE17EEF3274298BA00589EAA /* Location.swift in Sources */,

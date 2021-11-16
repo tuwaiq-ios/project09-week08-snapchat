@@ -7,6 +7,8 @@
 
 import UIKit
 import FirebaseAuth
+
+
 class LogInVC: UIViewController {
    lazy var userEmail: UITextField = {
     let userEmail = UITextField()
@@ -16,6 +18,7 @@ class LogInVC: UIViewController {
      userEmail.layer.borderColor = UIColor.lightGray.cgColor
      userEmail.placeholder = "Email Address..."
      userEmail.backgroundColor = .secondarySystemBackground
+       userEmail.text = "Hassan@gmail.com"
     return userEmail
   }()
   lazy var userPassword: UITextField = {
@@ -26,6 +29,7 @@ class LogInVC: UIViewController {
     userPassword.layer.borderColor = UIColor.lightGray.cgColor
     userPassword.placeholder = " Password..."
     userPassword.backgroundColor = .secondarySystemBackground
+      userPassword.text = "123123"
     return userPassword
   }()
   lazy var loginButton: UIButton = {
