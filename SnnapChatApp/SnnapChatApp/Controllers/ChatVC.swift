@@ -14,6 +14,9 @@ class ChatVC: UIViewController {
     var messages = [Message]()
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.title = "Chat"
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.titleView?.tintColor = .black
         setupUI()
         getAllMessages()
         chatTableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
@@ -64,7 +67,7 @@ extension ChatVC : UITableViewDelegate , UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return messages.count
     }
-
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell =
         chatTableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
@@ -82,13 +85,13 @@ extension ChatVC : UITableViewDelegate , UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let deleteAction = UIContextualAction(
-          style: .destructive,
-          title: "Delete") { _, _, _ in
-              self.messages.remove(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath], with: .automatic)
-          }
+            style: .destructive,
+            title: "Delete") { _, _, _ in
+                self.messages.remove(at: indexPath.row)
+                tableView.deleteRows(at: [indexPath], with: .automatic)
+            }
         return UISwipeActionsConfiguration(actions: [deleteAction])
-      }
+    }
 }
 extension ChatVC {
     @objc func sendMessage() {

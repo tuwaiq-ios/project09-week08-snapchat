@@ -26,6 +26,7 @@
 		B536E6E227424A060067175A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B536E6E027424A060067175A /* LaunchScreen.storyboard */; };
 		B56A5C6E2743A04300BCAF0D /* MessagesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56A5C6D2743A04300BCAF0D /* MessagesService.swift */; };
 		B56A5C702743A05300BCAF0D /* UsersService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56A5C6F2743A05300BCAF0D /* UsersService.swift */; };
+		E660E2192743CC99004D4220 /* TikTokVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E660E2182743CC99004D4220 /* TikTokVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		B56A5C6D2743A04300BCAF0D /* MessagesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesService.swift; sourceTree = "<group>"; };
 		B56A5C6F2743A05300BCAF0D /* UsersService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersService.swift; sourceTree = "<group>"; };
 		BD353D60583F8EE4C101AE7A /* Pods_SnnapChatApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SnnapChatApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E660E2182743CC99004D4220 /* TikTokVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TikTokVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,21 +112,46 @@
 				B536E6DE27424A060067175A /* Assets.xcassets */,
 				B536E6E027424A060067175A /* LaunchScreen.storyboard */,
 				B536E6E327424A060067175A /* Info.plist */,
-				B531475D27424CE400CDA765 /* LoginViewController.swift */,
-				B531475F27424D0300CDA765 /* TabVC.swift */,
-				B531476127424D1100CDA765 /* ChatVC.swift */,
-				B531476327424D3900CDA765 /* ProfileVC.swift */,
-				B531476527424D4E00CDA765 /* User.swift */,
-				B531476727424D5D00CDA765 /* Message.swift */,
-				B531476927424D9600CDA765 /* SignUpViewController.swift */,
-				B531476B27424DB800CDA765 /* UsersViewController.swift */,
-				B531476D274251F300CDA765 /* LocationVC.swift */,
-				B531477327429A3F00CDA765 /* CameraVC.swift */,
-				B53147752742CD6000CDA765 /* ContactListVC.swift */,
+				E660E2152743CA51004D4220 /* Services */,
+				E660E2162743CA78004D4220 /* Models */,
+				E660E2172743CA94004D4220 /* Controllers */,
+			);
+			path = SnnapChatApp;
+			sourceTree = "<group>";
+		};
+		E660E2152743CA51004D4220 /* Services */ = {
+			isa = PBXGroup;
+			children = (
 				B56A5C6D2743A04300BCAF0D /* MessagesService.swift */,
 				B56A5C6F2743A05300BCAF0D /* UsersService.swift */,
 			);
-			path = SnnapChatApp;
+			path = Services;
+			sourceTree = "<group>";
+		};
+		E660E2162743CA78004D4220 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B531476527424D4E00CDA765 /* User.swift */,
+				B531476727424D5D00CDA765 /* Message.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		E660E2172743CA94004D4220 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B531475F27424D0300CDA765 /* TabVC.swift */,
+				B531475D27424CE400CDA765 /* LoginViewController.swift */,
+				B531476927424D9600CDA765 /* SignUpViewController.swift */,
+				E660E2182743CC99004D4220 /* TikTokVC.swift */,
+				B531476127424D1100CDA765 /* ChatVC.swift */,
+				B531476327424D3900CDA765 /* ProfileVC.swift */,
+				B531476D274251F300CDA765 /* LocationVC.swift */,
+				B531477327429A3F00CDA765 /* CameraVC.swift */,
+				B53147752742CD6000CDA765 /* ContactListVC.swift */,
+				B531476B27424DB800CDA765 /* UsersViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -250,6 +277,7 @@
 				B53147762742CD6000CDA765 /* ContactListVC.swift in Sources */,
 				B531476C27424DB800CDA765 /* UsersViewController.swift in Sources */,
 				B531476827424D5D00CDA765 /* Message.swift in Sources */,
+				E660E2192743CC99004D4220 /* TikTokVC.swift in Sources */,
 				B531476E274251F300CDA765 /* LocationVC.swift in Sources */,
 				B531476A27424D9600CDA765 /* SignUpViewController.swift in Sources */,
 				B531476627424D4E00CDA765 /* User.swift in Sources */,

@@ -23,6 +23,8 @@ class ContactListVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.title = "Contectact"
+        navigationController?.navigationBar.prefersLargeTitles = true
         
         UsersService.shared.listenToUsers { newUsers in
             self.people = newUsers

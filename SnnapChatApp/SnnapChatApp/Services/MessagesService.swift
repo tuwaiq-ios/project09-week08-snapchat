@@ -8,7 +8,7 @@
 import UIKit
 import FirebaseFirestore
 class MessagesService {
-    static let shared = MessagesService()
+    static let sahared = MessagesService()
     
     let messagesCollection = Firestore.firestore().collection("messages")
     

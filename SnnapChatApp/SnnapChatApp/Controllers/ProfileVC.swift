@@ -9,41 +9,41 @@ import UIKit
 import FirebaseFirestore
 import Firebase
 class ProfileVC : UIViewController, UIImagePickerControllerDelegate, UITextFieldDelegate, UINavigationControllerDelegate{
-
-      lazy var profileImage: UIImageView = {
+    
+    lazy var profileImage: UIImageView = {
         let view = UIImageView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .purple
         view.layer.cornerRadius = 25
         view.isUserInteractionEnabled = true
         return view
-      }()
+    }()
     
-      lazy var imagePicker : UIImagePickerController = {
+    lazy var imagePicker : UIImagePickerController = {
         let imagePicker = UIImagePickerController()
         imagePicker.delegate = self
         imagePicker.sourceType = .photoLibrary
         imagePicker.allowsEditing = true
         return imagePicker
-      }()
+    }()
     @objc func OpenImage(_ sender: Any) {
-       let pick = UIImagePickerController()
-       pick.allowsEditing = true
-       pick.delegate = self
-       present(pick, animated: true)
-       }
-       func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-       let image = (info[.editedImage] ?? info[.originalImage]) as? UIImage;
-         profileImage.image = image
-       dismiss(animated: false)
-       }
-//    var img: UIImageView = {
-//        let imageView = UIImageView()
-//        imageView.image = UIImage(named: "7")
-//        imageView.translatesAutoresizingMaskIntoConstraints = false
-//        return imageView
-//    }()
-//
+        let pick = UIImagePickerController()
+        pick.allowsEditing = true
+        pick.delegate = self
+        present(pick, animated: true)
+    }
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        let image = (info[.editedImage] ?? info[.originalImage]) as? UIImage;
+        profileImage.image = image
+        dismiss(animated: false)
+    }
+    //    var img: UIImageView = {
+    //        let imageView = UIImageView()
+    //        imageView.image = UIImage(named: "7")
+    //        imageView.translatesAutoresizingMaskIntoConstraints = false
+    //        return imageView
+    //    }()
+    //
     let name : UITextField = {
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.placeholder = "Write your name"
@@ -58,7 +58,7 @@ class ProfileVC : UIViewController, UIImagePickerControllerDelegate, UITextField
         $0.backgroundColor = .init(white: 0.85, alpha: 1)
         $0.layer.cornerRadius = 22.5
         $0.textAlignment = .center
-
+        
         return $0
     }(UITextField())
     let Button : UIButton = {
@@ -80,26 +80,28 @@ class ProfileVC : UIViewController, UIImagePickerControllerDelegate, UITextField
     }(UIButton())
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.title = "Profile"
+        navigationController?.navigationBar.prefersLargeTitles = true
         
         let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped))
-             profileImage.addGestureRecognizer(tapRecognizer)
+        profileImage.addGestureRecognizer(tapRecognizer)
         
         view.backgroundColor = .white
-           profileImage.image = .init(systemName: "person.circle")
-            profileImage.tintColor = UIColor(ciColor: .black)
-            profileImage.layer.masksToBounds = true
-            profileImage.layer.cornerRadius = 100
-            profileImage.contentMode = .scaleAspectFit
-            profileImage.translatesAutoresizingMaskIntoConstraints = false
-            view.addSubview(profileImage)
-            NSLayoutConstraint.activate([
-             profileImage.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-             profileImage.topAnchor.constraint(equalTo: view.topAnchor, constant: 200),
-             profileImage.heightAnchor.constraint(equalToConstant: 200),
-             profileImage.widthAnchor.constraint(equalToConstant: 200)
-            ])
+        profileImage.image = .init(systemName: "person.circle")
+        profileImage.tintColor = UIColor(ciColor: .black)
+        profileImage.layer.masksToBounds = true
+        profileImage.layer.cornerRadius = 100
+        profileImage.contentMode = .scaleAspectFit
+        profileImage.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(profileImage)
+        NSLayoutConstraint.activate([
+            profileImage.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            profileImage.topAnchor.constraint(equalTo: view.topAnchor, constant: 200),
+            profileImage.heightAnchor.constraint(equalToConstant: 200),
+            profileImage.widthAnchor.constraint(equalToConstant: 200)
+        ])
         
-                name.font = .boldSystemFont(ofSize: 23)
+        name.font = .boldSystemFont(ofSize: 23)
         name.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(name)
         NSLayoutConstraint.activate([
@@ -121,8 +123,8 @@ class ProfileVC : UIViewController, UIImagePickerControllerDelegate, UITextField
         view.addSubview(Button)
         NSLayoutConstraint.activate([
             Button.topAnchor.constraint(equalTo: view.topAnchor,constant: 570),
-
-//            Button.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 500),
+            
+            //            Button.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 500),
             Button.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
             Button.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30),
             Button.heightAnchor.constraint(equalToConstant: 70)
@@ -181,5 +183,5 @@ class ProfileVC : UIViewController, UIImagePickerControllerDelegate, UITextField
         print("Image Tapped")
         present(imagePicker, animated: true)
     }
-       }
+}
 

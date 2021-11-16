@@ -32,7 +32,7 @@ class UsersService {
                     let status = data["status"] as? String else {
                         continue
                     }
-                    
+                
                 let user = User(
                     name: name, id: id, status: status
                 )

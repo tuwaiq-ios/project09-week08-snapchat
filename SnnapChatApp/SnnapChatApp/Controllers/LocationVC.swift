@@ -17,11 +17,12 @@ class LocationVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.title = "Location"
+        navigationController?.navigationBar.prefersLargeTitles = true
         
-
         let Asir = MKPointAnnotation()
-            Asir.title = "Me"
-            Asir.coordinate = CLLocationCoordinate2D(latitude: 18.2497107, longitude: 42.4584669)
+        Asir.title = "Me"
+        Asir.coordinate = CLLocationCoordinate2D(latitude: 18.2497107, longitude: 42.4584669)
         mapView.addAnnotation(Asir)
         setupMapView()
     }
@@ -34,8 +35,8 @@ class LocationVC: UIViewController {
         mapView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         mapView.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor).isActive = true
         mapView.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor).isActive = true
-    
-  
+        
+        
     }
     
-    }
+}
