@@ -53,9 +53,9 @@ class UsersViewController : UITableViewController {
                     
                     if data["id"] as? String != userID {
                         self.users.append(User(
-                            name: data["name"] as? String,
-                            email: data["email"] as? String,
-                            id: data["id"] as? String,
+                            name: data["name"] as? String ?? "",
+//                            email: data["email"] as? String,
+                            id: data["id"] as? String ?? "",
                             status: data["status"] as? String ?? ""))
                     }
                     
