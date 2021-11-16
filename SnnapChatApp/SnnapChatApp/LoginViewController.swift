@@ -35,7 +35,7 @@ class LoginViewController: UIViewController {
     }
     let nameTextField : UITextField = {
         $0.placeholder = "name"
-        $0.text = "m.albahl.q@gmail.com"
+        $0.text = "mdh@gmail.com"
         $0.textAlignment = .center
         $0.backgroundColor = .init(white: 0.90, alpha: 1)
         $0.layer.cornerRadius = 22.5

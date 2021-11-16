@@ -22,9 +22,10 @@
 		B53147762742CD6000CDA765 /* ContactListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53147752742CD6000CDA765 /* ContactListVC.swift */; };
 		B536E6D627424A040067175A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B536E6D527424A040067175A /* AppDelegate.swift */; };
 		B536E6D827424A040067175A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B536E6D727424A040067175A /* SceneDelegate.swift */; };
-		B536E6DA27424A040067175A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B536E6D927424A040067175A /* ViewController.swift */; };
 		B536E6DF27424A060067175A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B536E6DE27424A060067175A /* Assets.xcassets */; };
 		B536E6E227424A060067175A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B536E6E027424A060067175A /* LaunchScreen.storyboard */; };
+		B56A5C6E2743A04300BCAF0D /* MessagesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56A5C6D2743A04300BCAF0D /* MessagesService.swift */; };
+		B56A5C702743A05300BCAF0D /* UsersService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56A5C6F2743A05300BCAF0D /* UsersService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,10 +46,11 @@
 		B536E6D227424A040067175A /* SnnapChatApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SnnapChatApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B536E6D527424A040067175A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B536E6D727424A040067175A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		B536E6D927424A040067175A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B536E6DE27424A060067175A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B536E6E127424A060067175A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B536E6E327424A060067175A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B56A5C6D2743A04300BCAF0D /* MessagesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesService.swift; sourceTree = "<group>"; };
+		B56A5C6F2743A05300BCAF0D /* UsersService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersService.swift; sourceTree = "<group>"; };
 		BD353D60583F8EE4C101AE7A /* Pods_SnnapChatApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SnnapChatApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -105,7 +107,6 @@
 				B531477127427EBF00CDA765 /* GoogleService-Info.plist */,
 				B536E6D527424A040067175A /* AppDelegate.swift */,
 				B536E6D727424A040067175A /* SceneDelegate.swift */,
-				B536E6D927424A040067175A /* ViewController.swift */,
 				B536E6DE27424A060067175A /* Assets.xcassets */,
 				B536E6E027424A060067175A /* LaunchScreen.storyboard */,
 				B536E6E327424A060067175A /* Info.plist */,
@@ -120,6 +121,8 @@
 				B531476D274251F300CDA765 /* LocationVC.swift */,
 				B531477327429A3F00CDA765 /* CameraVC.swift */,
 				B53147752742CD6000CDA765 /* ContactListVC.swift */,
+				B56A5C6D2743A04300BCAF0D /* MessagesService.swift */,
+				B56A5C6F2743A05300BCAF0D /* UsersService.swift */,
 			);
 			path = SnnapChatApp;
 			sourceTree = "<group>";
@@ -240,14 +243,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				B531476027424D0300CDA765 /* TabVC.swift in Sources */,
+				B56A5C6E2743A04300BCAF0D /* MessagesService.swift in Sources */,
 				B531475E27424CE400CDA765 /* LoginViewController.swift in Sources */,
+				B56A5C702743A05300BCAF0D /* UsersService.swift in Sources */,
 				B531476427424D3900CDA765 /* ProfileVC.swift in Sources */,
 				B53147762742CD6000CDA765 /* ContactListVC.swift in Sources */,
 				B531476C27424DB800CDA765 /* UsersViewController.swift in Sources */,
 				B531476827424D5D00CDA765 /* Message.swift in Sources */,
 				B531476E274251F300CDA765 /* LocationVC.swift in Sources */,
 				B531476A27424D9600CDA765 /* SignUpViewController.swift in Sources */,
-				B536E6DA27424A040067175A /* ViewController.swift in Sources */,
 				B531476627424D4E00CDA765 /* User.swift in Sources */,
 				B536E6D627424A040067175A /* AppDelegate.swift in Sources */,
 				B531477427429A3F00CDA765 /* CameraVC.swift in Sources */,
