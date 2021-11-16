@@ -7,6 +7,7 @@
 
 import UIKit
 import AVFoundation
+
 protocol VideoCollectionViewCellDelegate: AnyObject
 {
    func didTapLikeButton(with model: VideoModel)
@@ -19,9 +20,8 @@ protocol VideoCollectionViewCellDelegate: AnyObject
 }
 
 
-class VideoCollectionViewCell: UICollectionViewCell {
+class VideoCollectionViewCell: UICollectionViewCell, UINavigationControllerDelegate {
     static let identifier = "VideoCollectionViewCell"
-   
     private var collectionView: UICollectionView?
 //Labels
     private let usernameLabel: UILabel = {
@@ -103,8 +103,10 @@ class VideoCollectionViewCell: UICollectionViewCell {
             profileButton.addTarget(self, action: #selector(didTapProfileButton), for: .touchDown)
             commentButton.addTarget(self, action: #selector(didTapCommentButton), for: .touchDown)
             shareButton.addTarget(self, action: #selector(didTapShareButton), for: .touchDown)
-           
-            likeButton.imageView?.tintColor = .white
+           ///////////////////////////////
+            ///
+            
+        
 //            videoContainer.clipsToBounds = true
             //Video Back
             
@@ -114,15 +116,28 @@ class VideoCollectionViewCell: UICollectionViewCell {
             @objc private func didTapLikeButton() {
             guard let model = model else { return }
             delegate?.didTapLikeButton(with: model)
+            
+                
             }
             @objc private func didTapCommentButton() {
             guard let model = model else { return }
             delegate?.didTapCommentButton(with: model)
             }
-            @objc private func didTapShareButton() {
+  
+    @objc private func didTapShareButton(_ sender: Any) {
+                
+                    let ShareButton = UIActivityViewController(activityItems: [self.usernameLabel.text], applicationActivities: nil)
+        ShareButton.popoverPresentationController?.sourceView = self.videoContainer
+//        self.present(ShareButton, AnimationTransition: true, complation: nil)
+//                    self.present(ShareButton, animated: true, completion: nil)
+                
             guard let model = model else { return }
             delegate?.didTapShareButton(with: model)
-            }
+                
+                  }
+    
+            
+
             @objc private func didTapProfileButton() {
             guard let model = model else { return }
             delegate?.didTapProfileButton(with: model)
@@ -134,7 +149,7 @@ class VideoCollectionViewCell: UICollectionViewCell {
                 
                 videoContainer.frame = videoContainer.bounds
                 
-                let size = contentView.frame.size.width/7
+                let size = contentView.frame.size.width/9
                 let width = contentView.frame.size.width
                 let height = contentView.frame.size.height - 100
                 // Buttons
@@ -160,7 +175,7 @@ class VideoCollectionViewCell: UICollectionViewCell {
     }
     
         public func configure(with model: VideoModel) {
-            contentView.backgroundColor = .red
+            contentView.backgroundColor = .white
             
             self.model = model
         configureVideo()
