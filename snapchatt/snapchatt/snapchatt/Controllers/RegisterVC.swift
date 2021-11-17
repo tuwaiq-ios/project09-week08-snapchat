@@ -16,7 +16,7 @@ class RegisterVC: UIViewController , UIImagePickerControllerDelegate , UINavigat
 	lazy var profileImage: UIImageView = {
 	   let image = UIImageView()
 		image.translatesAutoresizingMaskIntoConstraints = false
-		image.backgroundColor = .yellow
+		image.backgroundColor = .systemCyan
 		image.isUserInteractionEnabled = true
 		image.layer.cornerRadius = 25
 
@@ -80,7 +80,7 @@ class RegisterVC: UIViewController , UIImagePickerControllerDelegate , UINavigat
 		registerButton.translatesAutoresizingMaskIntoConstraints = false
 		registerButton.setTitle("Register", for: .normal)
 		registerButton.setTitleColor(.black, for: .normal)
-		registerButton.backgroundColor = .yellow
+		registerButton.backgroundColor = .systemCyan
 		registerButton.layer.cornerRadius = 12
 		registerButton.layer.masksToBounds = true
 		registerButton.addTarget(self, action: #selector(registerButtonTapped), for: .touchUpInside)
