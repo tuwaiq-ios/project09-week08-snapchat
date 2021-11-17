@@ -141,7 +141,7 @@ class ProfileVC: UIViewController {
                 print("Error writing document: \(err)")
             } else {
                 try? Auth.auth().signOut()
-                self.dismiss(animated: true, completion: nil)
+                self.present(Login(), animated: true, completion: nil)
                 print("ChangedUserStatus")
             }
         }
