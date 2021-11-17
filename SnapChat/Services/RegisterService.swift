@@ -40,6 +40,7 @@ class RegisterService {
                     name: (data["name"] as? String) ?? "No name",
                     status: (data["status"] as? String) ?? "No status",
                     image: (data["image"] as? String) ?? "No image",
+                    userEmail: "",
                     location: (data["status"] as? String) ?? "No status"
                 )
                 users.append(user)

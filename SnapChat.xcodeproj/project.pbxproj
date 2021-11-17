@@ -37,6 +37,10 @@
 		C9F3E3D8273AFDB10093B42F /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F3E3D7273AFDB10093B42F /* MapVC.swift */; };
 		C9F3E3DC273AFDCE0093B42F /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F3E3DB273AFDCE0093B42F /* ChatVC.swift */; };
 		C9F3E3DE273AFE230093B42F /* UsersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F3E3DD273AFE230093B42F /* UsersVC.swift */; };
+		CCA0D6002744D31100253A85 /* ChatUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA0D5FF2744D31100253A85 /* ChatUser.swift */; };
+		CCA0D6022744D3B400253A85 /* ConversationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA0D6012744D3B400253A85 /* ConversationVC.swift */; };
+		CCA0D6042744D3B900253A85 /* ChatVCcell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA0D6032744D3B900253A85 /* ChatVCcell.swift */; };
+		CCA0D6062744D3C000253A85 /* DMVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA0D6052744D3C000253A85 /* DMVC.swift */; };
 		D36D503995DA990AEAD02CB1 /* Pods_SnapChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B2D15505711CF2F539B5554 /* Pods_SnapChat.framework */; };
 /* End PBXBuildFile section */
 
@@ -75,6 +79,10 @@
 		C9F3E3D7273AFDB10093B42F /* MapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapVC.swift; sourceTree = "<group>"; };
 		C9F3E3DB273AFDCE0093B42F /* ChatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatVC.swift; sourceTree = "<group>"; };
 		C9F3E3DD273AFE230093B42F /* UsersVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersVC.swift; sourceTree = "<group>"; };
+		CCA0D5FF2744D31100253A85 /* ChatUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatUser.swift; sourceTree = "<group>"; };
+		CCA0D6012744D3B400253A85 /* ConversationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationVC.swift; sourceTree = "<group>"; };
+		CCA0D6032744D3B900253A85 /* ChatVCcell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatVCcell.swift; sourceTree = "<group>"; };
+		CCA0D6052744D3C000253A85 /* DMVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMVC.swift; sourceTree = "<group>"; };
 		D72834839C2AD10D690C3792 /* Pods-SnapChat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SnapChat.debug.xcconfig"; path = "Target Support Files/Pods-SnapChat/Pods-SnapChat.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -120,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				C953422F273FFA4000E149B0 /* RegisterService.swift */,
+				CCA0D5FF2744D31100253A85 /* ChatUser.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -147,6 +156,9 @@
 				C9F3E3DB273AFDCE0093B42F /* ChatVC.swift */,
 				C9F3E3DD273AFE230093B42F /* UsersVC.swift */,
 				84374BF12741373E008113F1 /* CamVC.swift */,
+				CCA0D6012744D3B400253A85 /* ConversationVC.swift */,
+				CCA0D6032744D3B900253A85 /* ChatVCcell.swift */,
+				CCA0D6052744D3C000253A85 /* DMVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -324,18 +336,22 @@
 				C9F3E3DC273AFDCE0093B42F /* ChatVC.swift in Sources */,
 				C9534232273FFAB000E149B0 /* User.swift in Sources */,
 				C9F3E3D6273AFDA20093B42F /* MyProfileVC.swift in Sources */,
+				CCA0D6022744D3B400253A85 /* ConversationVC.swift in Sources */,
+				CCA0D6002744D31100253A85 /* ChatUser.swift in Sources */,
 				C9F3E3C2273AD47A0093B42F /* LogInVC.swift in Sources */,
 				84374C6127429571008113F1 /* TikTokVC.swift in Sources */,
 				84374BEA27413090008113F1 /* LoginOrRegisterVC.swift in Sources */,
 				84374BEC27413510008113F1 /* Conversations.swift in Sources */,
 				84374BEE27413523008113F1 /* Location.swift in Sources */,
 				C9F3E3BE273AD47A0093B42F /* AppDelegate.swift in Sources */,
+				CCA0D6062744D3C000253A85 /* DMVC.swift in Sources */,
 				C9F3E3D2273ADB1D0093B42F /* TabVC.swift in Sources */,
 				C9F3E3D8273AFDB10093B42F /* MapVC.swift in Sources */,
 				C9534230273FFA4000E149B0 /* RegisterService.swift in Sources */,
 				C9F3E3D4273ADCED0093B42F /* RegisterVC.swift in Sources */,
 				84374BF027413531008113F1 /* Message.swift in Sources */,
 				C9F3E3DE273AFE230093B42F /* UsersVC.swift in Sources */,
+				CCA0D6042744D3B900253A85 /* ChatVCcell.swift in Sources */,
 				C9F3E3C0273AD47A0093B42F /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
