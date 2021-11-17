@@ -6,13 +6,12 @@
 //
 
 import Foundation
-
+import MessageKit
 import UIKit
-import FirebaseFirestore
+import CoreLocation
 
-struct Location {
-    let id: String
-    let userId: String
-    let location: String
- 
+struct LocationMKit: LocationItem{
+    var location: CLLocation
+    var size: CGSize
+    
 }

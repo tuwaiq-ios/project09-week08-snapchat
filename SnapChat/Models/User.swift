@@ -12,5 +12,6 @@ struct User {
     let name: String
     let status : String
     let image : String
+    var userEmail: String
     let location : String
 }

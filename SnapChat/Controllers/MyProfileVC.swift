@@ -13,15 +13,7 @@ import FirebaseFirestore
 class MyProfileVC: UIViewController , UIImagePickerControllerDelegate , UINavigationControllerDelegate {
     
     var users: Array<User> = []
-    
-    lazy var containerView: UIView = {
-        let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .white
-        view.layer.cornerRadius = 20
-        return view
-    }()
-    
+
     //image picker
     lazy var profileImage: UIImageView = {
        let image = UIImageView()
@@ -46,23 +38,18 @@ class MyProfileVC: UIViewController , UIImagePickerControllerDelegate , UINaviga
        let label = UITextField()
        label.translatesAutoresizingMaskIntoConstraints = false
        label.text = ""
-        label.borderStyle = .line
+        label.placeholder = "Name.."
+//        label.borderStyle = .line
        return label
    }()
-    lazy var usernameStackView: UIStackView = {
-        let view = UIStackView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.axis = .horizontal
-        view.spacing = 16
-        return view
-    }()
-    
+
     // user status
     lazy var userStatusLabel: UITextField = {
         let label = UITextField()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = ""
-        label.borderStyle = .line
+        label.placeholder = "status.."
+//        label.borderStyle = .line
         return label
     }()
     
@@ -70,28 +57,27 @@ class MyProfileVC: UIViewController , UIImagePickerControllerDelegate , UINaviga
     lazy var saveButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Save", for: .normal)
-        button.setTitleColor(.white, for: .normal)
-        button.titleLabel?.font = UIFont.preferredFont(forTextStyle: .headline, compatibleWith: .init(legibilityWeight: .bold))
-        button.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        button.widthAnchor.constraint(equalToConstant: 250).isActive = true
+        button.setTitleColor(.black, for: .normal)
+        button.titleLabel?.font = .systemFont(ofSize: 20, weight: .medium)
+        button.translatesAutoresizingMaskIntoConstraints = false
         button.layer.cornerRadius = 25
         button.addTarget(self, action: #selector(updateButtonTapped), for: .touchUpInside)
         button.layer.masksToBounds = true
-        button.backgroundColor = .black
+        button.backgroundColor = .systemGray6
         return button
     }()
     
     lazy var shareButton: UIButton = {
         let button = UIButton (type: .system)
         button.setTitle("ShareURL", for: .normal)
-        button.setTitleColor(.white, for: .normal)
-        button.titleLabel?.font = UIFont.preferredFont(forTextStyle: .headline, compatibleWith: .init(legibilityWeight: .bold))
-        button.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        button.widthAnchor.constraint(equalToConstant: 250).isActive = true
+        button.setTitleColor(.black, for: .normal)
+        button.backgroundColor = .quaternaryLabel
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.titleLabel?.font = .systemFont(ofSize: 20, weight: .medium)
         button.layer.cornerRadius = 25
         button.addTarget(self, action: #selector(sharePressed), for: .touchUpInside)
         button.layer.masksToBounds = true
-        button.backgroundColor = .black
+        button.backgroundColor = .systemGray6
 
         return button
     }()
@@ -100,20 +86,20 @@ class MyProfileVC: UIViewController , UIImagePickerControllerDelegate , UINaviga
         let button = UIButton(type: .system)
         button.setTitle("Sing out", for: .normal)
         button.setTitleColor(.red, for: .normal)
-        button.titleLabel?.font = UIFont.preferredFont (forTextStyle: .headline, compatibleWith: .init(legibilityWeight: .bold))
-        button.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        button.widthAnchor.constraint(equalToConstant: 250).isActive = true
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.titleLabel?.font = .systemFont(ofSize: 20, weight: .bold)
         button.addTarget(self, action: #selector(singOutButtonTapped), for: .touchUpInside)
         return button
     }()
-    // stack view to sing out and share URL
-    lazy var verticalStackView: UIStackView = {
-        let view = UIStackView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.axis = .vertical
-        view.distribution = .equalSpacing
-        return view
-    }()
+    lazy var mode = UISwitch()
+    @objc func mode (_ sender: UISwitch) {
+        if mode.isOn {
+          view.backgroundColor = .white
+        }
+        else {
+          view.backgroundColor = .black
+    }
+    }
     
     override func viewDidLoad () {
         super.viewDidLoad()
@@ -123,29 +109,62 @@ class MyProfileVC: UIViewController , UIImagePickerControllerDelegate , UINaviga
          profileImage.addGestureRecognizer(tapRecognizer)
         
         view.backgroundColor = .white
-   
-        view.addSubview(containerView)
-        containerView.addSubview (verticalStackView)
-        verticalStackView.addArrangedSubview(profileImage)
-        verticalStackView.addArrangedSubview (nameLabel)
-        verticalStackView.addArrangedSubview(usernameStackView)
-        usernameStackView.addArrangedSubview (userStatusLabel)
-        verticalStackView.addArrangedSubview(saveButton)
-        verticalStackView.addArrangedSubview(shareButton)
-        verticalStackView.addArrangedSubview(singOutButton)
         
+        view.addSubview(mode)
         NSLayoutConstraint.activate([
-            containerView.heightAnchor.constraint(equalToConstant: 500),
-            containerView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            containerView.leadingAnchor.constraint (equalToSystemSpacingAfter: view.leadingAnchor, multiplier: 6),
-            view.trailingAnchor.constraint(equalToSystemSpacingAfter: containerView.trailingAnchor, multiplier: 6),
-            verticalStackView.topAnchor.constraint(equalToSystemSpacingBelow: containerView.topAnchor, multiplier: 2),
-            verticalStackView.leadingAnchor.constraint(equalToSystemSpacingAfter: containerView.leadingAnchor, multiplier: 6),
-            containerView.trailingAnchor.constraint(equalToSystemSpacingAfter: verticalStackView.trailingAnchor, multiplier: 6),
-            containerView.bottomAnchor.constraint (equalToSystemSpacingBelow: verticalStackView.bottomAnchor, multiplier: 3),
-            profileImage.heightAnchor.constraint (equalToConstant: 200),
-            profileImage.widthAnchor.constraint(equalToConstant: 200),
+            mode.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20),
+            mode.topAnchor.constraint(equalTo: view.topAnchor, constant: 100),
         ])
+        view.addSubview(profileImage)
+        NSLayoutConstraint.activate([
+            profileImage.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -100),
+            profileImage.topAnchor.constraint(equalTo: view.topAnchor, constant: 160),
+            profileImage.widthAnchor.constraint(equalToConstant: 200),
+            profileImage.heightAnchor.constraint(equalToConstant: 200),
+        ])
+        view.addSubview(nameLabel)
+        NSLayoutConstraint.activate([
+            nameLabel.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -100),
+            nameLabel.topAnchor.constraint(equalTo: profileImage.topAnchor, constant: 250),
+            nameLabel.widthAnchor.constraint(equalToConstant: 200),
+            nameLabel.heightAnchor.constraint(equalToConstant: 40),
+        ])
+        
+        //Constraint lastName
+        view.addSubview(userStatusLabel)
+        NSLayoutConstraint.activate([
+            userStatusLabel.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -100),
+            userStatusLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 16),
+            userStatusLabel.widthAnchor.constraint(equalToConstant: 200),
+            userStatusLabel.heightAnchor.constraint(equalToConstant: 40),
+        ])
+        //Constraint userEmail
+        view.addSubview(saveButton)
+        NSLayoutConstraint.activate([
+            saveButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -70),
+            saveButton.topAnchor.constraint(equalTo: userStatusLabel.bottomAnchor, constant: 16),
+            saveButton.widthAnchor.constraint(equalToConstant: 250),
+            saveButton.heightAnchor.constraint(equalToConstant: 50),
+        ])
+        
+        //Constraint userPassword
+        view.addSubview(shareButton)
+        NSLayoutConstraint.activate([
+            shareButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -70),
+            shareButton.topAnchor.constraint(equalTo: saveButton.bottomAnchor, constant: 16),
+            shareButton.widthAnchor.constraint(equalToConstant: 250),
+            shareButton.heightAnchor.constraint(equalToConstant: 50),
+        ])
+        //Constraint loginButton
+        view.addSubview((singOutButton))
+        NSLayoutConstraint.activate([
+            (singOutButton).rightAnchor.constraint(equalTo: view.rightAnchor, constant: -70),
+            (singOutButton).topAnchor.constraint(equalTo: (shareButton).bottomAnchor, constant: 30),
+            (singOutButton).widthAnchor.constraint(equalToConstant: 250),
+            (singOutButton).heightAnchor.constraint(equalToConstant: 50),
+        ])
+        
+    
         guard let currentUserID = Auth.auth().currentUser?.uid else {return}
         RegisterService.shared.listenToUsers { ubdateUser in
             self.users = ubdateUser

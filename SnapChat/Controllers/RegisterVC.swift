@@ -197,7 +197,7 @@ class RegisterVC: UIViewController , UIImagePickerControllerDelegate , UINavigat
         let firstNam = firstName.text ?? ""
         let lastNam = lastName.text ?? ""
         let uuid = UUID().uuidString
-        let image = profileImage.image 
+        let image = profileImage.image
         
         if email.isEmpty || password.isEmpty || firstNam.isEmpty || lastNam.isEmpty {
             return
@@ -210,7 +210,7 @@ class RegisterVC: UIViewController , UIImagePickerControllerDelegate , UINavigat
         }
         
         RegisterService.shared.addUser(
-            user: User(id: uuid, name: firstNam,status: "busy", image: "gs://snapapp-e0267.appspot.com", location: "")
+            user: User(id: uuid, name: firstNam,status: "busy", image: "gs://snapapp-e0267.appspot.com", userEmail: "", location: "")
         )
         //open TabVC bage
         let vc = TabVC()
