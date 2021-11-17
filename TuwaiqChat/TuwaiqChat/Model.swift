@@ -13,3 +13,10 @@ struct User {
     var email : String?
     var profileImage : String?
 }
+struct Message {
+    var id : String?
+    var content : String?
+    var sender : String?
+    var reciever : String?
+}
+

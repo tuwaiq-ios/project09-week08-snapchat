@@ -71,6 +71,19 @@ class UserProfileVC : UIViewController {
     }(UILabel())
     
 }
+let signoutButton : UIButton = {
+    $0.translatesAutoresizingMaskIntoConstraints = false
+    $0.setTitle("Sign out", for: .normal)
+    $0.layer.cornerRadius = 20
+    $0.backgroundColor = UIColor(red: 0.92, green: 0.55, blue: 0.55, alpha: 1.00)
+    $0.layer.cornerRadius = 20
+    $0.tintColor = .darkGray
+    $0.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
+    return $0
+}(UIButton(type: .system))
+
+
+
 
 extension UserProfileVC {
     func setupUI() {
@@ -81,12 +94,11 @@ extension UserProfileVC {
         view.addSubview(userImage)
         view.addSubview(userNameLabel)
         view.addSubview(emailLabel)
+        view.addSubview(signoutButton)
         
-        userImage.tintColor = .systemBlue
-        userImage.isUserInteractionEnabled = true
-        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped))
-        userImage.addGestureRecognizer(tapRecognizer)
-        view.addSubview(userImage)
+        signoutButton.addTarget(self, action: #selector(signoutAction), for: .touchUpInside)
+        
+        
         NSLayoutConstraint.activate([
             userImage.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 50),
             userImage.centerXAnchor.constraint(equalTo: view.centerXAnchor),
@@ -103,9 +115,23 @@ extension UserProfileVC {
             emailLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             emailLabel.heightAnchor.constraint(equalToConstant: 40),
             
+            
+            signoutButton.topAnchor.constraint(equalTo: emailLabel.bottomAnchor, constant: 20),
+            signoutButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 50),
+            signoutButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -50),
+            signoutButton.heightAnchor.constraint(equalToConstant: 40)
+            
         ])
     }
     
+    @objc func signoutAction() {
+        try? Auth.auth().signOut()
+        let vc = UINavigationController(rootViewController: SignInVC())
+        vc.modalPresentationStyle = .fullScreen
+        
+        present(SignInVC(), animated: true, completion: nil)
+    }
+
     func setupImagePicker() {
         
         imagePicker.delegate = self

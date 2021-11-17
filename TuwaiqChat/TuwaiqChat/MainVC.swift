@@ -47,13 +47,17 @@ class MainVC : UIViewController {
     
     func getAllUsers() {
         Firestore.firestore().collection("Users").addSnapshotListener { snapshot, error in
+            self.users.removeAll()
             if error == nil {
                 if let value = snapshot?.documents {
                     for user in value {
                         let userData = user.data()
                         
-                            
+                        guard let currentUserID = Auth.auth().currentUser?.uid else {return}
+                        if userData["id"] as? String != currentUserID {
                             self.users.append(User(id: userData["id"] as? String, name: userData["name"] as? String, email: userData["email"] as? String, profileImage: userData["profileImage"] as? String))
+                        }
+                            
                     }
                 }
                 self.usersTableView.reloadData()
