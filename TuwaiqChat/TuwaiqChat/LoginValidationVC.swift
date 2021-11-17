@@ -16,7 +16,7 @@ class LoginValidationVC : UIViewController {
         
         if Auth.auth().currentUser?.uid != nil {
             // go to MainVC
-            let vc = UINavigationController(rootViewController: MainVC())
+            let vc = UINavigationController(rootViewController: TabBarVC())
             vc.modalTransitionStyle = .crossDissolve
             vc.modalPresentationStyle = .fullScreen
             DispatchQueue.main.async {

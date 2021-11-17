@@ -20,18 +20,23 @@ class MessageCell : UITableViewCell {
         selectionStyle = .none
         
         addSubview(mainView)
+        mainView.addSubview(bubbleImage)
         mainView.addSubview(messageLabel)
         
         NSLayoutConstraint.activate([
             mainView.topAnchor.constraint(equalTo: self.topAnchor, constant: 10),
             mainView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -10),
-            
             mainView.widthAnchor.constraint(equalToConstant: 250),
+            
+            bubbleImage.topAnchor.constraint(equalTo: mainView.topAnchor),
+            bubbleImage.bottomAnchor.constraint(equalTo: mainView.bottomAnchor),
+            bubbleImage.leftAnchor.constraint(equalTo: mainView.leftAnchor),
+            bubbleImage.rightAnchor.constraint(equalTo: mainView.rightAnchor),
             
             messageLabel.topAnchor.constraint(equalTo: mainView.topAnchor, constant: 10),
             messageLabel.bottomAnchor.constraint(equalTo: mainView.bottomAnchor, constant: -10),
-            messageLabel.leftAnchor.constraint(equalTo: mainView.leftAnchor, constant: 10),
-            messageLabel.rightAnchor.constraint(equalTo: mainView.rightAnchor, constant: -10),
+            messageLabel.leftAnchor.constraint(equalTo: mainView.leftAnchor, constant: 20),
+            messageLabel.rightAnchor.constraint(equalTo: mainView.rightAnchor, constant: -20),
             
         ])
         
@@ -45,6 +50,12 @@ class MessageCell : UITableViewCell {
         $0.layer.cornerRadius = 8
         return $0
     }(UIView())
+    
+    lazy var bubbleImage : UIImageView = {
+        $0.translatesAutoresizingMaskIntoConstraints = false
+        $0.contentMode = .scaleToFill
+        return $0
+    }(UIImageView())
     
     
     let messageLabel : UILabel = {

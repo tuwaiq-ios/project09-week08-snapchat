@@ -91,7 +91,7 @@ class SignInVC: UIViewController {
         
         Auth.auth().signIn(withEmail: emailView.textField.text!, password: passwordView.textField.text!) { result, error in
             if error == nil {
-                let vc = UINavigationController(rootViewController: MainVC())
+                let vc = UINavigationController(rootViewController: TabBarVC())
                 vc.modalTransitionStyle = .crossDissolve
                 vc.modalPresentationStyle = .fullScreen
                 self.present(vc, animated: true, completion: nil)
@@ -153,6 +153,4 @@ extension SignInVC {
     
     
 }
-
-
 
