@@ -24,6 +24,8 @@
 		E88D4D1027414987006C2560 /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88D4D0F27414987006C2560 /* MapVC.swift */; };
 		E88D4D12274149B6006C2560 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88D4D11274149B6006C2560 /* HomeVC.swift */; };
 		E88D4D14274149E7006C2560 /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88D4D13274149E7006C2560 /* ChatVC.swift */; };
+		FA3EF5FC2744DF880065AFE4 /* SpotlightVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3EF5FB2744DF880065AFE4 /* SpotlightVC.swift */; };
+		FA3EF5FE2744E3A60065AFE4 /* SpotlightCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3EF5FD2744E3A60065AFE4 /* SpotlightCell.swift */; };
 		FA9CB0FB2740483700FBE4C7 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9CB0FA2740483700FBE4C7 /* LoginVC.swift */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +51,8 @@
 		E88D4D11274149B6006C2560 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		E88D4D13274149E7006C2560 /* ChatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatVC.swift; sourceTree = "<group>"; };
 		F58AC89314CFD9324521C033 /* Pods-JetChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JetChat.release.xcconfig"; path = "Target Support Files/Pods-JetChat/Pods-JetChat.release.xcconfig"; sourceTree = "<group>"; };
+		FA3EF5FB2744DF880065AFE4 /* SpotlightVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotlightVC.swift; sourceTree = "<group>"; };
+		FA3EF5FD2744E3A60065AFE4 /* SpotlightCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotlightCell.swift; sourceTree = "<group>"; };
 		FA9CB0FA2740483700FBE4C7 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -89,6 +93,7 @@
 				0F20C8F62740013000F231A4 /* SceneDelegate.swift */,
 				E88D4D1527414F3C006C2560 /* Controller */,
 				E8084B4327429D5100CA36A8 /* Chat */,
+				FA3EF5F82744DC810065AFE4 /* Spotlight */,
 				0FB116702743D33300E63F2E /* Models */,
 				E88D4D0D27414962006C2560 /* CustomTabBar.swift */,
 				0F20C8FA2740013000F231A4 /* Main.storyboard */,
@@ -146,6 +151,15 @@
 				0F1BC68127424AFB00BD67DC /* ProfileVC.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		FA3EF5F82744DC810065AFE4 /* Spotlight */ = {
+			isa = PBXGroup;
+			children = (
+				FA3EF5FB2744DF880065AFE4 /* SpotlightVC.swift */,
+				FA3EF5FD2744E3A60065AFE4 /* SpotlightCell.swift */,
+			);
+			path = Spotlight;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -267,6 +281,7 @@
 				0FB1166C2743D16900E63F2E /* User.swift in Sources */,
 				E8084B42274293BE00CA36A8 /* DMScreen.swift in Sources */,
 				0FB1166A2743D14E00E63F2E /* Chat.swift in Sources */,
+				FA3EF5FC2744DF880065AFE4 /* SpotlightVC.swift in Sources */,
 				E88D4D14274149E7006C2560 /* ChatVC.swift in Sources */,
 				E88D4D12274149B6006C2560 /* HomeVC.swift in Sources */,
 				0FB1166E2743D18600E63F2E /* Location.swift in Sources */,
@@ -275,6 +290,7 @@
 				E88D4D0E27414962006C2560 /* CustomTabBar.swift in Sources */,
 				0F20C8F52740013000F231A4 /* AppDelegate.swift in Sources */,
 				E8084B402742935F00CA36A8 /* ChatTVCell.swift in Sources */,
+				FA3EF5FE2744E3A60065AFE4 /* SpotlightCell.swift in Sources */,
 				0F20C8F72740013000F231A4 /* SceneDelegate.swift in Sources */,
 				FA9CB0FB2740483700FBE4C7 /* LoginVC.swift in Sources */,
 			);
@@ -426,7 +442,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 5S67CQMAY2;
+				DEVELOPMENT_TEAM = 3AW2YNGT24;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = JetChat/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -455,7 +471,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 5S67CQMAY2;
+				DEVELOPMENT_TEAM = 3AW2YNGT24;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = JetChat/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
