@@ -21,9 +21,9 @@ class TabBarCustom: UITabBarController {
             
             barItem(tabBarTitle: "Chat", tabBarImage: UIImage(systemName: "message")!.withTintColor(.white, renderingMode: .alwaysOriginal), viewController: ChatVC()),
             
-            barItem(tabBarTitle: "Profiles", tabBarImage: UIImage(systemName: "message")!.withTintColor(.white, renderingMode: .alwaysOriginal), viewController: ProfileVC()),
+            barItem(tabBarTitle: "Profiles", tabBarImage: UIImage(systemName: "person")!.withTintColor(.white, renderingMode: .alwaysOriginal), viewController: ProfileVC()),
             
-            barItem(tabBarTitle: "Play", tabBarImage: UIImage(systemName: "message")!.withTintColor(.white, renderingMode: .alwaysOriginal), viewController: SpotlightVC())
+            barItem(tabBarTitle: "Play", tabBarImage: UIImage(systemName: "play")!.withTintColor(.white, renderingMode: .alwaysOriginal), viewController: SpotlightVC())
             
         ]
         

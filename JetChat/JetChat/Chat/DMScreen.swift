@@ -25,7 +25,6 @@ class DMScreen: MessagesViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view.
         setupLocation()
         title = barTitle
         messagesCollectionView.messagesDataSource = self
@@ -46,13 +45,11 @@ class DMScreen: MessagesViewController {
         
         //from inputBarAccessortyView
         messageInputBar.delegate = self
-        
         fetchMessages()
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         //present keyboard
-        
         self.messageInputBar.inputTextView.becomeFirstResponder()
         
     }
@@ -104,8 +101,8 @@ class DMScreen: MessagesViewController {
     
     private func  fetchMessages() {
         
-        self.messages.removeAll()
-
+//        self.messages.removeAll()
+        
         db.collection("messages").whereField("messagesBetween", isEqualTo: [user, barTitle].sorted())
             .order(by: "messageSentDate")
             .addSnapshotListener { (querySnapshot, error) in
@@ -125,6 +122,7 @@ class DMScreen: MessagesViewController {
                                let displayName = data["displayName"] as? String,
                                let kind = data["kind"] as? String
                             {
+                                
                                 if kind == "text" {
                                     let messageSentDateNEW = self.stringToDate(messageSentDate)
                                     let newMessage = MessageKit(sender: SenderMKit(senderId: senderId, displayName: displayName), messageId: messageId, sentDate: messageSentDateNEW, kind: .text(messageBody))
@@ -138,7 +136,6 @@ class DMScreen: MessagesViewController {
                                 }else if kind == "location"{
                                     
                                     let message = messageBody.components(separatedBy: ",")
-                                    
                                     
                                     let messageSentDateNEW = self.stringToDate(messageSentDate)
                                     let newMessage = MessageKit(sender: SenderMKit(senderId: senderId, displayName: displayName), messageId: messageId, sentDate: messageSentDateNEW,
@@ -214,7 +211,7 @@ extension DMScreen: MessagesDataSource, MessagesLayoutDelegate, MessagesDisplayD
     }
     
     func backgroundColor(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> UIColor {
-        return isFromCurrentSender(message: message) ? UIColor.green : UIColor.systemGray4
+        return isFromCurrentSender(message: message) ? UIColor.purple : UIColor.green
     }
     
     
