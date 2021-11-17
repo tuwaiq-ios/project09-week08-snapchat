@@ -7,11 +7,12 @@
 import UIKit
 
 
-class PeopleVC: UIViewController {
+class PeopleVC: UIViewController,  UISearchBarDelegate{
     
     let cellId = "PeopleCell"
     var people: [User] = []
     
+    lazy var searchBar:UISearchBar = UISearchBar()
     lazy var peopleTV: UITableView = {
         let tv = UITableView()
         tv.register(UITableViewCell.self, forCellReuseIdentifier: cellId)
@@ -29,6 +30,13 @@ class PeopleVC: UIViewController {
             self.peopleTV.reloadData()
         }
         
+        searchBar.searchBarStyle = UISearchBar.Style.default
+       searchBar.placeholder = " Search..."
+       searchBar.sizeToFit()
+       searchBar.isTranslucent = false
+       searchBar.backgroundImage = UIImage()
+       searchBar.delegate = self
+       navigationItem.titleView = searchBar
         view.backgroundColor = .brown
         let image = UIImage(systemName: "chat")
         tabBarItem = .init(title: "People", image: image, selectedImage: image)
@@ -40,6 +48,10 @@ class PeopleVC: UIViewController {
             peopleTV.leftAnchor.constraint(equalTo: view.leftAnchor),
             peopleTV.bottomAnchor.constraint(equalTo: view.bottomAnchor),
         ])
+    }
+    func searchBar(_ searchBar: UISearchBar, textDidChange textSearched: String)
+    {
+        
     }
     
 }
