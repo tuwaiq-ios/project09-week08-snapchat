@@ -45,11 +45,11 @@ class UsersVC : UITableViewController {
         
         Firestore.firestore().collection("users").document(curruntUserId).addSnapshotListener { documnet, error in
             let data = documnet?.data()
-            let curruntUserInfo = User(id: curruntUserId,
-                                       name: data?["name"] as! String,
-                                       status: data!["status"] as! String,
-                                       image: data?["image"] as! String,
-                                       location: data?["location"] as! String
+			let curruntUserInfo = User(id: curruntUserId,
+									   name: data?["name"] as? String ?? "",
+                                       status: data?["status"] as? String ?? "",
+                                       image: data?["image"] as? String ?? "",
+                                       location: data?["location"] as? String ?? ""
             )
             
             let filterField = [otherUser.id, curruntUserId].sorted().joined()

@@ -7,7 +7,7 @@
 
 import UIKit
 import FirebaseFirestore
-// add struct Message
+
 struct Message {
     let id: String
     let senderId: String
@@ -16,3 +16,11 @@ struct Message {
     let timestamp: Timestamp
     let conversationsId : String
 }
+//
+//struct Message {
+//	let content : String?
+//	let sender : String?
+//	let reciever : String?
+//	let id : String
+//	let timestamp : Timestamp?
+//}
