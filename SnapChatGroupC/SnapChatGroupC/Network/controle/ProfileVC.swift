@@ -83,7 +83,7 @@ class ProfileVC : UIViewController, UIImagePickerControllerDelegate,UITextFieldD
         profileImage.addGestureRecognizer(tapRecognizer)
         
         view.backgroundColor = .white
-        profileImage.image = UIImage(named: "455")
+        profileImage.image = .init(systemName: "person.circle")
         profileImage.tintColor = UIColor(ciColor: .black)
         profileImage.layer.masksToBounds = true
         profileImage.layer.cornerRadius = 100
@@ -143,6 +143,8 @@ class ProfileVC : UIViewController, UIImagePickerControllerDelegate,UITextFieldD
                 }
                 self.name.text = doucument?.data()?["name"] as? String
                 self.status.text = doucument?.data()?["status"] as? String
+                self.profileImage.image = doucument?.data()?["image"] as? UIImage 
+                
             }
     }
     
@@ -158,6 +160,7 @@ class ProfileVC : UIViewController, UIImagePickerControllerDelegate,UITextFieldD
             "name" : name.text as Any,
             "id" : currentUserID,
             "status" :status.text as Any,
+            "image" : "\(profileImage.image)" as Any,
         ],merge: true)
         let alert1 = UIAlertController(
             title: ("Saved"),

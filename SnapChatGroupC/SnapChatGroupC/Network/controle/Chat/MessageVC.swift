@@ -88,9 +88,10 @@ class MessageVC:  UIViewController, UITableViewDelegate, UITableViewDataSource {
                             let id = user["id"] as? String ?? ""
                             let name = user["name"] as? String ?? ""
                          let status = user["status"] as? String ?? ""
+                        let image = user["image"] as? String ?? ""
                         let latitude = user["latitude"] as? Double ?? 0
                         let longitude = user["longitude"] as? Double ?? 0
-                    let curUser = User(id: id, name: name, status: status, latitude: latitude, longitude: longitude)
+                        let curUser = User(id: id, name: name, status: status, latitude: latitude, longitude: longitude, image: image)
                         account.append(curUser)
 
                 }
