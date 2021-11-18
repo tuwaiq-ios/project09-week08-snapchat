@@ -12,6 +12,9 @@ import SDWebImage
 class MainVC : UIViewController {
     
     var users = [User]()
+    var filteredUsers = [User]()
+    
+    var isSearching = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,18 +24,19 @@ class MainVC : UIViewController {
         let profileButton = UIBarButtonItem(image: UIImage(systemName: "person.circle.fill"), style: .plain, target: self, action: #selector(showProfile))
         navigationItem.rightBarButtonItem = profileButton
     }
+   
     
     @objc func showProfile() {
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         navigationController?.pushViewController(UserProfileVC(), animated: true)
     }
     
-    let searchBar : CustomTextFieldView = {
+    lazy var searchBar : UISearchBar = {
         $0.translatesAutoresizingMaskIntoConstraints = false
-        $0.textField.placeholder = "search..."
-        $0.textField.textAlignment = .left
+        $0.placeholder = "search..."
+        $0.delegate = self
         return $0
-    }(CustomTextFieldView())
+    }(UISearchBar())
     
     
     lazy var usersTableView : UITableView = {
@@ -93,25 +97,89 @@ extension MainVC {
 
 extension MainVC : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return users.count
+        if isSearching {
+            return filteredUsers.count
+        } else {
+            return users.count
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = usersTableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CustomCell
-        cell.nameLabel.text = users[indexPath.row].name
+        
+//        cell.userImage.image = nil
+        if isSearching {
+            cell.nameLabel.text = filteredUsers[indexPath.row].name
 
-        if let imageURL = users[indexPath.row].profileImage {
-            cell.userImage.sd_setImage(with: URL(string: imageURL), completed: nil)
+            if let imageURL = filteredUsers[indexPath.row].profileImage {
+                cell.userImage.sd_setImage(with: URL(string: imageURL), completed: nil)
+            } else {
+                cell.userImage.image = UIImage(systemName: "person.circle.fill")
+            }
+        } else {
+            cell.nameLabel.text = users[indexPath.row].name
+
+            if let imageURL = users[indexPath.row].profileImage {
+                cell.userImage.sd_setImage(with: URL(string: imageURL), completed: nil)
+            }
+            else {
+                cell.userImage.image = UIImage(systemName: "person.circle.fill")
+            }
         }
+        
+        
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+
+        view.endEditing(true)
         let vc = DirectMessageVC()
-        vc.user = users[indexPath.row]
+        
+        if isSearching {
+            vc.user = filteredUsers[indexPath.row]
+        } else {
+            vc.user = users[indexPath.row]
+        }
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
+}
+
+
+extension MainVC : UISearchBarDelegate {
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        isSearching = true
+    }
+    
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        isSearching = false
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        isSearching = false
+        searchBar.text = ""
+        view.endEditing(true)
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        isSearching = false
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        filteredUsers.removeAll()
+        if searchText == "" {
+            isSearching = false
+            self.usersTableView.reloadData()
+        }
+        else {
+            isSearching = true
+            filteredUsers = users.filter({ user in
+                return user.name!.lowercased().contains(searchText.lowercased())
+            })
+            self.usersTableView.reloadData()
+        }
+    }
 }
