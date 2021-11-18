@@ -23,6 +23,7 @@ class ChatPageVC:UIViewController, UICollectionViewDataSource, UICollectionViewD
             self.collectionView?.reloadData()
         }
     }
+    var collectionView: UICollectionView?
     var containerViewBottomAnchor: NSLayoutConstraint?
     lazy var inputTextField: UITextField = {
         let textField = UITextField()
@@ -35,63 +36,49 @@ class ChatPageVC:UIViewController, UICollectionViewDataSource, UICollectionViewD
         let containerView = UIView()
         containerView.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: 50)
         containerView.backgroundColor = UIColor.white
-        
         let sendButton = UIButton(type: .system)
         sendButton.setTitle("Send", for: UIControl.State())
         sendButton.translatesAutoresizingMaskIntoConstraints = false
         sendButton.addTarget(self, action: #selector(handleSend), for: .touchUpInside)
         containerView.addSubview(sendButton)
-        
         sendButton.rightAnchor.constraint(equalTo: containerView.rightAnchor).isActive = true
         sendButton.centerYAnchor.constraint(equalTo: containerView.centerYAnchor).isActive = true
         sendButton.widthAnchor.constraint(equalToConstant: 80).isActive = true
         sendButton.heightAnchor.constraint(equalTo: containerView.heightAnchor).isActive = true
-        
         containerView.addSubview(self.inputTextField)
-        
         self.inputTextField.leftAnchor.constraint(equalTo: containerView.leftAnchor, constant: 8).isActive = true
         self.inputTextField.centerYAnchor.constraint(equalTo: containerView.centerYAnchor).isActive = true
         self.inputTextField.rightAnchor.constraint(equalTo: sendButton.leftAnchor).isActive = true
         self.inputTextField.heightAnchor.constraint(equalTo: containerView.heightAnchor).isActive = true
-        
         let separatorLineView = UIView()
-        separatorLineView.backgroundColor = .gray
+        separatorLineView.backgroundColor = .black
         separatorLineView.translatesAutoresizingMaskIntoConstraints = false
         containerView.addSubview(separatorLineView)
-        
         separatorLineView.leftAnchor.constraint(equalTo: containerView.leftAnchor).isActive = true
         separatorLineView.topAnchor.constraint(equalTo: containerView.topAnchor).isActive = true
         separatorLineView.widthAnchor.constraint(equalTo: containerView.widthAnchor).isActive = true
         separatorLineView.heightAnchor.constraint(equalToConstant: 1).isActive = true
-        
         return containerView
     }()
-    
-    let cellId = "ChatPageCell"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.prefersLargeTitles = true
        view.backgroundColor = .white
-    
-        
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 20, left: 10, bottom: 10, right: 10)
         layout.itemSize = CGSize(width: 60, height: 60)
+        layout.scrollDirection = .horizontal
         collectionView = UICollectionView(frame: self.view.frame, collectionViewLayout: layout)
-        
         collectionView?.delegate = self
-        
         collectionView?.dataSource = self
         collectionView?.reloadData()
-        
         collectionView?.contentInset = UIEdgeInsets(top: 8, left: 0, bottom: 8, right: 0)
         collectionView?.alwaysBounceVertical = true
         collectionView?.backgroundColor = .white
         collectionView?.keyboardDismissMode = .interactive
         collectionView?.register(ChatPageCell.self, forCellWithReuseIdentifier: ChatPageCell.identifier)
         view.addSubview(collectionView!)
-        
         guard let curruntUserId = Auth.auth().currentUser?.uid else {
             return
         }
@@ -115,12 +102,10 @@ class ChatPageVC:UIViewController, UICollectionViewDataSource, UICollectionViewD
         NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
-    
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         NotificationCenter.default.removeObserver(self)
     }
-    
     @objc func handleKeyboardWillShow(_ notification: Notification) {
         let keyboardFrame = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as AnyObject).cgRectValue
         let keyboardDuration = (notification.userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as AnyObject).doubleValue
@@ -129,7 +114,6 @@ class ChatPageVC:UIViewController, UICollectionViewDataSource, UICollectionViewD
             self.view.layoutIfNeeded()
         })
     }
-    
     @objc func handleKeyboardWillHide(_ notification: Notification) {
         let keyboardDuration = (notification.userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as AnyObject).doubleValue
         containerViewBottomAnchor?.constant = 0
@@ -148,52 +132,25 @@ class ChatPageVC:UIViewController, UICollectionViewDataSource, UICollectionViewD
         cell.bubbleWidthAnchor?.constant = estimateFrameForText(message.content!).width + 32
         return cell
     }
-    
-    
+    //// make sender colour diffrent
     fileprivate func setupCell(_ cell: ChatPageCell, message: Message) {
-       
-        
         if message.sender == Auth.auth().currentUser?.uid {
-            cell.bubbleView.backgroundColor = .systemGray4
+            cell.bubbleView.backgroundColor = .blue
             cell.textView.textColor = UIColor.white
             cell.profileImageView.isHidden = true
-            
             cell.bubbleViewRightAnchor?.isActive = true
             cell.bubbleViewLeftAnchor?.isActive = false
         } else {
-            
             cell.bubbleView.backgroundColor = .cyan
             cell.textView.textColor = UIColor.black
-            
             cell.profileImageView.isHidden = false
-            
-            cell.bubbleViewRightAnchor?.isActive = true
-            cell.bubbleViewLeftAnchor?.isActive = false
+            cell.bubbleViewRightAnchor?.isActive = false
+            cell.bubbleViewLeftAnchor?.isActive = true
         }
     }
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         collectionView?.collectionViewLayout.invalidateLayout()
     }
-    
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
-        var height: CGFloat = 80
-
-        if let text = messages[indexPath.item].content {
-            height = estimateFrameForText(text).height + 20
-
-        }
-        
-        let width = UIScreen.main.bounds.width
-        return CGSize(width: width, height: height)
-    }
-    
-    
-    var collectionView: UICollectionView?
-
-    
-    
     fileprivate func estimateFrameForText(_ text: String) -> CGRect {
         let size = CGSize(width: 200, height: 1000)
         let options = NSStringDrawingOptions.usesFontLeading.union(.usesLineFragmentOrigin)
@@ -203,34 +160,27 @@ class ChatPageVC:UIViewController, UICollectionViewDataSource, UICollectionViewD
         let containerView = UIView()
         containerView.backgroundColor = UIColor.white
         containerView.translatesAutoresizingMaskIntoConstraints = false
-        
         view.addSubview(containerView)
-        
         containerView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
-        
         containerViewBottomAnchor = containerView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         containerViewBottomAnchor?.isActive = true
-        
         containerView.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
         containerView.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        
         let sendButton = UIButton(type: .system)
         sendButton.setTitle("Send", for: UIControl.State())
         sendButton.translatesAutoresizingMaskIntoConstraints = false
         sendButton.addTarget(self, action: #selector(handleSend), for: .touchUpInside)
         containerView.addSubview(sendButton)
-        
         sendButton.rightAnchor.constraint(equalTo: containerView.rightAnchor).isActive = true
         sendButton.centerYAnchor.constraint(equalTo: containerView.centerYAnchor).isActive = true
         sendButton.widthAnchor.constraint(equalToConstant: 80).isActive = true
         sendButton.heightAnchor.constraint(equalTo: containerView.heightAnchor).isActive = true
-        
         containerView.addSubview(inputTextField)
+        //        inputTextField.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 300).isActive = true
         inputTextField.leftAnchor.constraint(equalTo: containerView.leftAnchor, constant: 8).isActive = true
         inputTextField.centerYAnchor.constraint(equalTo: containerView.centerYAnchor).isActive = true
         inputTextField.rightAnchor.constraint(equalTo: sendButton.leftAnchor).isActive = true
         inputTextField.heightAnchor.constraint(equalTo: containerView.heightAnchor).isActive = true
-        
         let separatorLineView = UIView()
         separatorLineView.backgroundColor = .purple
         separatorLineView.translatesAutoresizingMaskIntoConstraints = false
@@ -245,7 +195,23 @@ class ChatPageVC:UIViewController, UICollectionViewDataSource, UICollectionViewD
         guard let currentUser = Auth.auth().currentUser else {return}
         guard let message = inputTextField.text else {return}
         guard let user = user else {return}
-
+//        var MyAccount = User(id: currentUser.uid, name: "Me", status: "onLine", latitude: 0, longitude: 0)
+//        Firestore.firestore().collection("users/\(currentUser.uid)").getDocuments(completion: { sanpShot, error in
+//            guard  error == nil else {return}
+//            guard let users = sanpShot?.documents else { return }
+//
+//            for user in users {
+//              let user = user.data()
+//                    let id = user["id"] as? String ?? ""
+//                    let name = user["name"] as? String ?? ""
+//                    let status = user["status"] as? String ?? ""
+//                let latitude = user["latitude"] as? Double ?? 0
+//                let longitude = user["longitude"] as? Double ?? 0
+//            let curUser = User(id: id, name: name, status: status, latitude: latitude, longitude: longitude)
+//                MyAccount = curUser
+//        }
+//
+//        })
         Firestore.firestore().document("messages/\(messageId)").setData([
             "sender" : currentUser.uid,
             "receiver" : user.id,
@@ -255,7 +221,7 @@ class ChatPageVC:UIViewController, UICollectionViewDataSource, UICollectionViewD
             "senderName": "Me"
 //            "reciverId":
         ])
-        self.inputTextField.text = nil
+        inputTextField.text = ""
         self.collectionView?.reloadData()
     }
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
