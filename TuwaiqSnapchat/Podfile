@@ -1,0 +1,17 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'TuwaiqSnapchat' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for TuwaiqSnapchat
+ pod 'MessageKit'
+ pod 'Firebase/Analytics'
+ pod 'Firebase/Auth'
+ pod 'Firebase/Firestore'
+ pod 'FirebaseFirestoreSwift’,‘8.8.0-beta'
+ pod 'FirebaseStorage'
+pod 'SDWebImage', '~> 5.0'
+
+end
