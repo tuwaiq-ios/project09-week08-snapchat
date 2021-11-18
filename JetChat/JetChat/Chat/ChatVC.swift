@@ -163,8 +163,8 @@ extension ChatVC: UITableViewDelegate, UITableViewDataSource {
         tableView.deselectRow(at: indexPath, animated: true)
 
         let dmScreen = DMScreen()
-//        dmScreen.user = currentUserName
-//        dmScreen.barTitle = users[indexPath.row].name
+        dmScreen.user = currentUserName
+        dmScreen.barTitle = users[indexPath.row].name
         dmScreen.navigationItem.largeTitleDisplayMode = .never
 
         navigationController?.pushViewController(dmScreen, animated: true)
