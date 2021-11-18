@@ -46,7 +46,7 @@ class ProfileVC : UIViewController, UIImagePickerControllerDelegate,UITextFieldD
         return $0
     }(UITextField())
     let Button : UIButton = {
-        $0.backgroundColor = .darkGray
+        $0.backgroundColor = .black
         $0.setTitle("Save", for: .normal)
         $0.tintColor = .black
         $0.layer.cornerRadius = 22.5
@@ -60,7 +60,7 @@ class ProfileVC : UIViewController, UIImagePickerControllerDelegate,UITextFieldD
         $0.setTitleColor(UIColor.black, for: .normal)
         $0.layer.cornerRadius = 22.5
         $0.translatesAutoresizingMaskIntoConstraints = false
-        $0.addTarget(self, action: #selector(A), for: .touchUpInside)
+        $0.addTarget(self, action: #selector(signOut), for: .touchUpInside)
         return $0
     }(UIButton())
     
@@ -83,7 +83,7 @@ class ProfileVC : UIViewController, UIImagePickerControllerDelegate,UITextFieldD
         profileImage.addGestureRecognizer(tapRecognizer)
         
         view.backgroundColor = .white
-        profileImage.image = .init(systemName: "person.circle")
+        profileImage.image = UIImage(named: "455")
         profileImage.tintColor = UIColor(ciColor: .black)
         profileImage.layer.masksToBounds = true
         profileImage.layer.cornerRadius = 100
@@ -121,7 +121,7 @@ class ProfileVC : UIViewController, UIImagePickerControllerDelegate,UITextFieldD
             //      Button.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 500),
             Button.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
             Button.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50),
-            Button.heightAnchor.constraint(equalToConstant: 70)
+            Button.heightAnchor.constraint(equalToConstant: 55)
         ])
         view.addSubview(Button1)
         NSLayoutConstraint.activate([
@@ -174,7 +174,7 @@ class ProfileVC : UIViewController, UIImagePickerControllerDelegate,UITextFieldD
         )
         present(alert1, animated: true, completion: nil)
     }
-    @objc func A() {
+    @objc func signOut() {
         let firebaseAuth = Auth.auth()
         do {
             try firebaseAuth.signOut()

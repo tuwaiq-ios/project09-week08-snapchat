@@ -10,7 +10,7 @@
 
     class LoginRegisterVC: UIViewController {
       var name = UITextField()
-      var conf = UITextField()
+      //var conf = UITextField()
       let segmentedControl = UISegmentedControl()
       override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,13 +22,13 @@
         name.font = UIFont.systemFont(ofSize: 18)
         name.backgroundColor = .systemGray5
         name.layer.cornerRadius = 22.5
-        conf.placeholder = "Conf Password"
-        conf.textAlignment = .center
-        conf.translatesAutoresizingMaskIntoConstraints = false
-        conf.textColor = .black
-        conf.font = UIFont.systemFont(ofSize: 18)
-        conf.backgroundColor = .systemGray5
-        conf.layer.cornerRadius = 22.5
+//        conf.placeholder = "Conf Password"
+//        conf.textAlignment = .center
+//        conf.translatesAutoresizingMaskIntoConstraints = false
+//        conf.textColor = .black
+//        conf.font = UIFont.systemFont(ofSize: 18)
+//        conf.backgroundColor = .systemGray5
+//        conf.layer.cornerRadius = 22.5
       }
       var imageView: UIImageView = {
         let imageView = UIImageView()
@@ -127,7 +127,7 @@
         stackView.addArrangedSubview(name)
         stackView.addArrangedSubview(email)
         stackView.addArrangedSubview(password)
-        stackView.addArrangedSubview(conf)
+        //stackView.addArrangedSubview(conf)
         stackView.addArrangedSubview(logInButton)
         stackView.addArrangedSubview(signUp)
         view.addSubview(imageView)
@@ -155,12 +155,12 @@
         switch segmentedControl.selectedSegmentIndex {
         case 0:
           name.isHidden = false
-          conf.isHidden = false
+         // conf.isHidden = false
           signUp.isHidden = false
           logInButton.isHidden = true
         case 1:
           name.isHidden = true
-          conf.isHidden = true
+         // conf.isHidden = true
           signUp.isHidden = true
           logInButton.isHidden = false
         default:
