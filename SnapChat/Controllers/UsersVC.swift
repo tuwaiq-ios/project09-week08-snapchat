@@ -46,7 +46,9 @@ class UsersVC : UITableViewController {
                                        name: data?["name"] as? String ?? "",
                                        status: data?["status"] as? String ?? "",
                                        image: data?["image"] as? String ?? "",
-                                       location: data?["location"] as? String ?? ""
+                                       latitude: (data?["latitude"] as? Double) ?? 0.0,
+                                       longitude: (data?["longitude"] as? Double) ?? 0.0
+                                       
             )
             
             
@@ -88,11 +90,14 @@ class UsersVC : UITableViewController {
                     let data = document.data()
                     
                     if data["id"] as? String != userID {
-                        self.users.append(User(id: data["id"] as? String ?? "",
+                        self.users.append(User(
+                            id: data["id"] as? String ?? "",
                             name: (data["name"] as? String) ?? "",
                             status: (data["status"] as? String) ?? "",
                             image: (data["image"] as? String) ?? "",
-                          location: (data["location"] as? String) ?? "" ))
+                            latitude: (data["latitude"] as? Double) ?? 0.0,
+                            longitude: (data["longitude"] as? Double) ?? 0.0
+                             ))
                     }
                 }
                 

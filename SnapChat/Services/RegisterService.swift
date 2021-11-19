@@ -20,7 +20,8 @@ class RegisterService {
             "id": user.id,
             "image": user.image,
             "status": user.status,
-            "location" : user.location
+            "latitude" : user.latitude,
+            "longitude" : user.longitude
         ])
     }
     
@@ -40,7 +41,8 @@ class RegisterService {
                     name: (data["name"] as? String) ?? "No name",
                     status: (data["status"] as? String) ?? "No status",
                     image: (data["image"] as? String) ?? "No image",
-                    location: (data["status"] as? String) ?? "No status"
+                    latitude: (data["latitude"] as? Double) ?? 0.0,
+                    longitude: (data["longitude"] as? Double) ?? 0.0
                 )
                 users.append(user)
             }

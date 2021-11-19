@@ -209,7 +209,7 @@ class RegisterVC: UIViewController , UIImagePickerControllerDelegate , UINavigat
         }
         
         RegisterService.shared.addUser(
-            user: User(id: uuid, name: firstNam,status: "busy", image: "gs://snapapp-e0267.appspot.com", location: "")
+            user: User(id: uuid, name: firstNam,status: "busy", image: "gs://snapapp-e0267.appspot.com", latitude: 0.0 , longitude: 0.0)
         )
         //open TabVC bage
         let vc = TabVC()

@@ -28,11 +28,14 @@ class ChatVC: UIViewController {
         
         Firestore.firestore().collection("users").document(otherUserId).addSnapshotListener { doc, error in
             guard let data = doc?.data() else { return }
-            let otherUser = User(id: (data["id"] as? String) ?? "",
+            let otherUser = User(
+                                id: (data["id"] as? String) ?? "",
                                  name: (data["name"] as? String) ?? "",
                                  status: (data["status"] as? String) ?? "",
                                  image: (data["image"] as? String) ?? "",
-                                         location: (data["location"] as? String ?? ""))
+                                latitude: (data["latitude"] as? Double) ?? 0.0,
+                                longitude: (data["longitude"] as? Double) ?? 0.0
+                                )
                 self.user = otherUser
             self.title = otherUser.name
         }
