@@ -102,13 +102,13 @@
 				10177796274048AF00A998E0 /* CustomTextFieldView.swift */,
 				100386CF27419B15002A8B31 /* DirectMessageVC.swift */,
 				100386D127419D5D002A8B31 /* MessageCell.swift */,
+				513D3DB027439F4E00C49D33 /* TabBarVC.swift */,
+				513D3DB227439F8100C49D33 /* MapVC.swift */,
+				513D3DB427439FAB00C49D33 /* CameraVC.swift */,
 				1017778B274041A100A998E0 /* Assets.xcassets */,
 				1017778D274041A100A998E0 /* LaunchScreen.storyboard */,
 				10177790274041A100A998E0 /* Info.plist */,
 				10024AD727406FF1004FDC55 /* GoogleService-Info.plist */,
-				513D3DB027439F4E00C49D33 /* TabBarVC.swift */,
-				513D3DB227439F8100C49D33 /* MapVC.swift */,
-				513D3DB427439FAB00C49D33 /* CameraVC.swift */,
 			);
 			path = TuwaiqChat;
 			sourceTree = "<group>";
