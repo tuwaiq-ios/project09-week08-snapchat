@@ -18,8 +18,7 @@ class UsersVC : UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .white
-        navigationItem.title = "Users"
+//        view.backgroundColor = .white
         
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
         

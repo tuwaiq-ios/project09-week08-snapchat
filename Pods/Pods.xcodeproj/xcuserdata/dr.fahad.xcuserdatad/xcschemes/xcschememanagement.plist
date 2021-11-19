@@ -103,7 +103,7 @@
 		<key>MessageKit.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>21</integer>
+			<integer>24</integer>
 		</dict>
 		<key>Pods-SnapChat.xcscheme</key>
 		<dict>

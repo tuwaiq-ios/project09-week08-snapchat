@@ -23,7 +23,6 @@ class ConversationVC: UIViewController , UITableViewDataSource, UITableViewDeleg
         TVC.dataSource = self
         TVC.delegate = self
         view.backgroundColor = .white
-        navigationItem.title = "Conversation"
         
         view.addSubview(TVC)
         //constraint

@@ -12,6 +12,7 @@ import FirebaseFirestore
 
 class MyProfileVC: UIViewController , UIImagePickerControllerDelegate , UINavigationControllerDelegate {
     
+    let myColor = UIColor(named: "myBackgroundColor")
     var users: Array<User> = []
 
     //image picker
@@ -38,7 +39,7 @@ class MyProfileVC: UIViewController , UIImagePickerControllerDelegate , UINaviga
        let label = UITextField()
        label.translatesAutoresizingMaskIntoConstraints = false
        label.text = ""
-        label.placeholder = "Name.."
+        label.placeholder = (NSLocalizedString("namep", comment: ""))
 //        label.borderStyle = .line
        return label
    }()
@@ -48,7 +49,7 @@ class MyProfileVC: UIViewController , UIImagePickerControllerDelegate , UINaviga
         let label = UITextField()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = ""
-        label.placeholder = "status.."
+        label.placeholder = (NSLocalizedString("stp", comment: ""))
 //        label.borderStyle = .line
         return label
     }()
@@ -56,7 +57,7 @@ class MyProfileVC: UIViewController , UIImagePickerControllerDelegate , UINaviga
     //save the name and image and statuse
     lazy var saveButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle("Save", for: .normal)
+        button.setTitle(NSLocalizedString("savep", comment: ""), for: .normal)
         button.setTitleColor(.black, for: .normal)
         button.titleLabel?.font = .systemFont(ofSize: 20, weight: .medium)
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -69,7 +70,7 @@ class MyProfileVC: UIViewController , UIImagePickerControllerDelegate , UINaviga
     
     lazy var shareButton: UIButton = {
         let button = UIButton (type: .system)
-        button.setTitle("ShareURL", for: .normal)
+        button.setTitle(NSLocalizedString("sharep", comment: ""), for: .normal)
         button.setTitleColor(.black, for: .normal)
         button.backgroundColor = .quaternaryLabel
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -84,22 +85,13 @@ class MyProfileVC: UIViewController , UIImagePickerControllerDelegate , UINaviga
     //sing out from snap chat
     lazy var singOutButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle("Sing out", for: .normal)
+        button.setTitle(NSLocalizedString("signp", comment: ""), for: .normal)
         button.setTitleColor(.red, for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.titleLabel?.font = .systemFont(ofSize: 20, weight: .bold)
         button.addTarget(self, action: #selector(singOutButtonTapped), for: .touchUpInside)
         return button
     }()
-    lazy var mode = UISwitch()
-    @objc func mode (_ sender: UISwitch) {
-        if mode.isOn {
-          view.backgroundColor = .white
-        }
-        else {
-          view.backgroundColor = .black
-    }
-    }
     
     override func viewDidLoad () {
         super.viewDidLoad()
@@ -107,14 +99,7 @@ class MyProfileVC: UIViewController , UIImagePickerControllerDelegate , UINaviga
         // Gesture to image
         let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped))
          profileImage.addGestureRecognizer(tapRecognizer)
-        
-        view.backgroundColor = .white
-        
-        view.addSubview(mode)
-        NSLayoutConstraint.activate([
-            mode.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20),
-            mode.topAnchor.constraint(equalTo: view.topAnchor, constant: 100),
-        ])
+
         view.addSubview(profileImage)
         NSLayoutConstraint.activate([
             profileImage.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -100),

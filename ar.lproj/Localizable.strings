@@ -1,0 +1,26 @@
+/* 
+  Localizable.strings
+  SnapChat
+
+  Created by Amal on 14/04/1443 AH.
+  
+*/
+
+"Log In" = "تسجيل الدخول";
+"Sign In" = "حساب جديد";
+"email" = "الايميل...";
+"password" = "الرقم السري...";
+"Don't have account?" = "ليس لديك حساب؟";
+"did you have account?" = "هل لديك حساب؟";
+"first" = "الاسم الاول...";
+"last" = "الاسم الاخير...";
+"namep" = "اسمك";
+"stp" = "الحاله";
+"savep" = "حفظ";
+"sharep" = "شارك الرابط";
+"signp" = "تسجيل الخروج";
+"profile" = "الملف الشخصي";
+"Users" = "المستخدمين";
+"cam" = "الكاميرا";
+"Chat" = "الدردشات";
+"location" = "الموقع";

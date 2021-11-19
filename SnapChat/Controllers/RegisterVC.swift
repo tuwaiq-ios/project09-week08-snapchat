@@ -36,7 +36,7 @@ class RegisterVC: UIViewController , UIImagePickerControllerDelegate , UINavigat
         firstName.layer.cornerRadius = 12
         firstName.layer.borderWidth = 1
         firstName.layer.borderColor = UIColor.lightGray.cgColor
-        firstName.placeholder = " First Name..."
+        firstName.placeholder = (NSLocalizedString("first", comment: ""))
         firstName.backgroundColor = .secondarySystemBackground
       return firstName
   }()
@@ -47,7 +47,7 @@ class RegisterVC: UIViewController , UIImagePickerControllerDelegate , UINavigat
         lastName.layer.cornerRadius = 12
         lastName.layer.borderWidth = 1
         lastName.layer.borderColor = UIColor.lightGray.cgColor
-        lastName.placeholder = "  Last Name..."
+        lastName.placeholder = (NSLocalizedString("last", comment: ""))
         lastName.backgroundColor = .secondarySystemBackground
       return lastName
   }()
@@ -57,7 +57,7 @@ class RegisterVC: UIViewController , UIImagePickerControllerDelegate , UINavigat
           userEmail.layer.cornerRadius = 12
           userEmail.layer.borderWidth = 1
           userEmail.layer.borderColor = UIColor.lightGray.cgColor
-          userEmail.placeholder = "  Email Address..."
+          userEmail.placeholder = (NSLocalizedString("email", comment: ""))
           userEmail.backgroundColor = .secondarySystemBackground
         return userEmail
     }()
@@ -69,7 +69,7 @@ class RegisterVC: UIViewController , UIImagePickerControllerDelegate , UINavigat
         userPassword.layer.borderWidth = 1
         userPassword.layer.borderColor = UIColor.lightGray.cgColor
         userPassword.isSecureTextEntry = true
-        userPassword.placeholder = "  Password..."
+        userPassword.placeholder = (NSLocalizedString("password", comment: ""))
         userPassword.backgroundColor = .secondarySystemBackground
         return userPassword
     }()
@@ -77,7 +77,7 @@ class RegisterVC: UIViewController , UIImagePickerControllerDelegate , UINavigat
     private let registerButton: UIButton = {
         let registerButton = UIButton()
         registerButton.translatesAutoresizingMaskIntoConstraints = false
-        registerButton.setTitle("Register", for: .normal)
+        registerButton.setTitle(NSLocalizedString("Sign In", comment: ""), for: .normal)
         registerButton.setTitleColor(.black, for: .normal)
         registerButton.backgroundColor = .yellow
         registerButton.layer.cornerRadius = 12
@@ -93,13 +93,13 @@ class RegisterVC: UIViewController , UIImagePickerControllerDelegate , UINavigat
         label.backgroundColor = .white
         label.textColor = .black
         label.font = UIFont.systemFont(ofSize: 12, weight: .medium)
-        label.text = "did you have account? "
+        label.text = (NSLocalizedString("did you have account?", comment: ""))
         return label
       }()
       lazy var logInButton: UIButton = {
         let logInBtn = UIButton()
         logInBtn.translatesAutoresizingMaskIntoConstraints = false
-        logInBtn.setTitle("Sign in", for: .normal)
+        logInBtn.setTitle(NSLocalizedString("Log In", comment: ""), for: .normal)
         logInBtn.setTitleColor(.blue, for: .normal)
         logInBtn.backgroundColor = .white
         logInBtn.addTarget(self, action: #selector(logInButtonTapped), for: .touchUpInside)
@@ -117,7 +117,7 @@ class RegisterVC: UIViewController , UIImagePickerControllerDelegate , UINavigat
          profileImage.addGestureRecognizer(tapRecognizer)
         
         view.backgroundColor = .white
-        title = "Register"
+        title = (NSLocalizedString("Register ", comment: ""))
         
         
         //Constraint firstName
@@ -172,7 +172,7 @@ class RegisterVC: UIViewController , UIImagePickerControllerDelegate , UINavigat
         
         view.addSubview(labelToRegister)
             NSLayoutConstraint.activate([
-              labelToRegister.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -35),
+              labelToRegister.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -25),
               labelToRegister.topAnchor.constraint(equalTo: registerButton.bottomAnchor, constant: 40),
               labelToRegister.widthAnchor.constraint(equalToConstant: 300),
               labelToRegister.heightAnchor.constraint(equalToConstant: 40),
@@ -180,9 +180,9 @@ class RegisterVC: UIViewController , UIImagePickerControllerDelegate , UINavigat
             //Constraint LogInButton
             view.addSubview(logInButton)
             NSLayoutConstraint.activate([
-              logInButton.rightAnchor.constraint(equalTo: labelToRegister.leftAnchor, constant: 200),
+              logInButton.rightAnchor.constraint(equalTo: labelToRegister.leftAnchor, constant: 220),
               logInButton.topAnchor.constraint(equalTo: registerButton.bottomAnchor, constant: 40),
-              logInButton.widthAnchor.constraint(equalToConstant: 50),
+              logInButton.widthAnchor.constraint(equalToConstant: 85),
               logInButton.heightAnchor.constraint(equalToConstant: 40),
             ])
         

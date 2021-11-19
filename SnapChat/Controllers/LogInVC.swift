@@ -16,7 +16,7 @@ class LogInVC: UIViewController {
           userEmail.layer.cornerRadius = 12
           userEmail.layer.borderWidth = 1
           userEmail.layer.borderColor = UIColor.lightGray.cgColor
-          userEmail.placeholder = "  Email Address..."
+          userEmail.placeholder = (NSLocalizedString("email", comment: ""))
           userEmail.backgroundColor = .secondarySystemBackground
         return userEmail
     }()
@@ -28,7 +28,7 @@ class LogInVC: UIViewController {
         userPassword.layer.borderWidth = 1
         userPassword.isSecureTextEntry = true
         userPassword.layer.borderColor = UIColor.lightGray.cgColor
-        userPassword.placeholder = " Password..."
+        userPassword.placeholder = (NSLocalizedString("password", comment: ""))
         userPassword.backgroundColor = .secondarySystemBackground
         return userPassword
     }()
@@ -36,7 +36,7 @@ class LogInVC: UIViewController {
     lazy var loginButton: UIButton = {
         let loginButton = UIButton()
         loginButton.translatesAutoresizingMaskIntoConstraints = false
-        loginButton.setTitle("Log In", for: .normal)
+        loginButton.setTitle(NSLocalizedString("Log In", comment: ""), for: .normal)
         loginButton.setTitleColor(.black, for: .normal)
         loginButton.backgroundColor = .yellow
         loginButton.layer.cornerRadius = 12
@@ -51,13 +51,13 @@ class LogInVC: UIViewController {
         label.backgroundColor = .white
         label.textColor = .black
         label.font = UIFont.systemFont(ofSize: 12, weight: .medium)
-        label.text = "Don't have account?  "
+        label.text = (NSLocalizedString("Don't have account?", comment: ""))
         return label
     }()
     lazy var registerButton: UIButton = {
         let registerButton = UIButton()
         registerButton.translatesAutoresizingMaskIntoConstraints = false
-        registerButton.setTitle("Sign up", for: .normal)
+        registerButton.setTitle(NSLocalizedString("Sign In", comment: ""), for: .normal)
         registerButton.setTitleColor(.blue, for: .normal)
         registerButton.backgroundColor = .white
         registerButton.addTarget(self, action: #selector(registerButtonTapped), for: .touchUpInside)
@@ -79,7 +79,7 @@ class LogInVC: UIViewController {
         super.viewDidLoad()
         
         view.backgroundColor = .white
-        title = "Log In"
+        title = (NSLocalizedString("Log In", comment: ""))
         
         //Constraint imageView
         view.addSubview(imageView)
@@ -121,7 +121,7 @@ class LogInVC: UIViewController {
         //Constraint labelToRegister
         view.addSubview(labelToRegister)
         NSLayoutConstraint.activate([
-            labelToRegister.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -35),
+            labelToRegister.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -25),
             labelToRegister.topAnchor.constraint(equalTo: loginButton.bottomAnchor, constant: 40),
             labelToRegister.widthAnchor.constraint(equalToConstant: 300),
             labelToRegister.heightAnchor.constraint(equalToConstant: 40),
@@ -131,9 +131,9 @@ class LogInVC: UIViewController {
         
         view.addSubview(registerButton)
         NSLayoutConstraint.activate([
-            registerButton.rightAnchor.constraint(equalTo: labelToRegister.leftAnchor, constant: 170),
+            registerButton.rightAnchor.constraint(equalTo: labelToRegister.leftAnchor, constant: 210),
             registerButton.topAnchor.constraint(equalTo: loginButton.bottomAnchor, constant: 40),
-            registerButton.widthAnchor.constraint(equalToConstant: 50),
+            registerButton.widthAnchor.constraint(equalToConstant: 85),
             registerButton.heightAnchor.constraint(equalToConstant: 40),
         ])
         
