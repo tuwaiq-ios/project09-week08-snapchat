@@ -48,8 +48,8 @@ class LogInVC: UIViewController {
     lazy var labelToRegister: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.backgroundColor = .white
-        label.textColor = .black
+//        label.backgroundColor = .white
+//        label.textColor = .black
         label.font = UIFont.systemFont(ofSize: 12, weight: .medium)
         label.text = (NSLocalizedString("Don't have account?", comment: ""))
         return label
@@ -59,7 +59,7 @@ class LogInVC: UIViewController {
         registerButton.translatesAutoresizingMaskIntoConstraints = false
         registerButton.setTitle(NSLocalizedString("Sign In", comment: ""), for: .normal)
         registerButton.setTitleColor(.blue, for: .normal)
-        registerButton.backgroundColor = .white
+//        registerButton.backgroundColor = .white
         registerButton.addTarget(self, action: #selector(registerButtonTapped), for: .touchUpInside)
         registerButton.titleLabel?.font = .systemFont(ofSize: 12, weight: .medium)
         return registerButton
@@ -77,8 +77,7 @@ class LogInVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        view.backgroundColor = .white
+        view.backgroundColor = UIColor (named: "myBackgroundColor")
         title = (NSLocalizedString("Log In", comment: ""))
         
         //Constraint imageView

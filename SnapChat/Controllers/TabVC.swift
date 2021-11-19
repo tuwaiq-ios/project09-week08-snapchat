@@ -31,7 +31,8 @@ class TabVC: UITabBarController {
    }
   override func viewDidLoad() {
     super.viewDidLoad()
-    view.backgroundColor = .systemBackground
+      view.backgroundColor = UIColor (named: "myBackgroundColor")
+//      view.backgroundColor = .systemBackground
       UITabBar.appearance().barTintColor = .systemBackground
       tabBar.tintColor = .label
       setupVCs()

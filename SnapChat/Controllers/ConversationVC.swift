@@ -13,30 +13,31 @@ import Firebase
 class ConversationVC: UIViewController , UITableViewDataSource, UITableViewDelegate {
     
     var conversation: Array<Conversations> = []
-    let TVC = UITableView()
     
-    //    var users = [User]()
+    lazy var ConversationTV : UITableView = {
+        let ConversationTV = UITableView()
+        ConversationTV.translatesAutoresizingMaskIntoConstraints = false
+        ConversationTV.dataSource = self
+        ConversationTV.delegate = self
+        return ConversationTV
+    }()
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        TVC.translatesAutoresizingMaskIntoConstraints = false
-        TVC.dataSource = self
-        TVC.delegate = self
-        view.backgroundColor = .white
         
-        view.addSubview(TVC)
-        //constraint
+        view.backgroundColor = UIColor (named: "myBackgroundColor")
+        
+        view.addSubview(ConversationTV)
+        //constraint tabel view
         NSLayoutConstraint.activate([
-            
-            TVC.leftAnchor.constraint (equalTo: view.leftAnchor),
-            TVC.rightAnchor.constraint(equalTo: view.rightAnchor),
-            TVC.topAnchor.constraint(equalTo: view.topAnchor),
-            TVC.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+            ConversationTV.leftAnchor.constraint (equalTo: view.leftAnchor),
+            ConversationTV.rightAnchor.constraint(equalTo: view.rightAnchor),
+            ConversationTV.topAnchor.constraint(equalTo: view.topAnchor),
+            ConversationTV.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
-        TVC.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
-        
+        ConversationTV.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
         getConversation()
-        
     }
     
     
@@ -53,14 +54,12 @@ class ConversationVC: UIViewController , UITableViewDataSource, UITableViewDeleg
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        
         // Create conversation between me and user
         self.tabBarController?.selectedIndex = 1
-        
-        //             let user = conversation[indexPath.row]
         let messagingVC = ChatVC()
         messagingVC.conversation = conversation[indexPath.row]
         messagingVC.title = conversation[indexPath.row].title
-        
         navigationController?.pushViewController(messagingVC, animated: true)
         
     }
@@ -87,8 +86,7 @@ class ConversationVC: UIViewController , UITableViewDataSource, UITableViewDeleg
                         ))
                         
                     }
-                    
-                    self.TVC.reloadData()
+                    self.ConversationTV.reloadData()
                     
                 } else {
                     print("ERROR : ", error?.localizedDescription)

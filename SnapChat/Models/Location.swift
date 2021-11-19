@@ -16,4 +16,17 @@ struct Location {
     let location: String
  
 }
+// Location_struct from fawaz
+
+import UIKit
+import Firebase
+import Foundation
+import FirebaseFirestore
+import CoreLocation
+
+struct Location_struct {
+  var id: String
+  var location: CLLocation
+  var size: CGSize
+}
 

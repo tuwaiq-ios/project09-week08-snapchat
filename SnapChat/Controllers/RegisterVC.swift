@@ -90,8 +90,8 @@ class RegisterVC: UIViewController , UIImagePickerControllerDelegate , UINavigat
     lazy var labelToRegister: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.backgroundColor = .white
-        label.textColor = .black
+//        label.backgroundColor = .white
+//        label.textColor = .black
         label.font = UIFont.systemFont(ofSize: 12, weight: .medium)
         label.text = (NSLocalizedString("did you have account?", comment: ""))
         return label
@@ -101,7 +101,7 @@ class RegisterVC: UIViewController , UIImagePickerControllerDelegate , UINavigat
         logInBtn.translatesAutoresizingMaskIntoConstraints = false
         logInBtn.setTitle(NSLocalizedString("Log In", comment: ""), for: .normal)
         logInBtn.setTitleColor(.blue, for: .normal)
-        logInBtn.backgroundColor = .white
+//        logInBtn.backgroundColor = .white
         logInBtn.addTarget(self, action: #selector(logInButtonTapped), for: .touchUpInside)
         logInBtn.titleLabel?.font = .systemFont(ofSize: 12, weight: .medium)
         return logInBtn
@@ -109,14 +109,13 @@ class RegisterVC: UIViewController , UIImagePickerControllerDelegate , UINavigat
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        view.backgroundColor = UIColor (named: "myBackgroundColor")
+        
         RegisterService.shared.listenToUsers { newUsers in
             self.users = newUsers
         }
         let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped))
          profileImage.addGestureRecognizer(tapRecognizer)
-        
-        view.backgroundColor = .white
         title = (NSLocalizedString("Register ", comment: ""))
         
         

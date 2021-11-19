@@ -13,5 +13,6 @@ pod 'Firebase/Firestore'
  pod 'SDWebImage'
    pod 'FirebaseStorage'
   pod 'MessageKit'
-
+pod 'Firebase/Core'
+pod 'Firebase/Messaging'
 end

@@ -12,7 +12,6 @@ import FirebaseFirestore
 
 class MyProfileVC: UIViewController , UIImagePickerControllerDelegate , UINavigationControllerDelegate {
     
-    let myColor = UIColor(named: "myBackgroundColor")
     var users: Array<User> = []
 
     //image picker
@@ -96,6 +95,7 @@ class MyProfileVC: UIViewController , UIImagePickerControllerDelegate , UINaviga
     override func viewDidLoad () {
         super.viewDidLoad()
 
+        view.backgroundColor = UIColor (named: "myBackgroundColor")
         // Gesture to image
         let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped))
          profileImage.addGestureRecognizer(tapRecognizer)

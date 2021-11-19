@@ -17,6 +17,8 @@ class ChatVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = UIColor (named: "myBackgroundColor")
+        
         guard let curruntUserId = Auth.auth().currentUser?.uid else { return }
         let users = conversation?.users ?? []
         let otherUserId = users.first { id in
@@ -39,45 +41,47 @@ class ChatVC: UIViewController {
         chatTableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
     }
     let chatTableView : UITableView = {
-        $0.translatesAutoresizingMaskIntoConstraints = false
-        return $0
-    }(UITableView())
-    let messageTextField : UITextField = {
-        $0.translatesAutoresizingMaskIntoConstraints = false
-        $0.placeholder = "Message..."
-        $0.backgroundColor = .init(white: 0.85, alpha: 1)
-        $0.layer.cornerRadius = 22.5
-        return $0
-    }(UITextField())
+        let chat = UITableView()
+        chat.translatesAutoresizingMaskIntoConstraints = false
+        return chat
+    }()
+    let messageTF : UITextField = {
+        let messageTF = UITextField()
+        messageTF.translatesAutoresizingMaskIntoConstraints = false
+        messageTF.placeholder = "Message..."
+        messageTF.backgroundColor = .init(white: 0.85, alpha: 1)
+        messageTF.layer.cornerRadius = 22.5
+        return messageTF
+    }()
     let sendButton : UIButton = {
-        $0.translatesAutoresizingMaskIntoConstraints = false
-        $0.setBackgroundImage(UIImage(systemName: "paperplane.circle.fill"), for: .normal)
-        $0.tintColor = .brown
-        $0.addTarget(self, action: #selector(sendMessage), for: .touchUpInside)
-        return $0
-    }(UIButton(type: .system))
+        let sendButton = UIButton()
+        sendButton.translatesAutoresizingMaskIntoConstraints = false
+        sendButton.setBackgroundImage(UIImage(systemName: "paperplane.circle.fill"), for: .normal)
+        sendButton.tintColor = .yellow
+        sendButton.addTarget(self, action: #selector(sendMessage), for: .touchUpInside)
+        return sendButton
+    }()
     func setupUI() {
-        view.backgroundColor = .white
         navigationItem.title = user?.name
         chatTableView.delegate = self
         chatTableView.dataSource = self
         view.addSubview(chatTableView)
-        view.addSubview(messageTextField)
+        view.addSubview(messageTF)
         view.addSubview(sendButton)
          sendButton.addTarget(self, action: #selector(sendMessage), for: .touchUpInside)
         NSLayoutConstraint.activate([
             chatTableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             chatTableView.leftAnchor.constraint(equalTo: view.leftAnchor),
             chatTableView.rightAnchor.constraint(equalTo: view.rightAnchor),
-            chatTableView.bottomAnchor.constraint(equalTo: messageTextField.topAnchor),
-            messageTextField.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 15),
-            messageTextField.rightAnchor.constraint(equalTo: sendButton.leftAnchor, constant: -5),//*****
-            messageTextField.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
-            messageTextField.heightAnchor.constraint(equalToConstant: 45),
+            chatTableView.bottomAnchor.constraint(equalTo: messageTF.topAnchor),
+            messageTF.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 15),
+            messageTF.rightAnchor.constraint(equalTo: sendButton.leftAnchor, constant: -5),//*****
+            messageTF.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+            messageTF.heightAnchor.constraint(equalToConstant: 45),
             sendButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -15),
-            sendButton.heightAnchor.constraint(equalTo: messageTextField.heightAnchor),
+            sendButton.heightAnchor.constraint(equalTo: messageTF.heightAnchor),
             sendButton.widthAnchor.constraint(equalTo: sendButton.heightAnchor),
-            sendButton.centerYAnchor.constraint(equalTo: messageTextField.centerYAnchor)
+            sendButton.centerYAnchor.constraint(equalTo: messageTF.centerYAnchor)
         ])
     }
 }
@@ -116,7 +120,7 @@ extension ChatVC : UITableViewDelegate , UITableViewDataSource {
     @objc func sendMessage() {
         let messageId = UUID().uuidString
         guard let currentUserID = Auth.auth().currentUser?.uid else {return}
-        guard let message = messageTextField.text else {return}
+        guard let message = messageTF.text else {return}
 
         
         Firestore.firestore().document("messages/\(messageId)").setData([
@@ -128,7 +132,7 @@ extension ChatVC : UITableViewDelegate , UITableViewDataSource {
             "conversationsId" : conversation?.id
             
         ])
-        messageTextField.text = ""
+        messageTF.text = ""
     }
     func getAllMessages() {
 //        guard let chatID = user?.id else {return} ..................

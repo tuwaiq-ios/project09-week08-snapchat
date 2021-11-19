@@ -18,15 +18,12 @@ class UsersVC : UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        view.backgroundColor = .white
-        
+        view.backgroundColor = UIColor (named: "myBackgroundColor")
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
         
         getUsers()
         
     }
-    
-    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return users.count
     }
@@ -80,12 +77,8 @@ class UsersVC : UITableViewController {
 
         
         self.tabBarController?.selectedIndex = 1
-//        let vc = ChatVC()
-//        vc.user = users[indexPath.row]
-//        navigationController?.pushViewController(vc, animated: true)
     }
-    
-    
+ 
     func getUsers() {
         Firestore.firestore().collection("users").addSnapshotListener { snapshot, error in
             if error == nil {
@@ -101,7 +94,6 @@ class UsersVC : UITableViewController {
                             image: (data["image"] as? String) ?? "",
                           location: (data["location"] as? String) ?? "" ))
                     }
-                    
                 }
                 
                 self.tableView.reloadData()

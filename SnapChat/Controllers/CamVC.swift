@@ -26,7 +26,8 @@ class CamVC : UIViewController {
   override func viewDidLoad() {
   super.viewDidLoad()
     checkCameraPermissions()
-    view.backgroundColor = .black
+      view.backgroundColor = UIColor (named: "myBackgroundColor")
+//    view.backgroundColor = .black
     view.layer.addSublayer(previewLayer)
     view.addSubview(shutterButton)
     shutterButton.addTarget(self, action: #selector(didTapTakePhoto), for: .touchUpInside)
