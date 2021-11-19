@@ -14,7 +14,7 @@ struct Message {
     let receiver: String
     let content: String?
     let convId :String
-   // let timestamp: Timestamp
+    // let timestamp: Timestamp
     let senderId:String
     let receiverName: String
     let senderName:String

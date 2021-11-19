@@ -4,13 +4,15 @@
 //
 //  Created by sara al zhrani on 07/04/1443 AH.
 //
+//
+//  ViewController.swift
+//  MapKKu
+//
+//  Created by Ahmed Assiri on 06/04/1443 AH.
+//
 
 import UIKit
 import MapKit
-
-
-
-
 
 
 class locationVC: UIViewController {
@@ -29,8 +31,6 @@ class locationVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        
         setMapConstraints()
         
     }
@@ -46,52 +46,29 @@ class locationVC: UIViewController {
         mapView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
         
         
+        let AhmedLocation = MKPointAnnotation()
+        AhmedLocation.title = "Ahmed"
+        AhmedLocation.coordinate = CLLocationCoordinate2D(latitude: 18.622485, longitude: 42.015544)
         
-        let A = MKPointAnnotation()
-        A.title = "Ahmed"
-        A.coordinate = CLLocationCoordinate2D(latitude: 24.5246542, longitude: 39.5691841)
+        mapView.addAnnotation(AhmedLocation)
         
-        mapView.addAnnotation(A)
+        let AzizLocation = MKPointAnnotation()
+        AzizLocation.title = "Aziz"
+        AzizLocation.coordinate = CLLocationCoordinate2D(latitude: 18.2464685, longitude: 42.5117238)
         
+        mapView.addAnnotation(AzizLocation)
         
-        let AZ = MKPointAnnotation()
-        AZ.title = "Aziz"
-        AZ.coordinate = CLLocationCoordinate2D(latitude: 24.7135517, longitude: 46.6752957)
-        mapView.addAnnotation(AZ)
+        let SaraAliLocation = MKPointAnnotation()
+        SaraAliLocation.title = "SaraAli"
+        SaraAliLocation.coordinate = CLLocationCoordinate2D(latitude: 18.3093394, longitude: 42.7662325)
         
+        mapView.addAnnotation(SaraAliLocation)
         
-        let SZ = MKPointAnnotation()
-        SZ.title = "Sara Ali"
-        SZ.coordinate = CLLocationCoordinate2D(latitude: 18.084764, longitude: 43.138569)
+        let SaraLocation = MKPointAnnotation()
+        SaraLocation.title = "SaraM"
+        SaraLocation.coordinate = CLLocationCoordinate2D(latitude: 18.2177726, longitude: 42.5387020)
         
-        mapView.addAnnotation(SZ)
+        mapView.addAnnotation(SaraLocation)
         
-        
-        let SM = MKPointAnnotation()
-        SM.title = "Sara"
-        SM.coordinate = CLLocationCoordinate2D(latitude: 21.41667, longitude: 39.81667)
-        
-        mapView.addAnnotation(SM)
     }
-    
-    
-    
-    
 }
-
-
-
-
-//extension ViewController : MKMapViewDelegate, CLLocationManagerDelegate  {
-
-//  func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-
-//  guard let lastLocations: [CLLocation]) {
-//
-//  }
-//  }
-
-
-
-//}
-

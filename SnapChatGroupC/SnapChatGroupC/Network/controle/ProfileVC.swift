@@ -143,7 +143,7 @@ class ProfileVC : UIViewController, UIImagePickerControllerDelegate,UITextFieldD
                 }
                 self.name.text = doucument?.data()?["name"] as? String
                 self.status.text = doucument?.data()?["status"] as? String
-                self.profileImage.image = doucument?.data()?["image"] as? UIImage 
+                self.profileImage.image = doucument?.data()?["image"] as? UIImage
                 
             }
     }

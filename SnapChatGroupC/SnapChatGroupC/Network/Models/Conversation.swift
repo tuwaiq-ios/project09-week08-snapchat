@@ -12,7 +12,7 @@ struct Conversation {
     let conersationId: String
     let senderId: String
     let messageId: String
-  //  let timestamp: Timestamp
+    //  let timestamp: Timestamp
     let title: String
     let usersIds: [String]
     let reciverId:String

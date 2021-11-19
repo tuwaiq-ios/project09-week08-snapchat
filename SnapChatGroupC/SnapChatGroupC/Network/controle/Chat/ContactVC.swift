@@ -32,12 +32,12 @@ class PeopleVC: UIViewController,  UISearchBarDelegate{
         }
         
         searchBar.searchBarStyle = UISearchBar.Style.default
-       searchBar.placeholder = " Search..."
-       searchBar.sizeToFit()
-       searchBar.isTranslucent = false
-       searchBar.backgroundImage = UIImage()
-       searchBar.delegate = self
-       navigationItem.titleView = searchBar
+        searchBar.placeholder = " Search..."
+        searchBar.sizeToFit()
+        searchBar.isTranslucent = false
+        searchBar.backgroundImage = UIImage()
+        searchBar.delegate = self
+        navigationItem.titleView = searchBar
         view.backgroundColor = .brown
         let image = UIImage(systemName: "chat")
         tabBarItem = .init(title: "People", image: image, selectedImage: image)

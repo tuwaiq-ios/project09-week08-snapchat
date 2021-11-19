@@ -37,10 +37,10 @@ class MessageVC:  UIViewController, UITableViewDelegate, UITableViewDataSource {
         t.backgroundColor = .systemGray6
         return t
     }()
-   
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         view.addSubview(conversationTV)
         view.addSubview(spinner)
         spinner.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
@@ -63,7 +63,7 @@ class MessageVC:  UIViewController, UITableViewDelegate, UITableViewDataSource {
             DispatchQueue.main.asyncAfter(deadline: time, execute: {
                 self.spinner.stopAnimating()
             })
-          
+            
         }
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -76,32 +76,32 @@ class MessageVC:  UIViewController, UITableViewDelegate, UITableViewDataSource {
         cell.textLabel?.text = (data.usersIds.first ?? "no name") + " - " +  (data.usersIds.last ?? "no name")
         return cell
     }
-
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let talk = talking[indexPath.row]
         var account: [User] = []
         Firestore.firestore().collection("users").getDocuments(completion: { sanpShot, error in
-                    guard  error == nil else {return}
-                    guard let users = sanpShot?.documents else { return }
-                    for user in users {
-                      let user = user.data()
-                            let id = user["id"] as? String ?? ""
-                            let name = user["name"] as? String ?? ""
-                         let status = user["status"] as? String ?? ""
-                        let image = user["image"] as? String ?? ""
-                        let latitude = user["latitude"] as? Double ?? 0
-                        let longitude = user["longitude"] as? Double ?? 0
-                        let curUser = User(id: id, name: name, status: status, latitude: latitude, longitude: longitude)
-                        account.append(curUser)
-
-                }
+            guard  error == nil else {return}
+            guard let users = sanpShot?.documents else { return }
+            for user in users {
+                let user = user.data()
+                let id = user["id"] as? String ?? ""
+                let name = user["name"] as? String ?? ""
+                let status = user["status"] as? String ?? ""
+                let image = user["image"] as? String ?? ""
+                let latitude = user["latitude"] as? Double ?? 0
+                let longitude = user["longitude"] as? Double ?? 0
+                let curUser = User(id: id, name: name, status: status, latitude: latitude, longitude: longitude)
+                account.append(curUser)
+                
+            }
             let view = ChatPageVC()
             let userAccount = account.first(where: {$0.id == talk.reciverId})
             view.user = userAccount
             self.present(UINavigationController(rootViewController:view), animated: true, completion: nil)
+            
+        })
         
-                })
-             
     }
 }
 
