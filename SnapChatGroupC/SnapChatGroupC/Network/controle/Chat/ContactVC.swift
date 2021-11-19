@@ -5,6 +5,7 @@
 //  Created by sara al zhrani on 07/04/1443 AH.
 //
 import UIKit
+import FirebaseFirestore
 
 
 class PeopleVC: UIViewController,  UISearchBarDelegate{
@@ -67,6 +68,7 @@ extension PeopleVC: UITableViewDelegate, UITableViewDataSource {
         
         cell.textLabel?.text = user.name
         cell.detailTextLabel?.text = user.status
+        cell.imageView?.image = UIImage(named: "40")
         
         return cell
     }
@@ -82,6 +84,33 @@ extension PeopleVC: UITableViewDelegate, UITableViewDataSource {
             animated: true,
             completion: nil
         )
+    }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        //2
+        let action = UIContextualAction(style: .normal, title: "") { _, _, success in
+            let alertController = UIAlertController(title: "Favorite", message: "Add to my Favoiret", preferredStyle: .alert)
+            
+            let alertAction = UIAlertAction(title: "OK", style: .default, handler: { [self] _ in do {
+                let user = people[indexPath.row]
+                Firestore.firestore().collection("favorite").document(user.id).setData([
+                    "id": user.id,
+                    "name": user.name,
+                    "status": user.status,
+                    "latitude": 0.0,
+                    "longitude": 0.0,
+                ], merge: true)
+            }
+                success(true)
+            })
+            alertController.addAction(alertAction)
+            self.present(alertController, animated: true, completion: nil)
+        }
+        
+        action.image = UIImage(systemName: "heart")
+        action.backgroundColor = .blue
+        
+        return UISwipeActionsConfiguration(actions: [action])
     }
 }
 

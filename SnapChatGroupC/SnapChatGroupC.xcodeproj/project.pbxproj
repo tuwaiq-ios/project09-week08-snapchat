@@ -26,6 +26,8 @@
 		1FFF7540273EF98F00A1902E /* ContactVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFF753F273EF98F00A1902E /* ContactVC.swift */; };
 		1FFF7542273EF9A300A1902E /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFF7541273EF9A300A1902E /* ProfileVC.swift */; };
 		1FFF7544273EF9C300A1902E /* MessageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFF7543273EF9C300A1902E /* MessageVC.swift */; };
+		8963AE5B2748372000F7A629 /* FavoriteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8963AE5A2748372000F7A629 /* FavoriteVC.swift */; };
+		8963AE5D2748393C00F7A629 /* AnimationLaunch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8963AE5C2748393C00F7A629 /* AnimationLaunch.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +54,8 @@
 		1FFF7541273EF9A300A1902E /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		1FFF7543273EF9C300A1902E /* MessageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageVC.swift; sourceTree = "<group>"; };
 		81BC25BD6C16E73332B6A01E /* Pods-SnapChatGroupC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SnapChatGroupC.debug.xcconfig"; path = "Target Support Files/Pods-SnapChatGroupC/Pods-SnapChatGroupC.debug.xcconfig"; sourceTree = "<group>"; };
+		8963AE5A2748372000F7A629 /* FavoriteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteVC.swift; sourceTree = "<group>"; };
+		8963AE5C2748393C00F7A629 /* AnimationLaunch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationLaunch.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +86,7 @@
 				1FFF7543273EF9C300A1902E /* MessageVC.swift */,
 				1F537B0027423E020076D2CE /* ChatPageVC.swift */,
 				1F537B0227423E2F0076D2CE /* ChatPageCell.swift */,
+				8963AE5A2748372000F7A629 /* FavoriteVC.swift */,
 			);
 			path = Chat;
 			sourceTree = "<group>";
@@ -110,6 +115,7 @@
 				1FFF7531273EF85D00A1902E /* Network */,
 				1FFF751C273EF79D00A1902E /* AppDelegate.swift */,
 				1FFF751E273EF79D00A1902E /* SceneDelegate.swift */,
+				8963AE5C2748393C00F7A629 /* AnimationLaunch.swift */,
 				1FFF7525273EF7A000A1902E /* Assets.xcassets */,
 				1FFF7527273EF7A000A1902E /* LaunchScreen.storyboard */,
 				1FFF752A273EF7A000A1902E /* Info.plist */,
@@ -283,11 +289,13 @@
 				1FFF7538273EF93800A1902E /* Message.swift in Sources */,
 				1FFF7544273EF9C300A1902E /* MessageVC.swift in Sources */,
 				1FFF7536273EF91F00A1902E /* UsersService.swift in Sources */,
+				8963AE5B2748372000F7A629 /* FavoriteVC.swift in Sources */,
 				1F537B0327423E2F0076D2CE /* ChatPageCell.swift in Sources */,
 				1F537B0127423E020076D2CE /* ChatPageVC.swift in Sources */,
 				1FFF751F273EF79D00A1902E /* SceneDelegate.swift in Sources */,
 				1FD72AE02740E93500B63DE4 /* LoginRegisterVC.swift in Sources */,
 				1FFF7542273EF9A300A1902E /* ProfileVC.swift in Sources */,
+				8963AE5D2748393C00F7A629 /* AnimationLaunch.swift in Sources */,
 				1FFF753A273EF94F00A1902E /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

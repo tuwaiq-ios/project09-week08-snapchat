@@ -27,6 +27,7 @@ func setupVCs() {
     createNavController(for:MessageVC(), title: NSLocalizedString("Chat", comment: ""), image: UIImage(systemName: "message")!),
    createNavController(for:locationVC (), title: NSLocalizedString("location", comment: ""), image: UIImage(systemName: "location")!),
    createNavController(for:PeopleVC(), title: NSLocalizedString("Contact", comment: ""), image: UIImage(systemName: "person.3")!),
+    createNavController(for:FavoriteVC(), title: NSLocalizedString("Favorite", comment: ""), image: UIImage(systemName: "heart")!),
    createNavController(for:ProfileVC(), title: NSLocalizedString("Profile", comment: ""), image: UIImage(systemName: "person")!),
   ]
  }

@@ -13,6 +13,6 @@ struct User {
     let status: String
     let latitude: Double
     let longitude: Double
-    let image : String
+//    let image : String
     
 }
