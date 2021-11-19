@@ -10,4 +10,3 @@
 6. Realtime location sharing
 
 
-
