@@ -1,0 +1,24 @@
+/* 
+  localized.strings
+  JetChat
+
+  Created by ibrahim asiri on 15/04/1443 AH.
+  
+*/
+
+"Ibrahim" = "إبراهيم";
+"Your Name" = "الأسم";
+"Email" = "الإيميل";
+"Password" = "كلمة المرور";
+"Register" = "تسجيل";
+"Login" = "دخول";
+"Swift Abha" = "سويفت أبها";
+"Map" = "الخريطة";
+"SnapHome" = "الصفحة الرئيسية";
+"Sign out" = "تسجيل الخروج";
+"Profile" = "الملف الشخصي";
+"Chat" = "المحادثات";
+"Search for a friend" = "البحث عن صديق";
+"Write your message" = "أكتب رسالتك";
+"Spotlight" = "بقعة ضوء";
+
