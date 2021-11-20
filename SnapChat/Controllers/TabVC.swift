@@ -12,6 +12,7 @@ class TabVC: UITabBarController {
   fileprivate func createNavController(for rootViewController: UIViewController,
                            title: String,
                            image: UIImage) -> UIViewController {
+      // titel in all views
       let navController = UINavigationController(rootViewController: rootViewController)
       navController.tabBarItem.title = title
       navController.tabBarItem.image = image
@@ -32,7 +33,6 @@ class TabVC: UITabBarController {
   override func viewDidLoad() {
     super.viewDidLoad()
       view.backgroundColor = UIColor (named: "myBackgroundColor")
-//      view.backgroundColor = .systemBackground
       UITabBar.appearance().barTintColor = .systemBackground
       tabBar.tintColor = .label
       setupVCs()

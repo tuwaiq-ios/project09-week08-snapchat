@@ -51,7 +51,7 @@ class VideoCollectionViewCell: UICollectionViewCell, UINavigationControllerDeleg
     }()
     private let likeButton: UIButton = {
          let button = UIButton()
-        button.setBackgroundImage(UIImage(systemName: "heart.fill"), for:.normal)
+        button.setBackgroundImage(UIImage(systemName: "arrowshape.turn.up.backward.circle"), for:.normal)
         button.tintColor = .white
         return button
     }()
@@ -63,7 +63,7 @@ class VideoCollectionViewCell: UICollectionViewCell, UINavigationControllerDeleg
     }()
     private let shareButton: UIButton = {
          let button = UIButton()
-        button.setBackgroundImage(UIImage(systemName:"arrowshape.turn.up.right.fill"), for:.normal)
+        button.setBackgroundImage(UIImage(systemName:"square.and.arrow.up.circle"), for:.normal)
         button.tintColor = .white
         return button
     }()

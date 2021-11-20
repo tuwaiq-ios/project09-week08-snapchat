@@ -25,11 +25,10 @@ class TikTok: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .white
         
-   
 
 
         // Do any additional setup after loading the view.
-        
+        // abyat add
         for _ in 0..<1{
             let model = VideoModel(caption: "Abyat AD",
                                    username: "@Sara",
@@ -38,66 +37,74 @@ class TikTok: UIViewController {
                                    videoFileFormat: "mp4")
             data.append (model)
         }
+        // exbo dubai
         for _ in 1..<2 {
-            let model = VideoModel(caption: "Expo 2020 Dubai ",
-                                   username: "@Sara",
+            let model = VideoModel(caption: "Expo 2020 Dubai 🇦🇪 ",
+                                   username: "@Amal",
                                    audioTrackName: "Video Song 🎵",
                                    videoFileName: "video2",
                                    videoFileFormat: "mp4")
             data.append (model)
         }
+        //jedaah rain
         for _ in 2..<3 {
-            let model = VideoModel(caption: "Abyat AD",
+            let model = VideoModel(caption: "Rainy Day 🌧 ",
                                    username: "@Sara",
-                                   audioTrackName: "Video Song 🎵",
+                                   audioTrackName: "Video Song2 🎵",
                                    videoFileName: "video3",
                                    videoFileFormat: "mp4")
             data.append (model)
         }
+        //Cars
         for _ in 3..<4 {
-            let model = VideoModel(caption: "food AD",
-                                   username: "@Sara",
-                                   audioTrackName: "Video Song 🎵",
+            let model = VideoModel(caption: "King abdullah road ",
+                                   username: "@Fawaz",
+                                   audioTrackName: "Video Song 3🎵",
                                    videoFileName: "video4",
                                    videoFileFormat: "mp4")
             data.append (model)
         }
+        //cake
         for _ in 4..<5 {
-            let model = VideoModel(caption: "s AD",
+            let model = VideoModel(caption: "My New Own Party Cake 🍰 ",
                                    username: "@Sara",
-                                   audioTrackName: "Video Song 🎵",
+                                   audioTrackName: "Video Song 4 🎵",
                                    videoFileName: "video5",
                                    videoFileFormat: "mp4")
             data.append (model)
         }
+        //kitchen
         for _ in 5..<6 {
-            let model = VideoModel(caption: "Abyat AD",
-                                   username: "@Sara",
-                                   audioTrackName: "Video Song 🎵",
+            let model = VideoModel(caption: "our Today's lunch 🌮",
+                                   username: "@Lolo",
+                                   audioTrackName: "Video Song 5 🎵",
                                    videoFileName: "video6",
                                    videoFileFormat: "mp4")
             data.append (model)
         }
+        // sea
         for _ in 6..<7 {
-            let model = VideoModel(caption: "Abyat AD",
+            let model = VideoModel(caption: "sea vacation 🌊",
                                    username: "@Sara",
-                                   audioTrackName: "Video Song 🎵",
+                                   audioTrackName: "Video Song 6🎵",
                                    videoFileName: "video7",
                                    videoFileFormat: "mp4")
             data.append (model)
         }
+        
         for _ in 7..<8{
-            let model = VideoModel(caption: "Abyat AD",
+            let model = VideoModel(caption: "indego resort",
                                    username: "@Sara",
-                                   audioTrackName: "Video Song 🎵",
+                                   audioTrackName: "Video Song  7🎵",
                                    videoFileName: "video8",
                                    videoFileFormat: "mp4")
             data.append (model)
         }
+        // hadi
         for _ in 8..<9 {
-            let model = VideoModel(caption: "Abyat AD",
+            let model = VideoModel(caption: "the best instructor Ever (HADI)®....",
                                    username: "@Sara",
-                                   audioTrackName: "Video Song 🎵",
+                                   audioTrackName: "class 2 ",
                                    videoFileName: "video99",
                                    videoFileFormat: "MP4")
             data.append (model)
@@ -133,6 +140,7 @@ extension TikTok: UICollectionViewDataSource{
        
         func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) ->
             UICollectionViewCell {
+                
             let model = data[indexPath.row]
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: VideoCollectionViewCell.identifier,
                                                                for: indexPath) as! VideoCollectionViewCell
@@ -144,18 +152,22 @@ extension TikTok: UICollectionViewDataSource{
 
 extension TikTok: VideoCollectionViewCellDelegate{
     func didTapLikeButton(with model: VideoModel) {
-        print("like button tapped")
-        let button = UIButton(type: .custom)
-        let image = UIImage(named: "fav")?.withRenderingMode(.alwaysTemplate)
-        button.setImage(image, for: .normal)
-        button.tintColor = UIColor.red
+        print("back button tapped")
+//        let button = UIButton(type: .custom)
+//        let image = UIImage(named: "fav")?.withRenderingMode(.alwaysTemplate)
+//        button.setImage(image, for: .normal)
+//        button.tintColor = UIColor.red
+        
+        let vc = TabVC()
+        vc.modalPresentationStyle = .fullScreen
+        self.present(vc, animated: true, completion: nil)
         
     }
     
     func didTapProfileButton(with model: VideoModel) {
         print("profile button tapped")
         let vc = MyProfileVC()
-        vc.modalPresentationStyle = .fullScreen
+        vc.modalPresentationStyle = .automatic
         self.present(vc, animated: true, completion: nil)
     }
     

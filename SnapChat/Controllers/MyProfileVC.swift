@@ -66,7 +66,7 @@ class MyProfileVC: UIViewController , UIImagePickerControllerDelegate , UINaviga
         button.backgroundColor = .systemGray6
         return button
     }()
-    
+    //share the name
     lazy var shareButton: UIButton = {
         let button = UIButton (type: .system)
         button.setTitle(NSLocalizedString("sharep", comment: ""), for: .normal)
@@ -99,7 +99,8 @@ class MyProfileVC: UIViewController , UIImagePickerControllerDelegate , UINaviga
         // Gesture to image
         let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped))
          profileImage.addGestureRecognizer(tapRecognizer)
-
+        
+        //Constraint profileImage
         view.addSubview(profileImage)
         NSLayoutConstraint.activate([
             profileImage.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -100),
@@ -107,6 +108,7 @@ class MyProfileVC: UIViewController , UIImagePickerControllerDelegate , UINaviga
             profileImage.widthAnchor.constraint(equalToConstant: 200),
             profileImage.heightAnchor.constraint(equalToConstant: 200),
         ])
+        //Constraint nameLabel
         view.addSubview(nameLabel)
         NSLayoutConstraint.activate([
             nameLabel.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -100),
@@ -115,7 +117,7 @@ class MyProfileVC: UIViewController , UIImagePickerControllerDelegate , UINaviga
             nameLabel.heightAnchor.constraint(equalToConstant: 40),
         ])
         
-        //Constraint lastName
+        //Constraint userStatusLabel
         view.addSubview(userStatusLabel)
         NSLayoutConstraint.activate([
             userStatusLabel.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -100),
@@ -123,7 +125,7 @@ class MyProfileVC: UIViewController , UIImagePickerControllerDelegate , UINaviga
             userStatusLabel.widthAnchor.constraint(equalToConstant: 200),
             userStatusLabel.heightAnchor.constraint(equalToConstant: 40),
         ])
-        //Constraint userEmail
+        //Constraint saveButton
         view.addSubview(saveButton)
         NSLayoutConstraint.activate([
             saveButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -70),
@@ -132,7 +134,7 @@ class MyProfileVC: UIViewController , UIImagePickerControllerDelegate , UINaviga
             saveButton.heightAnchor.constraint(equalToConstant: 50),
         ])
         
-        //Constraint userPassword
+        //Constraint shareButton
         view.addSubview(shareButton)
         NSLayoutConstraint.activate([
             shareButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -70),
@@ -140,7 +142,7 @@ class MyProfileVC: UIViewController , UIImagePickerControllerDelegate , UINaviga
             shareButton.widthAnchor.constraint(equalToConstant: 250),
             shareButton.heightAnchor.constraint(equalToConstant: 50),
         ])
-        //Constraint loginButton
+        //Constraint singOutButton
         view.addSubview((singOutButton))
         NSLayoutConstraint.activate([
             (singOutButton).rightAnchor.constraint(equalTo: view.rightAnchor, constant: -70),
@@ -168,7 +170,7 @@ class MyProfileVC: UIViewController , UIImagePickerControllerDelegate , UINaviga
         present(LogInVC(), animated: true, completion: nil)
     }
     
-    //update name , image , status in fire store
+    //update name , image , status in firebase
     @objc private func updateButtonTapped() {
         
         guard let currentUserID = Auth.auth().currentUser?.uid else {return}
@@ -200,7 +202,7 @@ class MyProfileVC: UIViewController , UIImagePickerControllerDelegate , UINaviga
         dismiss(animated: true)
     }
     
-    //share
+    //share the namelabel
     @objc func sharePressed (_ sender: Any) {
         let activityVC = UIActivityViewController(activityItems: [self.nameLabel.text], applicationActivities: nil)
         activityVC.popoverPresentationController?.sourceView = self.view

@@ -48,8 +48,6 @@ class LogInVC: UIViewController {
     lazy var labelToRegister: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-//        label.backgroundColor = .white
-//        label.textColor = .black
         label.font = UIFont.systemFont(ofSize: 12, weight: .medium)
         label.text = (NSLocalizedString("Don't have account?", comment: ""))
         return label

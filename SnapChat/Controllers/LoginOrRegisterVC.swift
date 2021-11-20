@@ -61,8 +61,6 @@ lazy var loginButton: UIButton = {
         view.addSubview(loginButton)
         NSLayoutConstraint.activate([
             loginButton.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 300),
-//            loginButton.bottomAnchor.constraint(equalTo: registerButton.topAnchor),
-
             loginButton.rightAnchor.constraint(equalTo: view.rightAnchor),
             loginButton.leftAnchor.constraint(equalTo: view.leftAnchor),
             loginButton.heightAnchor.constraint(equalToConstant: 100),

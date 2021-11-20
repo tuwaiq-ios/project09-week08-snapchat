@@ -131,7 +131,7 @@ extension ChatVC : UITableViewDelegate , UITableViewDataSource {
             "senderId" : currentUserID,
             "senderName": "",
             "content" : message,
-            "timestamp":  Timestamp(),
+            "timestamp": Timestamp(),
             "conversationsId" : conversation?.id
             
         ])

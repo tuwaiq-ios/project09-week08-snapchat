@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		84374BEA27413090008113F1 /* LoginOrRegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84374BE927413090008113F1 /* LoginOrRegisterVC.swift */; };
 		84374BEC27413510008113F1 /* Conversations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84374BEB27413510008113F1 /* Conversations.swift */; };
-		84374BEE27413523008113F1 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84374BED27413523008113F1 /* Location.swift */; };
 		84374BF027413531008113F1 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84374BEF27413531008113F1 /* Message.swift */; };
 		84374BF22741373E008113F1 /* CamVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84374BF12741373E008113F1 /* CamVC.swift */; };
 		84374C5727429550008113F1 /* video4.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 84374C4E2742954B008113F1 /* video4.mp4 */; };
@@ -26,7 +25,6 @@
 		C9534230273FFA4000E149B0 /* RegisterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C953422F273FFA4000E149B0 /* RegisterService.swift */; };
 		C9534232273FFAB000E149B0 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9534231273FFAB000E149B0 /* User.swift */; };
 		C960E7722747DBBC0046729A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C960E7742747DBBC0046729A /* Localizable.strings */; };
-		C98B5A29274629AB0034166D /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98B5A28274629AB0034166D /* UserService.swift */; };
 		C98B5A5B2746773F0034166D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C98B5A5A2746773F0034166D /* GoogleService-Info.plist */; };
 		C9F3E3BE273AD47A0093B42F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F3E3BD273AD47A0093B42F /* AppDelegate.swift */; };
 		C9F3E3C0273AD47A0093B42F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F3E3BF273AD47A0093B42F /* SceneDelegate.swift */; };
@@ -40,7 +38,6 @@
 		C9F3E3DC273AFDCE0093B42F /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F3E3DB273AFDCE0093B42F /* ChatVC.swift */; };
 		C9F3E3DE273AFE230093B42F /* UsersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F3E3DD273AFE230093B42F /* UsersVC.swift */; };
 		CCA0D6022744D3B400253A85 /* ConversationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA0D6012744D3B400253A85 /* ConversationVC.swift */; };
-		CCB8890227478C5100B5869A /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB8890127478C5100B5869A /* LocationService.swift */; };
 		D36D503995DA990AEAD02CB1 /* Pods_SnapChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B2D15505711CF2F539B5554 /* Pods_SnapChat.framework */; };
 /* End PBXBuildFile section */
 
@@ -48,7 +45,6 @@
 		4B2D15505711CF2F539B5554 /* Pods_SnapChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SnapChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		84374BE927413090008113F1 /* LoginOrRegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginOrRegisterVC.swift; sourceTree = "<group>"; };
 		84374BEB27413510008113F1 /* Conversations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Conversations.swift; sourceTree = "<group>"; };
-		84374BED27413523008113F1 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		84374BEF27413531008113F1 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		84374BF12741373E008113F1 /* CamVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CamVC.swift; sourceTree = "<group>"; };
 		84374C4E2742954B008113F1 /* video4.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video4.mp4; sourceTree = "<group>"; };
@@ -69,7 +65,6 @@
 		C960E76F2747D9730046729A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		C960E7732747DBBC0046729A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C960E7752747DBBE0046729A /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
-		C98B5A28274629AB0034166D /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		C98B5A5A2746773F0034166D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C9F3E3BA273AD47A0093B42F /* SnapChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SnapChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9F3E3BD273AD47A0093B42F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -85,7 +80,6 @@
 		C9F3E3DB273AFDCE0093B42F /* ChatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatVC.swift; sourceTree = "<group>"; };
 		C9F3E3DD273AFE230093B42F /* UsersVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersVC.swift; sourceTree = "<group>"; };
 		CCA0D6012744D3B400253A85 /* ConversationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationVC.swift; sourceTree = "<group>"; };
-		CCB8890127478C5100B5869A /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		D72834839C2AD10D690C3792 /* Pods-SnapChat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SnapChat.debug.xcconfig"; path = "Target Support Files/Pods-SnapChat/Pods-SnapChat.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -131,8 +125,6 @@
 			isa = PBXGroup;
 			children = (
 				C953422F273FFA4000E149B0 /* RegisterService.swift */,
-				C98B5A28274629AB0034166D /* UserService.swift */,
-				CCB8890127478C5100B5869A /* LocationService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -142,7 +134,6 @@
 			children = (
 				C9534231273FFAB000E149B0 /* User.swift */,
 				84374BEB27413510008113F1 /* Conversations.swift */,
-				84374BED27413523008113F1 /* Location.swift */,
 				84374BEF27413531008113F1 /* Message.swift */,
 			);
 			path = Models;
@@ -340,19 +331,16 @@
 				84374BF22741373E008113F1 /* CamVC.swift in Sources */,
 				C9F3E3DC273AFDCE0093B42F /* ChatVC.swift in Sources */,
 				C9534232273FFAB000E149B0 /* User.swift in Sources */,
-				C98B5A29274629AB0034166D /* UserService.swift in Sources */,
 				C9F3E3D6273AFDA20093B42F /* MyProfileVC.swift in Sources */,
 				CCA0D6022744D3B400253A85 /* ConversationVC.swift in Sources */,
 				C9F3E3C2273AD47A0093B42F /* LogInVC.swift in Sources */,
 				84374C6127429571008113F1 /* TikTokVC.swift in Sources */,
 				84374BEA27413090008113F1 /* LoginOrRegisterVC.swift in Sources */,
 				84374BEC27413510008113F1 /* Conversations.swift in Sources */,
-				84374BEE27413523008113F1 /* Location.swift in Sources */,
 				C9F3E3BE273AD47A0093B42F /* AppDelegate.swift in Sources */,
 				C9F3E3D2273ADB1D0093B42F /* TabVC.swift in Sources */,
 				C9F3E3D8273AFDB10093B42F /* MapVC.swift in Sources */,
 				C9534230273FFA4000E149B0 /* RegisterService.swift in Sources */,
-				CCB8890227478C5100B5869A /* LocationService.swift in Sources */,
 				C9F3E3D4273ADCED0093B42F /* RegisterVC.swift in Sources */,
 				84374BF027413531008113F1 /* Message.swift in Sources */,
 				C9F3E3DE273AFE230093B42F /* UsersVC.swift in Sources */,
