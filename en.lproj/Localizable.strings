@@ -1,0 +1,26 @@
+/* 
+  Localizable.strings
+  SnapChat
+
+  Created by Amal on 14/04/1443 AH.
+  
+*/
+"Log In" = "Log in";
+"Sign In" = "Sign up";
+"email" = "Email...";
+"password" = "Password...";
+"Don't have account?" = "Don't have account?";
+"did you have account?" = "did you have account?";
+"first" = "first name...";
+"last" = "last name...";
+"namep" = "Name";
+"stp" = "Status...";
+"savep" = "Save...";
+"sharep" = "ShareURL...";
+"signp" = "Sign Out...";
+"profile" = "Profile";
+"Users" = "Users";
+"cam" = "Cam";
+"Chat" = "Chat";
+"location" = "Location";
+
