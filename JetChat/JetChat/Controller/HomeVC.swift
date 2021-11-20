@@ -35,6 +35,7 @@ class HomeVC: UIViewController {
         let pC = UIView()
         return pC
     }()
+    
     let cancelPhotoButton: UIButton = {
         let btn = UIButton(type: .system)
 
@@ -42,6 +43,7 @@ class HomeVC: UIViewController {
         
         return btn
     }()
+  
     let savePhotoButton: UIButton = {
         let btn = UIButton(type: .system)
         btn.setupButton(using: "square.and.arrow.down")
@@ -105,7 +107,6 @@ class HomeVC: UIViewController {
         profileImage.widthAnchor.constraint(equalToConstant: 60).isActive = true
         profileImage.heightAnchor.constraint(equalToConstant: 60).isActive = true
     }
-
   
     private func readImageFromFirestore(){
         guard let currentUser = Auth.auth().currentUser else {return}
@@ -193,6 +194,7 @@ class HomeVC: UIViewController {
         recordButton.widthAnchor.constraint(equalToConstant: 60).isActive = true
         recordButton.heightAnchor.constraint(equalToConstant: 60).isActive = true
     }
+  
     private func showWelcomeScreen() {
         let vc = UINavigationController(rootViewController: Login())
         vc.modalTransitionStyle = .flipHorizontal
@@ -301,12 +303,14 @@ class HomeVC: UIViewController {
         stackView.heightAnchor.constraint(equalToConstant: 120).isActive = true
         
     }
+  
     @objc private func cancelPreviewPhoto() {
         DispatchQueue.main.async {
             self.userProcessedImage.removeFromSuperview()
             self.previewContainer.removeFromSuperview()
         }
     }
+ 
     @objc private func savePreviewPhotoToLibrary() {
         guard let previewPhoto = userProcessedImage.image else {return}
         
@@ -339,6 +343,7 @@ class HomeVC: UIViewController {
             
         }
     }
+  
     @objc private func recordButtonTapped() {
         photoOutput.capturePhoto(with: AVCapturePhotoSettings(), delegate: self)
     }
@@ -371,6 +376,7 @@ extension HomeVC: AVCapturePhotoCaptureDelegate {
         view.addSubview(previewContainer)
     }
 }
+
 extension UIButton {
     open func setupButton(with title: String) {
         backgroundColor = .blue

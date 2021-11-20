@@ -60,6 +60,7 @@ class MapVC: UIViewController {
             handleCLLocationAuthorization()
         }
     }
+    
     private func handleCLLocationAuthorization() {
         locationManager.requestWhenInUseAuthorization()
         

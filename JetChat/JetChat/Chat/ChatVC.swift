@@ -18,6 +18,7 @@ class ChatVC: UIViewController {
     let storage = Storage.storage()
     let search = UISearchController()
     var currentUserName = ""
+   
     let tableView: UITableView = {
         let table = UITableView(frame: .zero, style: .insetGrouped)
         table.register(ChatCell.self, forCellReuseIdentifier: ChatCell.cellId)
@@ -52,6 +53,7 @@ class ChatVC: UIViewController {
         tableView.rowHeight = 80
 
     }
+  
     private func setupSearchBar() {
         search.loadViewIfNeeded()
         search.searchResultsUpdater = self

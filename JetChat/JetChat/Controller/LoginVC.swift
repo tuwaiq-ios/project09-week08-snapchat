@@ -39,7 +39,7 @@ class Login: UITableViewController {
         nameSeparatorV.translatesAutoresizingMaskIntoConstraints = false
         nameSeparatorV.backgroundColor = .lightGray
         
-        emailTF.text = "ibra@i.com"
+        emailTF.text = "ibra3@i.com"
         emailTF.placeholder = "Email".localized()
         emailTF.textAlignment = .center
         emailTF.translatesAutoresizingMaskIntoConstraints = false

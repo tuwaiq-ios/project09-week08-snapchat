@@ -47,12 +47,14 @@ class DMScreen: MessagesViewController {
         messageInputBar.delegate = self
         fetchMessages()
     }
+ 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         //present keyboard
         self.messageInputBar.inputTextView.becomeFirstResponder()
         
     }
+ 
     private func setupLocation() {
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
@@ -62,7 +64,6 @@ class DMScreen: MessagesViewController {
         default:
             break
         }
-        
     }
     
     private func customizeBar() {
@@ -99,9 +100,7 @@ class DMScreen: MessagesViewController {
     }
     
     private func  fetchMessages() {
-        
-//        self.messages.removeAll()
-        
+                
         db.collection("messages").whereField("messagesBetween", isEqualTo: [user, barTitle].sorted())
             .order(by: "messageSentDate")
             .addSnapshotListener { (querySnapshot, error) in

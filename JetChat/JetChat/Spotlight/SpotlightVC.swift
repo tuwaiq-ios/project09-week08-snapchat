@@ -42,7 +42,8 @@ import UIKit
          
 
      }
-      func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+     
+     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
           return blogsArt.count
      }
 

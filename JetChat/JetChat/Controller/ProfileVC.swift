@@ -70,6 +70,7 @@ class ProfileVC: UIViewController {
         setUpLabels()
         
     }
+  
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         fetchCurrentUsers()
@@ -147,6 +148,7 @@ class ProfileVC: UIViewController {
             }
         }
     }
+  
     func setupImagePicker() {
         
         imagePicker.delegate = self
@@ -154,6 +156,7 @@ class ProfileVC: UIViewController {
         imagePicker.allowsEditing = true
         present(imagePicker, animated: true)
     }
+  
     @objc func imageTapped() {
         print("Image tapped")
         setupImagePicker()
@@ -248,7 +251,6 @@ class ProfileVC: UIViewController {
                 }
         }
     }
-    
 }
 
 extension ProfileVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
