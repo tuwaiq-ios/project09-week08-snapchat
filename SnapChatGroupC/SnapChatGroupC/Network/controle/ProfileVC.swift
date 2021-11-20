@@ -83,7 +83,7 @@ class ProfileVC : UIViewController, UIImagePickerControllerDelegate,UITextFieldD
         profileImage.addGestureRecognizer(tapRecognizer)
         
         view.backgroundColor = .white
-        profileImage.image = .init(systemName: "person.circle")
+        profileImage.image = .init(systemName: "455")
         profileImage.tintColor = UIColor(ciColor: .black)
         profileImage.layer.masksToBounds = true
         profileImage.layer.cornerRadius = 100

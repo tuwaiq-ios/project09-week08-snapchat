@@ -64,7 +64,7 @@ class ChatPageCell: UICollectionViewCell {
         profileImageView.heightAnchor.constraint(equalToConstant: 32).isActive = true
         
         
-        bubbleViewRightAnchor = bubbleView.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -8)
+        bubbleViewRightAnchor = bubbleView.rightAnchor.constraint(equalTo: self.rightAnchor, constant: 300)
         
         bubbleViewRightAnchor?.isActive = true
         

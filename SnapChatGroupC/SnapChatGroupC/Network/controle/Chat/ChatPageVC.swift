@@ -128,15 +128,15 @@ class ChatPageVC:UIViewController, UICollectionViewDataSource, UICollectionViewD
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ChatPageCell.identifier, for: indexPath) as! ChatPageCell
         let message = messages[indexPath.item]
         cell.textView.text = message.content
-        cell.profileImageView.image = UIImage(named: "40")
+//        cell.profileImageView.image = UIImage(named: "40")
         setupCell(cell, message: message)
         cell.bubbleWidthAnchor?.constant = estimateFrameForText(message.content!).width + 32
         return cell
     }
-    //// make sender colour diffrent
+    
     fileprivate func setupCell(_ cell: ChatPageCell, message: Message) {
         if message.sender == Auth.auth().currentUser?.uid {
-            cell.bubbleView.backgroundColor = .blue
+            cell.bubbleView.backgroundColor = .systemGray2
             cell.textView.textColor = UIColor.white
             cell.profileImageView.isHidden = true
             cell.bubbleViewRightAnchor?.isActive = true
@@ -144,7 +144,7 @@ class ChatPageVC:UIViewController, UICollectionViewDataSource, UICollectionViewD
         } else {
             cell.bubbleView.backgroundColor = .cyan
             cell.textView.textColor = UIColor.black
-            cell.profileImageView.isHidden = true
+            cell.profileImageView.isHidden = false
             cell.bubbleViewRightAnchor?.isActive = false
             cell.bubbleViewLeftAnchor?.isActive = true
         }
