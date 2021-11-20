@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		05F94ABE9A57686FDD189620 /* Pods_SnapChatGroupC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 113EBE83B7E323F432B61897 /* Pods_SnapChatGroupC.framework */; };
+		1F28B3772748F8CD00D13C9F /* CameraVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F28B3762748F8CD00D13C9F /* CameraVC.swift */; };
+		1F28B3792748FDBE00D13C9F /* WetharVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F28B3782748FDBE00D13C9F /* WetharVC.swift */; };
 		1F537B0127423E020076D2CE /* ChatPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F537B0027423E020076D2CE /* ChatPageVC.swift */; };
 		1F537B0327423E2F0076D2CE /* ChatPageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F537B0227423E2F0076D2CE /* ChatPageCell.swift */; };
 		1FD72AE02740E93500B63DE4 /* LoginRegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD72ADF2740E93500B63DE4 /* LoginRegisterVC.swift */; };
@@ -33,6 +35,8 @@
 /* Begin PBXFileReference section */
 		08F56CA2EB20A855FB508494 /* Pods-SnapChatGroupC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SnapChatGroupC.release.xcconfig"; path = "Target Support Files/Pods-SnapChatGroupC/Pods-SnapChatGroupC.release.xcconfig"; sourceTree = "<group>"; };
 		113EBE83B7E323F432B61897 /* Pods_SnapChatGroupC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SnapChatGroupC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1F28B3762748F8CD00D13C9F /* CameraVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraVC.swift; sourceTree = "<group>"; };
+		1F28B3782748FDBE00D13C9F /* WetharVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WetharVC.swift; sourceTree = "<group>"; };
 		1F537B0027423E020076D2CE /* ChatPageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatPageVC.swift; sourceTree = "<group>"; };
 		1F537B0227423E2F0076D2CE /* ChatPageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatPageCell.swift; sourceTree = "<group>"; };
 		1FD72ADF2740E93500B63DE4 /* LoginRegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRegisterVC.swift; sourceTree = "<group>"; };
@@ -86,7 +90,6 @@
 				1FFF7543273EF9C300A1902E /* MessageVC.swift */,
 				1F537B0027423E020076D2CE /* ChatPageVC.swift */,
 				1F537B0227423E2F0076D2CE /* ChatPageCell.swift */,
-				8963AE5A2748372000F7A629 /* FavoriteVC.swift */,
 			);
 			path = Chat;
 			sourceTree = "<group>";
@@ -152,6 +155,9 @@
 				1FD72ADF2740E93500B63DE4 /* LoginRegisterVC.swift */,
 				1FFF753B273EF96C00A1902E /* locationVC.swift */,
 				1FFF7541273EF9A300A1902E /* ProfileVC.swift */,
+				1F28B3762748F8CD00D13C9F /* CameraVC.swift */,
+				8963AE5A2748372000F7A629 /* FavoriteVC.swift */,
+				1F28B3782748FDBE00D13C9F /* WetharVC.swift */,
 				1FD72ADE2740E8B500B63DE4 /* Chat */,
 			);
 			path = controle;
@@ -281,7 +287,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				1FFF753E273EF98000A1902E /* TabBarVC.swift in Sources */,
+				1F28B3772748F8CD00D13C9F /* CameraVC.swift in Sources */,
 				1FFF7540273EF98F00A1902E /* ContactVC.swift in Sources */,
+				1F28B3792748FDBE00D13C9F /* WetharVC.swift in Sources */,
 				1FFF7534273EF8FE00A1902E /* MessagesService.swift in Sources */,
 				1FD72AE22740EA1700B63DE4 /* Conversation.swift in Sources */,
 				1FFF753C273EF96C00A1902E /* locationVC.swift in Sources */,

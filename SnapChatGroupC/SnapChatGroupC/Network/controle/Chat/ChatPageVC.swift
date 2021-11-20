@@ -64,7 +64,7 @@ class ChatPageVC:UIViewController, UICollectionViewDataSource, UICollectionViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.prefersLargeTitles = true
-        view.backgroundColor = .white
+       view.backgroundColor = .white
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 20, left: 10, bottom: 10, right: 10)
         layout.itemSize = CGSize(width: 60, height: 60)
@@ -128,6 +128,7 @@ class ChatPageVC:UIViewController, UICollectionViewDataSource, UICollectionViewD
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ChatPageCell.identifier, for: indexPath) as! ChatPageCell
         let message = messages[indexPath.item]
         cell.textView.text = message.content
+        cell.profileImageView.image = UIImage(named: "40")
         setupCell(cell, message: message)
         cell.bubbleWidthAnchor?.constant = estimateFrameForText(message.content!).width + 32
         return cell
@@ -143,7 +144,7 @@ class ChatPageVC:UIViewController, UICollectionViewDataSource, UICollectionViewD
         } else {
             cell.bubbleView.backgroundColor = .cyan
             cell.textView.textColor = UIColor.black
-            cell.profileImageView.isHidden = false
+            cell.profileImageView.isHidden = true
             cell.bubbleViewRightAnchor?.isActive = false
             cell.bubbleViewLeftAnchor?.isActive = true
         }
@@ -195,23 +196,7 @@ class ChatPageVC:UIViewController, UICollectionViewDataSource, UICollectionViewD
         guard let currentUser = Auth.auth().currentUser else {return}
         guard let message = inputTextField.text else {return}
         guard let user = user else {return}
-        //        var MyAccount = User(id: currentUser.uid, name: "Me", status: "onLine", latitude: 0, longitude: 0)
-        //        Firestore.firestore().collection("users/\(currentUser.uid)").getDocuments(completion: { sanpShot, error in
-        //            guard  error == nil else {return}
-        //            guard let users = sanpShot?.documents else { return }
-        //
-        //            for user in users {
-        //              let user = user.data()
-        //                    let id = user["id"] as? String ?? ""
-        //                    let name = user["name"] as? String ?? ""
-        //                    let status = user["status"] as? String ?? ""
-        //                let latitude = user["latitude"] as? Double ?? 0
-        //                let longitude = user["longitude"] as? Double ?? 0
-        //            let curUser = User(id: id, name: name, status: status, latitude: latitude, longitude: longitude)
-        //                MyAccount = curUser
-        //        }
-        //
-        //        })
+
         Firestore.firestore().document("messages/\(messageId)").setData([
             "sender" : currentUser.uid,
             "receiver" : user.id,
@@ -219,7 +204,7 @@ class ChatPageVC:UIViewController, UICollectionViewDataSource, UICollectionViewD
             "id": messageId,
             "receiverName":user.name,
             "senderName": "Me"
-            //            "reciverId":
+//            "reciverId":
         ])
         inputTextField.text = ""
         self.collectionView?.reloadData()

@@ -32,7 +32,6 @@ class UsersService {
                     let id = data["id"] as? String,
                     let name = data["name"] as? String,
                     let status = data["status"] as? String
-                        //                    let image = data["image"] as? String
                         
                 else  {
                     continue
@@ -40,13 +39,16 @@ class UsersService {
                 
                 let latitude = data["latitude"] as? Double
                 let longitude = data["longitude"] as? Double
-                
+//                let image = data["image"] as? String
+
                 let user = User(
                     id: id,
                     name: name,
                     status: status,
                     latitude: latitude ?? 00,
-                    longitude: longitude ?? 00)
+                    longitude: longitude ?? 00
+//                    image: image!)
+                    )
                 
                 users.append(user)
             }
@@ -60,9 +62,10 @@ class UsersService {
             "id": user.id,
             "name": user.name,
             "status": user.status,
-            //            "image" : user.image,
             "latitude": 0.0,
-            "longitude": 0.0,
+            "longitude": 0.0
+//            "image" : user.image
+
         ], merge: true)
     }
 }

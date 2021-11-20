@@ -26,13 +26,13 @@ class MessagesService {
                 let content = newData["content"] as? String
                 let receiver = newData["receiver"] as? String ?? ""
                 let reciverId = newData["reciverId"] as? String ?? ""
-                let  sender = newData["sender"] as? String
+                let sender = newData["sender"] as? String
                 let timestamp = newData["timestamp"] as? Timestamp
                 let convId = newData["convId"] as? String
                 let senderId = newData["senderId"] as? String
                 let receiverName = newData["receiverName"] as? String
                 let senderName = newData["senderName"] as? String
-                let newConversation = Conversation(conersationId: convId ?? "", senderId: senderId ?? "", messageId: id ?? "", title: content ?? "", usersIds: [receiverName ?? "",senderName ?? ""], reciverId: receiver)
+                let newConversation = Conversation(conersationId: convId ?? "", senderId: sender ?? "", messageId: id ?? "", title: content ?? "", usersIds: [receiverName ?? "",senderName ?? ""], reciverId: receiver)
                 conversation.append(newConversation)
             }
             completion(conversation)

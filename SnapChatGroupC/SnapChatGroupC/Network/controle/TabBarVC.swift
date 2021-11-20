@@ -37,7 +37,55 @@ class TabBarVC : UITabBarController {
         UITabBar.appearance().barTintColor = .systemGray6
         tabBar.tintColor = .label
         setupVCs()
+        
+        
+        view.isUserInteractionEnabled = true
+        
+        let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(handleGesture))
+            swipeLeft.direction = .left
+            self.view.addGestureRecognizer(swipeLeft)
+                
+        let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(handleGesture))
+            swipeRight.direction = .right
+            self.view.addGestureRecognizer(swipeRight)
+                
+            let swipeUp = UISwipeGestureRecognizer(target: self, action: #selector(handleGesture))
+            swipeUp.direction = .up
+            self.view.addGestureRecognizer(swipeUp)
+                
+            let swipeDown = UISwipeGestureRecognizer(target: self, action: #selector(handleGesture))
+            swipeDown.direction = .down
+            self.view.addGestureRecognizer(swipeDown)
+        
     }
-}
+        
+        @objc func handleGesture(gesture: UISwipeGestureRecognizer) {
+           if gesture.direction == .right {
+               present(
+                   UINavigationController(rootViewController: CamVC()),
+                   animated: true,
+                   completion: nil
+               )
+           }
+           else if gesture.direction == .left {
+        
+                   present(
+                       UINavigationController(rootViewController: ViewController()),
+                       animated: true,
+                       completion: nil)
+              
+           }
+           else if gesture.direction == .up {
+                print("Swipe Up")
+           }
+           else if gesture.direction == .down {
+                print("Swipe Down")
+           }
+        }
+        
+        
+        
+    }
 
+                       
 

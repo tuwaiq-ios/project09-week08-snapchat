@@ -43,6 +43,8 @@ class FavoriteVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                 
                 let latitude = data["latitude"] as? Double
                 let longitude = data["longitude"] as? Double
+//                let image = data["image"] as? String
+
                 
                 let user = User(
                     id: id,

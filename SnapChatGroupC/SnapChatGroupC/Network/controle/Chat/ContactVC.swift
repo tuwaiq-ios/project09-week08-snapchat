@@ -12,6 +12,16 @@ class PeopleVC: UIViewController,  UISearchBarDelegate{
     
     let cellId = "PeopleCell"
     var people: [User] = []
+    var isSearch:Bool = false{
+        didSet {
+            peopleTV.reloadData()
+        }
+    }
+    var resultSearch: [User] = []{
+        didSet{
+            peopleTV.reloadData()
+        }
+    }
     
     lazy var searchBar:UISearchBar = UISearchBar()
     lazy var peopleTV: UITableView = {
@@ -30,7 +40,7 @@ class PeopleVC: UIViewController,  UISearchBarDelegate{
             self.people = newUsers
             self.peopleTV.reloadData()
         }
-        
+        searchBar.showsCancelButton = true
         searchBar.searchBarStyle = UISearchBar.Style.default
         searchBar.placeholder = " Search..."
         searchBar.sizeToFit()
@@ -50,18 +60,37 @@ class PeopleVC: UIViewController,  UISearchBarDelegate{
             peopleTV.bottomAnchor.constraint(equalTo: view.bottomAnchor),
         ])
     }
-    func searchBar(_ searchBar: UISearchBar, textDidChange textSearched: String)
-    {
-        
+    
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        isSearch = true
+        print(searchBar.text)
+        let seName = (searchBar.text ?? "")
+        if people.contains(where: {$0.name == seName}) {
+            let result = people.filter({$0.name == seName})
+            resultSearch.removeAll()
+            resultSearch = result
+            print("name is exist")
+        } else {
+            print ("Not Found")
+        }
     }
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        isSearch = false
+    }
+   
     
 }
 
 extension PeopleVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+       
+        if isSearch {
+            return resultSearch.count
+        } else {
         return people.count
     }
-    
+    }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .subtitle, reuseIdentifier: cellId)
         let user = people[indexPath.row]

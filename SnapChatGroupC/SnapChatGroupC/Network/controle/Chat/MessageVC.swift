@@ -9,12 +9,9 @@ import UIKit
 import FirebaseFirestore
 import FirebaseAuth
 
-
-
-class MessageVC:  UIViewController, UITableViewDelegate, UITableViewDataSource {
+class MessageVC:  UIViewController, UITableViewDelegate, UITableViewDataSource  {
     
-    var talking : Array<Conversation> = []
-    {
+    var talking : [Conversation] = []{
         didSet {
             conversationTV.reloadData()
         }
@@ -23,10 +20,10 @@ class MessageVC:  UIViewController, UITableViewDelegate, UITableViewDataSource {
         let spinner = UIActivityIndicatorView()
         spinner.translatesAutoresizingMaskIntoConstraints = false
         spinner.tintColor = .white
-        spinner.backgroundColor = .gray
+        spinner.backgroundColor = .lightGray
         return spinner
     }()
-    
+
     var people: [User] = []
     lazy var conversationTV: UITableView = {
         let t = UITableView()
@@ -37,72 +34,92 @@ class MessageVC:  UIViewController, UITableViewDelegate, UITableViewDataSource {
         t.backgroundColor = .systemGray6
         return t
     }()
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         view.addSubview(conversationTV)
         view.addSubview(spinner)
-        spinner.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-        spinner.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        spinner.heightAnchor.constraint(equalToConstant: view.bounds.height).isActive = true
-        spinner.widthAnchor.constraint(equalToConstant: view.bounds.width).isActive = true
+        spinner.startAnimating()
         NSLayoutConstraint.activate([
             conversationTV.topAnchor.constraint(equalTo: view.topAnchor),
             conversationTV.leftAnchor.constraint(equalTo: view.leftAnchor),
             conversationTV.rightAnchor.constraint(equalTo: view.rightAnchor),
             conversationTV.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            spinner.heightAnchor.constraint(equalToConstant: view.bounds.height),
+            spinner.widthAnchor.constraint(equalToConstant: view.bounds.width),
+            spinner.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            spinner.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
-        view.backgroundColor = .green
-        spinner.startAnimating()
         guard  let user = Auth.auth().currentUser else { return }
         MessagesService.shared.getAllConversation { conversation in
-            print(conversation)
-            self.talking = conversation
-            let time = DispatchTime.now() + 1
-            DispatchQueue.main.asyncAfter(deadline: time, execute: {
-                self.spinner.stopAnimating()
-            })
-            
+            for con in conversation {
+                print("Receiver " + con.reciverId)
+                print("Sender " + con.senderId)
+                print("user " + user.uid)
+                if con.senderId == user.uid {
+                    print("same sender")
+                    if !(self.talking.contains(where: {$0.reciverId == con.reciverId})) {
+                        self.talking.append(con)
+                } else {
+                    print("deferent sender")
+                }
+            }
         }
+        let time = DispatchTime.now() + 1
+        DispatchQueue.main.asyncAfter(deadline: time, execute: {
+            self.spinner.stopAnimating()
+        })
     }
+ 
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return talking.count
     }
+    
+ 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "talkingcell", for: indexPath)
         let data = talking[indexPath.row]
         cell.imageView?.image = UIImage(named: "40")
         cell.textLabel?.text = (data.usersIds.first ?? "no name") + " - " +  (data.usersIds.last ?? "no name")
+        
+        
         return cell
     }
     
+
+ 
+
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let talk = talking[indexPath.row]
         var account: [User] = []
         Firestore.firestore().collection("users").getDocuments(completion: { sanpShot, error in
-            guard  error == nil else {return}
-            guard let users = sanpShot?.documents else { return }
-            for user in users {
-                let user = user.data()
-                let id = user["id"] as? String ?? ""
-                let name = user["name"] as? String ?? ""
-                let status = user["status"] as? String ?? ""
-                let image = user["image"] as? String ?? ""
-                let latitude = user["latitude"] as? Double ?? 0
-                let longitude = user["longitude"] as? Double ?? 0
-                let curUser = User(id: id, name: name, status: status, latitude: latitude, longitude: longitude)
-                account.append(curUser)
-                
-            }
+                    guard  error == nil else {return}
+                    guard let users = sanpShot?.documents else { return }
+                    for user in users {
+                      let user = user.data()
+                            let id = user["id"] as? String ?? ""
+                            let name = user["name"] as? String ?? ""
+                         let status = user["status"] as? String ?? ""
+                        let latitude = user["latitude"] as? Double ?? 0
+                        let longitude = user["longitude"] as? Double ?? 0
+                    let curUser = User(id: id, name: name, status: status, latitude: latitude, longitude: longitude)
+                        account.append(curUser)
+
+                }
             let view = ChatPageVC()
             let userAccount = account.first(where: {$0.id == talk.reciverId})
             view.user = userAccount
             self.present(UINavigationController(rootViewController:view), animated: true, completion: nil)
-            
-        })
         
+                })
+             
     }
 }
+
+    
+
 
 
