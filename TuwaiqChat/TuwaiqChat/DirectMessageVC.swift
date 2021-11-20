@@ -7,6 +7,8 @@
 
 import UIKit
 import Firebase
+import CoreLocation
+import MapKit
 
 class DirectMessageVC : UIViewController {
     
@@ -14,10 +16,29 @@ class DirectMessageVC : UIViewController {
     var bottomViewConstraint = NSLayoutConstraint()
     var bottomPadding : CGFloat = 0
     
+    var myLat : Double?
+    var myLong : Double?
+    
     var messages = [Message]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        guard let userID = Auth.auth().currentUser?.uid else {return}
+        Firestore.firestore().collection("Users").document(userID).getDocument { document, error in
+            if error == nil {
+                if let userData = document?.data() {
+                    DispatchQueue.main.async {
+                        if let lat = userData["userLatitude"] as? Double, let long = userData["userLongtude"] as? Double {
+                            self.myLat = lat
+                            self.myLong = long
+                        }
+                        
+                    }
+                }
+            }
+        }
+        
         
         getAllMessages()
         keyboardSetting()
@@ -32,6 +53,7 @@ class DirectMessageVC : UIViewController {
         view.addSubview(bottomView)
         bottomView.addSubview(messageView)
         bottomView.addSubview(sendButton)
+        bottomView.addSubview(sendLocationButton)
         
         NSLayoutConstraint.activate([
             messagesTableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
@@ -45,13 +67,19 @@ class DirectMessageVC : UIViewController {
             
             messageView.topAnchor.constraint(equalTo: bottomView.topAnchor, constant: 5),
             messageView.bottomAnchor.constraint(equalTo: bottomView.bottomAnchor, constant: -5),
-            messageView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 10),
             messageView.rightAnchor.constraint(equalTo: sendButton.leftAnchor, constant: -10),
             
             sendButton.centerYAnchor.constraint(equalTo: messageView.centerYAnchor),
             sendButton.rightAnchor.constraint(equalTo: bottomView.rightAnchor, constant: -10),
             sendButton.heightAnchor.constraint(equalToConstant: 40),
             sendButton.widthAnchor.constraint(equalTo: sendButton.heightAnchor),
+            
+            sendLocationButton.leftAnchor.constraint(equalTo: bottomView.leftAnchor, constant: 10),
+            sendLocationButton.rightAnchor.constraint(equalTo: messageView.leftAnchor, constant: -10),
+            sendLocationButton.centerYAnchor.constraint(equalTo: messageView.centerYAnchor),
+            sendLocationButton.heightAnchor.constraint(equalToConstant: 40),
+            sendLocationButton.widthAnchor.constraint(equalTo: sendLocationButton.heightAnchor),
+            
             
         ])
         
@@ -101,6 +129,15 @@ class DirectMessageVC : UIViewController {
         return $0
     }(CustomTextFieldView())
     
+    
+    let sendLocationButton : UIButton = {
+        $0.translatesAutoresizingMaskIntoConstraints = false
+        $0.setBackgroundImage(UIImage(systemName: "location.north.circle.fill"), for: .normal)
+        $0.addTarget(self, action: #selector(sendLocation), for: .touchUpInside)
+        return $0
+    }(UIButton(type: .system))
+    
+    
 }
 
 
@@ -134,7 +171,29 @@ extension DirectMessageVC : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         view.endEditing(true)
+        
+        let message = messages[indexPath.row]
+        
+        if let locationArray = message.content?.split(separator: ",") {
+        let lat = locationArray[0]
+        let long = locationArray[1]
+        
+  
+        if  message.hasLocation == true {
+            
+            if (UIApplication.shared.canOpenURL(NSURL(string:"comgooglemaps://")! as URL)) {
+                UIApplication.shared.open(URL(string:"comgooglemaps://?saddr=&daddr=\(lat),\(long)&directionsmode=driving")!, options: [:], completionHandler: nil)
+            } else {
+                print("Can't use comgooglemaps://");
+                let coordinate = CLLocationCoordinate2DMake((Double(lat))! ,(Double(long))!)
+                let mapItem = MKMapItem(placemark: MKPlacemark(coordinate: coordinate, addressDictionary:nil))
+                mapItem.name = "Location"
+                mapItem.openInMaps(launchOptions: [MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeDriving])
+            }
+        }
     }
+    }
+    
     
 }
 
@@ -148,11 +207,28 @@ extension DirectMessageVC {
         Firestore.firestore().document("Messages/\(messageId)").setData([
             "sender" : currentUserID,
             "reciever" : user.id!,
-            "message" : message
+            "message" : message,
+            "hasLocation" : false
         ])
         
         messageView.textField.text = ""
     }
+    
+    
+    @objc func sendLocation() {
+        
+
+        let messageId = String(Date().timeIntervalSince1970)
+        guard let currentUserID = Auth.auth().currentUser?.uid else {return}
+        guard let user = user else {return}
+        Firestore.firestore().document("Messages/\(messageId)").setData([
+            "sender" : currentUserID,
+            "reciever" : user.id!,
+            "message" : "\(myLat!),\(myLong!)",
+            "hasLocation" : true
+        ])
+    }
+    
     
     func getAllMessages() {
         Firestore.firestore().collection("Messages").addSnapshotListener { [self] snapshot, error in
@@ -163,7 +239,7 @@ extension DirectMessageVC {
                     let data = document.data()
                     if let sender = data["sender"] as? String, let reciever = data["reciever"] as? String {
                         if (sender == currentUserID && reciever == user?.id) || (sender == user?.id && reciever == currentUserID) {
-                            self.messages.append(Message(content: data["message"] as? String, sender: sender , reciever: reciever))
+                            self.messages.append(Message(content: data["message"] as? String, sender: sender , reciever: reciever, hasLocation: data["hasLocation"] as? Bool))
                         }
                     }
                 }
@@ -172,7 +248,6 @@ extension DirectMessageVC {
             }
         }
     }
-    
 }
 
 

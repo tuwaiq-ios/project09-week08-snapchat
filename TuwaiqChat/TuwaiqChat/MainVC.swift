@@ -59,7 +59,7 @@ class MainVC : UIViewController {
                         
                         guard let currentUserID = Auth.auth().currentUser?.uid else {return}
                         if userData["id"] as? String != currentUserID {
-                            self.users.append(User(id: userData["id"] as? String, name: userData["name"] as? String, email: userData["email"] as? String, profileImage: userData["profileImage"] as? String))
+                            self.users.append(User(id: userData["id"] as? String, name: userData["name"] as? String, email: userData["email"] as? String, profileImage: userData["profileImage"] as? String, lat: userData["userLatitude"] as? Double, long: userData["userLongtude"] as? Double))
                         }
                             
                     }
