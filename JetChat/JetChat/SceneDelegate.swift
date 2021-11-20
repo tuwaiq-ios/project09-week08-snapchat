@@ -6,11 +6,11 @@
 //
 
 import UIKit
-
+import Firebase
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-
+    private let db = Firestore.firestore()
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
@@ -32,14 +32,36 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // The scene may re-connect later, as its session was not necessarily discarded (see `application:didDiscardSceneSessions` instead).
     }
 
+  
+
     func sceneDidBecomeActive(_ scene: UIScene) {
         // Called when the scene has moved from an inactive state to an active state.
         // Use this method to restart any tasks that were paused (or not yet started) when the scene was inactive.
+        guard let user = Auth.auth().currentUser else {return}
+        self.db.collection("users").document(user.uid).setData([
+            "status": "yes"
+        ], merge: true) { err in
+            if let err = err {
+                print("Error writing document: \(err)")
+            } else {
+                print("State Changed successfully")
+            }
+        }
     }
 
     func sceneWillResignActive(_ scene: UIScene) {
         // Called when the scene will move from an active state to an inactive state.
         // This may occur due to temporary interruptions (ex. an incoming phone call).
+        guard let user = Auth.auth().currentUser else {return}
+        self.db.collection("users").document(user.uid).setData([
+            "status": "no"
+        ], merge: true) { err in
+            if let err = err {
+                print("Error writing document: \(err)")
+            } else {
+                print("State Changed successfully")
+            }
+        }
     }
 
     func sceneWillEnterForeground(_ scene: UIScene) {
@@ -51,8 +73,19 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Called as the scene transitions from the foreground to the background.
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
+        guard let user = Auth.auth().currentUser else {return}
+        self.db.collection("users").document(user.uid).setData([
+            "status": "no"
+        ], merge: true) { err in
+            if let err = err {
+                print("Error writing document: \(err)")
+            } else {
+                print("State Changed successfully")
+            }
+        }
     }
 
 
 }
+
 

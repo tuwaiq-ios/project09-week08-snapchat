@@ -38,7 +38,7 @@ class ProfileVC: UIViewController {
     let userNameLabel: UILabel = {
         let name = UILabel()
         name.font = UIFont.systemFont(ofSize: 29, weight: .bold)
-        name.textColor = .purple
+        name.textColor = .white
         name.textAlignment = .center
         
         return name
@@ -48,7 +48,7 @@ class ProfileVC: UIViewController {
         let isOnline = UILabel()
         isOnline.font = UIFont.systemFont(ofSize: 16, weight: .regular)
         isOnline.textAlignment = .center
-        isOnline.textColor = .purple
+        isOnline.textColor = .white
         return isOnline
     }()
     
@@ -63,6 +63,7 @@ class ProfileVC: UIViewController {
         super.viewDidLoad()
         
         view.backgroundColor = .systemGray2
+        
         title = "Profile".localized()
         self.navigationController?.navigationBar.prefersLargeTitles = false
         readImageFromFirestore()

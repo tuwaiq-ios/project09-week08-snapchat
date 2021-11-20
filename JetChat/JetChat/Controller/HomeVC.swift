@@ -23,10 +23,10 @@ class HomeVC: UIViewController {
     
     private let recordButton: UIButton  = {
         let btn = UIButton(type: .system)
-        btn.setImage(UIImage(systemName: "camera")?.withTintColor(.blue, renderingMode: .alwaysOriginal), for: .normal)
+        btn.setImage(UIImage(systemName: "camera.on.rectangle")?.withTintColor(.red, renderingMode: .alwaysOriginal), for: .normal)
         btn.layer.cornerRadius = 15
         btn.backgroundColor = .clear
-        btn.layer.borderColor = UIColor.blue.cgColor
+        btn.layer.borderColor = UIColor.white.cgColor
         btn.layer.borderWidth = 2
         return btn
     }()
@@ -50,7 +50,7 @@ class HomeVC: UIViewController {
     
     let flashButton: UIButton = {
         let btn = UIButton(type: .system)
-        btn.setupButton(using: "bolt.slash")
+        btn.setupButton(using: "bolt.slash.circle")
         return btn
     }()
     
