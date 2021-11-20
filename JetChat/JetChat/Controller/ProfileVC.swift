@@ -54,7 +54,7 @@ class ProfileVC: UIViewController {
     
     let signOutButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle("Sign out", for: .normal)
+        button.setTitle("Sign out".localized(), for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
@@ -63,7 +63,7 @@ class ProfileVC: UIViewController {
         super.viewDidLoad()
         
         view.backgroundColor = .systemGray2
-        title = "Profile"
+        title = "Profile".localized()
         self.navigationController?.navigationBar.prefersLargeTitles = false
         readImageFromFirestore()
         setUpLabels()

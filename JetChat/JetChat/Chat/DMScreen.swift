@@ -72,8 +72,7 @@ class DMScreen: MessagesViewController {
         messageInputBar.inputTextView.layer.borderColor = UIColor.white.cgColor
         messageInputBar.inputTextView.layer.borderWidth = 1
         messageInputBar.inputTextView.clipsToBounds = true
-        
-        messageInputBar.inputTextView.placeholder = "Write your message"
+        messageInputBar.inputTextView.placeholder = "Write your message".localized()
         
         scrollsToLastItemOnKeyboardBeginsEditing = true
         

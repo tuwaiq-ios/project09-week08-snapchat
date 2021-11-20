@@ -40,7 +40,7 @@ class MapVC: UIViewController {
         super.viewDidLoad()
         
         setupMap()
-        navigationItem.title = "Maps"
+        navigationItem.title = "Map".localized()
         readUsersLocationOnDB()
     }
     
@@ -236,5 +236,6 @@ extension MapVC {
             }
     }
 }
+
 
 

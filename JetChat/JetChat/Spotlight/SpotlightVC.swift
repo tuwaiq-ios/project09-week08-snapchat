@@ -15,7 +15,7 @@ import UIKit
          
          view.backgroundColor = UIColor.darkText
          let feedLbl = UILabel()
-         feedLbl.text = "Spotlight"
+         feedLbl.text = "Spotlight".localized()
          feedLbl.textColor = .systemBackground
          feedLbl.translatesAutoresizingMaskIntoConstraints = false
          view.addSubview(feedLbl)

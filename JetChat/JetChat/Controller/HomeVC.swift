@@ -7,21 +7,21 @@
 
 import UIKit
 import FirebaseAuth
-import AVFoundation // كاميرا - تسجيل صوت - فيديو كل شي تقريبا يتعلق بالكاميرا
+import AVFoundation
 import Photos
 import FirebaseFirestore
 import FirebaseStorage
 
 class HomeVC: UIViewController {
     
-    private var sessionForAV: AVCaptureSession? // اوبجكت اوبشنال من الاي في كابتشر سيشن
-    private let photoOutput = AVCapturePhotoOutput() // نعرض عليها الصور
-    private let videoPreviewLayer = AVCaptureVideoPreviewLayer() // اول مانفتح الكاميرا
+    private var sessionForAV: AVCaptureSession?
+    private let photoOutput = AVCapturePhotoOutput()
+    private let videoPreviewLayer = AVCaptureVideoPreviewLayer()
     private var isFlashOn = false
-    private let db = Firestore.firestore() // ريفيرنس للداتا بيس
-    private let storage = Storage.storage() // ريفيرنس للستورج فالداتا بيس
+    private let db = Firestore.firestore()
+    private let storage = Storage.storage()
     
-    private let recordButton: UIButton  = { // زر التقاط الصورة
+    private let recordButton: UIButton  = {
         let btn = UIButton(type: .system)
         btn.setImage(UIImage(systemName: "camera")?.withTintColor(.blue, renderingMode: .alwaysOriginal), for: .normal)
         btn.layer.cornerRadius = 15
@@ -31,24 +31,20 @@ class HomeVC: UIViewController {
         return btn
     }()
     
-    let previewContainer: UIView = { // الصورة بعد الالتقاط
+    let previewContainer: UIView = {
         let pC = UIView()
-        
-       
         return pC
     }()
-    let cancelPhotoButton: UIButton = { // نكنسل الصورة
+    let cancelPhotoButton: UIButton = {
         let btn = UIButton(type: .system)
 
         btn.setupButton(using: "xmark")
         
         return btn
     }()
-    let savePhotoButton: UIButton = { // نخزن الصورة
+    let savePhotoButton: UIButton = {
         let btn = UIButton(type: .system)
-
         btn.setupButton(using: "square.and.arrow.down")
-        
         return btn
     }()
     
@@ -58,7 +54,7 @@ class HomeVC: UIViewController {
         return btn
     }()
     
-    let userProcessedImage: UIImageView = { // عشان نعرض الصورة بعد الالتقاط
+    let userProcessedImage: UIImageView = {
         let img = UIImageView()
         img.contentMode = .scaleAspectFit
         return img
@@ -74,21 +70,18 @@ class HomeVC: UIViewController {
         return img
     }()
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         view.backgroundColor = .black
         view.layer.addSublayer(videoPreviewLayer)
        
-        navigationItem.title = "SnapTest"
+        navigationItem.title = "SnapHome".localized()
         
         setupRecordButton()
-        
         hasUserGavePermissionForCamera()
         setupCameraButtons()
         setupProfileImage()
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -98,8 +91,6 @@ class HomeVC: UIViewController {
         showWelcomeScreen()
         }
         readImageFromFirestore()
-        
-        
     }
     
     private func setupProfileImage() {
@@ -155,26 +146,20 @@ class HomeVC: UIViewController {
                                 DispatchQueue.main.async {
                                     self.profileImage.image = UIImage(systemName: "person.crop.circle.fill")?.withTintColor(.white, renderingMode: .alwaysOriginal)
                                 }
-                                
                             }
-                            
-                           
                         }
                     }
                 }
             }
     }
     
-    
     private func isUserIsSignedIn() -> Bool {
         return Auth.auth().currentUser != nil
     }
     
-    
     private func setupCameraButtons() {
         
         flashButton.addTarget(self, action: #selector(flashButtonTapped), for: .touchUpInside)
-        
         
         let stackView = UIStackView(arrangedSubviews:  [flashButton])
         
@@ -189,11 +174,9 @@ class HomeVC: UIViewController {
         stackView.layer.borderColor = UIColor.white.cgColor
         
         view.addSubview(stackView)
-        
         stackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10).isActive = true
         stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10).isActive = true
         stackView.widthAnchor.constraint(equalToConstant: 40).isActive = true
-        
         stackView.heightAnchor.constraint(equalToConstant: 70).isActive = true
         
     }
@@ -201,7 +184,6 @@ class HomeVC: UIViewController {
     private func setupRecordButton(){
         
         recordButton.addTarget(self, action: #selector(recordButtonTapped), for: .touchUpInside)
-        
         
         recordButton.translatesAutoresizingMaskIntoConstraints = false
         
@@ -258,18 +240,13 @@ class HomeVC: UIViewController {
                 sessionForAV.addInput(inputDevice)
             }
             
-            
-            
         }catch let err {print("error getting input from device \(err.localizedDescription)")}
-        
         
         if sessionForAV.canAddOutput(photoOutput) {
             sessionForAV.addOutput(photoOutput)
         }
         
-        
         videoPreviewLayer.videoGravity = .resizeAspectFill
-        
         videoPreviewLayer.session = sessionForAV
         videoPreviewLayer.frame = CGRect(x: 0, y:0, width: view.frame.width , height: view.frame.height)
   
@@ -296,9 +273,7 @@ class HomeVC: UIViewController {
         }
     }
     
-    
     private func setupPreviewButtons() {
-        
         
         savePhotoButton.addTarget(self, action: #selector(savePreviewPhotoToLibrary), for: .touchUpInside)
         cancelPhotoButton.addTarget(self, action: #selector(cancelPreviewPhoto), for: .touchUpInside)
@@ -342,7 +317,6 @@ class HomeVC: UIViewController {
                     try PHPhotoLibrary.shared().performChangesAndWait {
                         PHAssetChangeRequest.creationRequestForAsset(from: previewPhoto)
                         print("User saved photo to his library")
-                        
                         
                         DispatchQueue.main.async {
                             let alert = UIAlertController(title: "Awesome!", message: "you photo has been saved", preferredStyle: .alert)
@@ -395,8 +369,6 @@ extension HomeVC: AVCapturePhotoCaptureDelegate {
         setupPreviewButtons()
         
         view.addSubview(previewContainer)
-       
-        
     }
 }
 extension UIButton {
@@ -414,4 +386,3 @@ extension UIButton {
         layer.borderColor = UIColor.white.cgColor
     }
 }
-

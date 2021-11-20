@@ -32,20 +32,23 @@ class Login: UITableViewController {
         
         view.backgroundColor = .white
         
-        nameTF.text = "Ibrahim"
-        nameTF.placeholder = "Your Name"
+        nameTF.text = "Ibrahim".localized()
+        nameTF.placeholder = "Your Name".localized()
+        nameTF.textAlignment = .center
         nameTF.translatesAutoresizingMaskIntoConstraints = false
         nameSeparatorV.translatesAutoresizingMaskIntoConstraints = false
         nameSeparatorV.backgroundColor = .lightGray
         
         emailTF.text = "ibra@i.com"
-        emailTF.placeholder = "Email"
+        emailTF.placeholder = "Email".localized()
+        emailTF.textAlignment = .center
         emailTF.translatesAutoresizingMaskIntoConstraints = false
         emailSeparatorV.translatesAutoresizingMaskIntoConstraints = false
         emailSeparatorV.backgroundColor = .lightGray
         
         passTf.text = "123456"
-        passTf.placeholder = "Password"
+        passTf.placeholder = "Password".localized()
+        passTf.textAlignment = .center
         passTf.translatesAutoresizingMaskIntoConstraints = false
         passTf.isSecureTextEntry = true
         
@@ -93,7 +96,7 @@ class Login: UITableViewController {
         ])
         
         registerBtn.backgroundColor = UIColor(displayP3Red: 70/255, green: 99/255, blue: 160/255, alpha: 1)
-        registerBtn.setTitle("Register", for: .normal)
+        registerBtn.setTitle("Register".localized(), for: .normal)
         registerBtn.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(registerBtn)
         registerBtn.layer.cornerRadius = 10
@@ -117,7 +120,7 @@ class Login: UITableViewController {
             profilImg.heightAnchor.constraint(equalToConstant: 250)
         ])
         
-        loginRegstSg = UISegmentedControl(items: ["Login", "Register"])
+        loginRegstSg = UISegmentedControl(items: ["Login".localized(), "Register".localized()])
         loginRegstSg.selectedSegmentIndex = 1
         loginRegstSg.backgroundColor = UIColor(displayP3Red: 75/255, green: 99/255, blue: 170/255, alpha: 1)
         loginRegstSg.translatesAutoresizingMaskIntoConstraints = false
@@ -129,7 +132,7 @@ class Login: UITableViewController {
             loginRegstSg.widthAnchor.constraint(equalTo: containerV.widthAnchor, multiplier: 0.5)
         ])
         
-        label.text = "Swift Abha"
+        label.text = "Swift Abha".localized()
         label.textColor = UIColor(displayP3Red: 61/255, green: 91/255, blue: 151/255, alpha: 1)
         label.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(label)
@@ -154,7 +157,7 @@ class Login: UITableViewController {
             
             Auth.auth().createUser(withEmail: email, password: password) { result, error in
                 if error == nil {
-                    // go to main vc
+                    // go to home vc
                     let vc = UINavigationController(rootViewController: TabBarCustom())
                     vc.modalTransitionStyle = .crossDissolve
                     vc.modalPresentationStyle = .fullScreen
@@ -178,7 +181,6 @@ class Login: UITableViewController {
                 }
             }
         }
-        
     }
     
     func login() {
@@ -203,5 +205,17 @@ class Login: UITableViewController {
     @objc func loginRegstSgChg() {
         let tit = loginRegstSg.titleForSegment(at: loginRegstSg.selectedSegmentIndex)
         registerBtn.setTitle(tit, for: .normal)
+    }
+}
+
+extension String {
+    
+    func localized() -> String {
+        
+        return NSLocalizedString(self,
+                                 tableName: "localized",
+                                 bundle: .main,
+                                 value: self,
+                                 comment: self)
     }
 }

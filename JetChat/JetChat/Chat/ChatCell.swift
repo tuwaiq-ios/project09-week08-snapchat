@@ -7,13 +7,13 @@
 
 import UIKit
 
-class ChatTVCell: UITableViewCell {
+class ChatCell: UITableViewCell {
 
-    static let cellId = "12345"
+    static let cellId = "chatCell"
 
     let userNameLabel: UILabel = {
        let name = UILabel()
-        
+
         name.font = UIFont.systemFont(ofSize: 16, weight: .medium)
         name.textAlignment = .left
         name.textColor = .black
@@ -45,7 +45,6 @@ class ChatTVCell: UITableViewCell {
     
     required init?(coder: NSCoder) {fatalError("init(coder:) has not been implemented")}
     
-    
     func setupViews() {
 
         
@@ -59,17 +58,11 @@ class ChatTVCell: UITableViewCell {
         circleImage.leadingAnchor.constraint(equalTo: userNameLabel.trailingAnchor, constant: 10).isActive = true
         circleImage.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: -10).isActive = true
        
-        
         userEmail.translatesAutoresizingMaskIntoConstraints = false
         addSubview(userEmail)
         userEmail.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10).isActive = true
         userEmail.topAnchor.constraint(equalTo: userNameLabel.bottomAnchor, constant: 10).isActive = true
-        
-        
     }
-    
-   
-
 }
 
 

@@ -10,11 +10,6 @@ import UIKit
  class SpotlightCell: UICollectionViewCell{
 
      let blogImgCell = UIImageView()
-     let titlLbl = UILabel()
-     let subTLbl = UILabel()
-     let blogLbl = UILabel()
-     let writerImg = UIImageView()
-     let writerLbl = UILabel()
 
      override init(frame: CGRect){
          super.init(frame: frame)

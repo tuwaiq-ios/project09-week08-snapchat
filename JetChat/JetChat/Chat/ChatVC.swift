@@ -12,28 +12,24 @@ import FirebaseStorage
 
 class ChatVC: UIViewController {
     
-    
     var users: [User] = []
     var filterUsers: [User] = []
     let db = Firestore.firestore()
-    private let storage = Storage.storage()
-    private let search = UISearchController()
-    private var currentUserName = ""
-    private let tableView: UITableView = {
+    let storage = Storage.storage()
+    let search = UISearchController()
+    var currentUserName = ""
+    let tableView: UITableView = {
         let table = UITableView(frame: .zero, style: .insetGrouped)
-
-        table.register(ChatTVCell.self,
-                       forCellReuseIdentifier: ChatTVCell.cellId)
+        table.register(ChatCell.self, forCellReuseIdentifier: ChatCell.cellId)
 
         return table
     }()
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        navigationItem.title = "Chat"
+        navigationItem.title = "Chat".localized()
         navigationController?.navigationBar.prefersLargeTitles = true
         
         tableView.backgroundColor = .white
@@ -45,8 +41,6 @@ class ChatVC: UIViewController {
         fetchAllUsers()
     }
     
-   
-
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         tableView.frame = view.bounds
@@ -64,7 +58,7 @@ class ChatVC: UIViewController {
         search.obscuresBackgroundDuringPresentation = false
         search.searchBar.returnKeyType = .done
         search.searchBar.sizeToFit()
-        search.searchBar.placeholder = "Search for a friend"
+        search.searchBar.placeholder = "Search for a friend".localized()
         search.hidesNavigationBarDuringPresentation = false
         definesPresentationContext = true
         
@@ -92,33 +86,28 @@ class ChatVC: UIViewController {
                                let userId = data["userID"] as? String,
                                let userEmail = data["email"] as? String
                             {
-                                
-                                  
-                                      guard let currentUser = FirebaseAuth.Auth.auth().currentUser else { return}
-                                      if userId != currentUser.uid {
-                        
-                                          print("userName: \(userName)")
-                                          let newUser = User(id: userId, name: userName, status: userIsOnline, userEmail: userEmail)
-                                          self.users.append(newUser)
-                                          DispatchQueue.main.async {
-                                              self.tableView.reloadData()
-                                          }
-                                      }else {
-                                          self.currentUserName = userName
-                                      }
 
+                            guard let currentUser = FirebaseAuth.Auth.auth().currentUser else {return}
+                            if userId != currentUser.uid {
+                        
+                                print("userName: \(userName)")
+                                let newUser = User(id: userId, name: userName,status: userIsOnline, userEmail: userEmail)
+                                self.users.append(newUser)
+                                DispatchQueue.main.async {
+                                self.tableView.reloadData()
+                                }
+                            }else {
+                                self.currentUserName = userName
                             }
                         }
                     }
                 }
             }
+        }
     }
-    
 }
 
-
 extension ChatVC: UITableViewDelegate, UITableViewDataSource {
-
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if search.isActive && !search.searchBar.text!.isEmpty {
@@ -130,15 +119,13 @@ extension ChatVC: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
-        let cell = tableView.dequeueReusableCell(withIdentifier: ChatTVCell.cellId, for: indexPath) as! ChatTVCell
-        
+        let cell = tableView.dequeueReusableCell(withIdentifier: ChatCell.cellId, for: indexPath) as! ChatCell
         
         if search.isActive && !search.searchBar.text!.isEmpty {
             cell.backgroundColor = .white
             cell.userNameLabel.text = filterUsers[indexPath.row].name
             cell.userEmail.text     = filterUsers[indexPath.row].userEmail
             cell.circleImage.tintColor = filterUsers[indexPath.row].status == "online" ? UIColor.green : UIColor.gray
-            
             
             cell.accessoryType = .disclosureIndicator
             cell.backgroundColor = .white
@@ -149,13 +136,10 @@ extension ChatVC: UITableViewDelegate, UITableViewDataSource {
             cell.userEmail.text     = users[indexPath.row].userEmail
             cell.circleImage.tintColor  =  users[indexPath.row].status == "online" ? UIColor.green.withAlphaComponent(0.4) : UIColor.gray
 
-            
             cell.accessoryType = .disclosureIndicator
             cell.backgroundColor = .white
             return cell
         }
-        
-       
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -168,12 +152,8 @@ extension ChatVC: UITableViewDelegate, UITableViewDataSource {
         dmScreen.navigationItem.largeTitleDisplayMode = .never
 
         navigationController?.pushViewController(dmScreen, animated: true)
-
     }
-
 }
-
-
 
 extension ChatVC: UISearchResultsUpdating, UISearchBarDelegate {
     
@@ -187,9 +167,8 @@ extension ChatVC: UISearchResultsUpdating, UISearchBarDelegate {
         if let userEnteredSearchText = searchBar.text {
             findResultsBasedOnSearch(with: userEnteredSearchText)
         }
-        
-        
     }
+    
     private func findResultsBasedOnSearch(with text: String)  {
         filterUsers.removeAll()
         if !text.isEmpty {

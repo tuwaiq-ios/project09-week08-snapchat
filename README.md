@@ -7,6 +7,7 @@
 2. Profile (name & status & image)
 3. List of people to chat with
 4. Start a new conversation
-6. Realtime location sharing
+5. Realtime location sharing
+
 
 
