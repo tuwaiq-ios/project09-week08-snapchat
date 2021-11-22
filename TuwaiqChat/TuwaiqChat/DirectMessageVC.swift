@@ -24,21 +24,11 @@ class DirectMessageVC : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        guard let userID = Auth.auth().currentUser?.uid else {return}
-        Firestore.firestore().collection("Users").document(userID).getDocument { document, error in
-            if error == nil {
-                if let userData = document?.data() {
-                    DispatchQueue.main.async {
-                        if let lat = userData["userLatitude"] as? Double, let long = userData["userLongtude"] as? Double {
-                            self.myLat = lat
-                            self.myLong = long
-                        }
-                        
-                    }
-                }
-            }
+        GetLocation.shared.getMyLocation()
+        GetLocation.shared.gotLocation = {
+            self.myLat = GetLocation.shared.latitude
+            self.myLong = GetLocation.shared.longtude
         }
-        
         
         getAllMessages()
         keyboardSetting()
@@ -175,24 +165,25 @@ extension DirectMessageVC : UITableViewDelegate, UITableViewDataSource {
         let message = messages[indexPath.row]
         
         if let locationArray = message.content?.split(separator: ",") {
-        let lat = locationArray[0]
-        let long = locationArray[1]
-        
-  
-        if  message.hasLocation == true {
+            let lat = locationArray[0]
+            let long = locationArray[1]
             
-            if (UIApplication.shared.canOpenURL(NSURL(string:"comgooglemaps://")! as URL)) {
-                UIApplication.shared.open(URL(string:"comgooglemaps://?saddr=&daddr=\(lat),\(long)&directionsmode=driving")!, options: [:], completionHandler: nil)
-            } else {
-                print("Can't use comgooglemaps://");
-                let coordinate = CLLocationCoordinate2DMake((Double(lat))! ,(Double(long))!)
-                let mapItem = MKMapItem(placemark: MKPlacemark(coordinate: coordinate, addressDictionary:nil))
-                mapItem.name = "Location"
-                mapItem.openInMaps(launchOptions: [MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeDriving])
+            
+            if  message.hasLocation == true {
+                
+                if (UIApplication.shared.canOpenURL(NSURL(string:"comgooglemaps://")! as URL)) {
+                    UIApplication.shared.open(URL(string:"comgooglemaps://?saddr=&daddr=\(lat),\(long)&directionsmode=driving")!, options: [:], completionHandler: nil)
+                } else {
+                    print("Can't use comgooglemaps://");
+                    let coordinate = CLLocationCoordinate2DMake((Double(lat))! ,(Double(long))!)
+                    let mapItem = MKMapItem(placemark: MKPlacemark(coordinate: coordinate, addressDictionary:nil))
+                    mapItem.name = "Location"
+                    mapItem.openInMaps(launchOptions: [MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeDriving])
+                }
             }
         }
     }
-    }
+    
     
     
 }
@@ -217,7 +208,6 @@ extension DirectMessageVC {
     
     @objc func sendLocation() {
         
-
         let messageId = String(Date().timeIntervalSince1970)
         guard let currentUserID = Auth.auth().currentUser?.uid else {return}
         guard let user = user else {return}

@@ -4,16 +4,25 @@
 //
 //  Created by PC on 08/04/1443 AH.
 //
-
 import UIKit
 import Firebase
 
 class SignUpVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-
+    
+    var userLatitude = Double()
+    var userLongtude = Double()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
         setGradientBackground()
+        GetLocation.shared.getMyLocation()
+        
+        GetLocation.shared.gotLocation = {
+            self.locationSuccess = true
+            self.userLatitude = GetLocation.shared.latitude
+            self.userLongtude = GetLocation.shared.longtude
+        }
     }
     
     
@@ -61,7 +70,7 @@ class SignUpVC: UIViewController, UIImagePickerControllerDelegate, UINavigationC
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         let image = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
-
+        
         profileImage.image = image
         profileImageSuccess = true
         picker.dismiss(animated: true, completion: nil)
@@ -70,7 +79,7 @@ class SignUpVC: UIViewController, UIImagePickerControllerDelegate, UINavigationC
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true, completion: nil)
     }
- 
+    
     
     lazy var fieldsStackView : UIStackView = {
         $0.translatesAutoresizingMaskIntoConstraints = false
@@ -107,14 +116,16 @@ class SignUpVC: UIViewController, UIImagePickerControllerDelegate, UINavigationC
         $0.addTarget(self, action: #selector(signupAction), for: .touchUpInside)
         return $0
     }(UIButton(type: .system))
-
+    
     
     var nameSuccess = false
     var emailSuccess = false
     var passwordSuccess = false
     var profileImageSuccess = false
+    var locationSuccess = false
     
     @objc func signupAction() {
+        
         if let name = nameView.textField.text, name.isEmpty == false {
             nameSuccess = true
             nameView.layer.shadowColor = UIColor.white.cgColor
@@ -142,8 +153,10 @@ class SignUpVC: UIViewController, UIImagePickerControllerDelegate, UINavigationC
             passwordView.layer.shadowColor = UIColor.red.cgColor
         }
         
+        print(nameSuccess, emailSuccess, passwordSuccess, locationSuccess)
         
-        if nameSuccess, emailSuccess, passwordSuccess {
+        if nameSuccess, emailSuccess, passwordSuccess, locationSuccess {
+            
             // firebase signup
             Auth.auth().createUser(withEmail: emailView.textField.text!, password: passwordView.textField.text!) { result, error in
                 if error == nil {
@@ -165,11 +178,13 @@ class SignUpVC: UIViewController, UIImagePickerControllerDelegate, UINavigationC
                                             "name" : self.nameView.textField.text!,
                                             "email" : self.emailView.textField.text!,
                                             "id" : userID,
-                                            "profileImage" : imageUrlString
+                                            "profileImage" : imageUrlString,
+                                            "userLatitude" : self.userLatitude,
+                                            "userLongtude" : self.userLongtude
                                         ]) { error in
                                             if error == nil {
                                                 DispatchQueue.main.async {
-                                                    let vc = UINavigationController(rootViewController: TabBarVC())
+                                                    let vc = UINavigationController(rootViewController: TabBarController())
                                                     vc.modalTransitionStyle = .crossDissolve
                                                     vc.modalPresentationStyle = .fullScreen
                                                     self.present(vc, animated: true, completion: nil)
@@ -189,11 +204,13 @@ class SignUpVC: UIViewController, UIImagePickerControllerDelegate, UINavigationC
                             "name" : self.nameView.textField.text!,
                             "email" : self.emailView.textField.text!,
                             "id" : userID,
-                            "profileImage" : nil
+                            "profileImage" : nil,
+                            "userLatitude" : self.userLatitude,
+                            "userLongtude" : self.userLongtude
                         ]) { error in
                             if error == nil {
                                 DispatchQueue.main.async {
-                                    let vc = UINavigationController(rootViewController: MainVC())
+                                    let vc = UINavigationController(rootViewController: TabBarController())
                                     vc.modalTransitionStyle = .crossDissolve
                                     vc.modalPresentationStyle = .fullScreen
                                     self.present(vc, animated: true, completion: nil)
@@ -210,8 +227,8 @@ class SignUpVC: UIViewController, UIImagePickerControllerDelegate, UINavigationC
         
         
     }
-
-
+    
+    
 }
 
 extension SignUpVC {
@@ -232,7 +249,7 @@ extension SignUpVC {
             fieldsStackView.topAnchor.constraint(equalTo: profileImage.bottomAnchor, constant: 60),
             fieldsStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
             fieldsStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50),
-
+            
             emailView.heightAnchor.constraint(equalToConstant: 40)
             
         ])
@@ -241,5 +258,4 @@ extension SignUpVC {
     
     
 }
-
 

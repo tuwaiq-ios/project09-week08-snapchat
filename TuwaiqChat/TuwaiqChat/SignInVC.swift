@@ -5,6 +5,7 @@
 //  Created by PC on 08/04/1443 AH.
 //
 
+
 import UIKit
 import Firebase
 
@@ -91,7 +92,7 @@ class SignInVC: UIViewController {
         
         Auth.auth().signIn(withEmail: emailView.textField.text!, password: passwordView.textField.text!) { result, error in
             if error == nil {
-                let vc = UINavigationController(rootViewController: TabBarVC())
+                let vc = UINavigationController(rootViewController: TabBarController())
                 vc.modalTransitionStyle = .crossDissolve
                 vc.modalPresentationStyle = .fullScreen
                 self.present(vc, animated: true, completion: nil)
@@ -153,4 +154,6 @@ extension SignInVC {
     
     
 }
+
+
 

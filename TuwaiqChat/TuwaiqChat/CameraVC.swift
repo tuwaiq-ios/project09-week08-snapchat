@@ -187,7 +187,7 @@ class CameraVC: UIViewController {
         recordButton.heightAnchor.constraint(equalToConstant: 60).isActive = true
     }
     private func showWelcomeScreen() {
-        let vc = UINavigationController(rootViewController: TabBarVC())
+        let vc = UINavigationController(rootViewController: TabBarController())
         vc.modalTransitionStyle = .flipHorizontal
         vc.modalPresentationStyle = .fullScreen
         self.present(vc, animated: true, completion: nil)

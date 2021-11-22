@@ -1,5 +1,5 @@
 //
-//  TabBarVC.swift
+//  TabBarController.swift
 //  TuwaiqChat
 //
 //  Created by Maram Al shahrani on 11/04/1443 AH.
@@ -7,13 +7,11 @@
 
 import UIKit
 
-
-class TabBarVC: UITabBarController {
+class TabBarController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-
         viewControllers = [
             
             barItem(tabBarTitle: "Chat", tabBarImage: UIImage(systemName: "message")!.withTintColor(.white, renderingMode: .alwaysOriginal), viewController: MainVC()),

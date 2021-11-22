@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Tuwaiq Chat needs your location</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>App Needs To Access your Photo Library for user profile Image</string>
 	<key>NSCameraUsageDescription</key>
